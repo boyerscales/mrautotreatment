@@ -1,0 +1,1002 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0a08">
+<title>Mr. Auto Treatment | Mobile Car Detailing in Sacramento</title>
+<meta name="description" content="Interior and exterior car detailing in Sacramento. We come to you, or drop it off with us. Book online in under a minute.">
+<!-- Preview build with placeholder prices and phone. Remove noindex when it goes live. -->
+<meta name="robots" content="noindex">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mr. Auto Treatment | Sacramento Car Detailing">
+<meta property="og:description" content="Interior and exterior detailing. We come to you, or you drop it off. Book online.">
+<meta property="og:image" content="assets/porsche-foam.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Allura&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#0b0a08; --bg2:#100e0b; --panel:#15130f; --panel2:#1c1914;
+  --line:#2a261e; --line2:#3a3428;
+  --ink:#f6f1e7; --muted:#b4ab99; --faint:#7f7766;
+  --gold:#e3b23c; --gold-hi:#f4cd67; --gold-deep:#a97d17; --gold-wash:rgba(227,178,60,.10);
+  --ok:#7fd49a;
+  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
+  --script:"Allura","Snell Roundhand","Brush Script MT",cursive;
+  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  --wrap:1180px;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%;overflow-x:clip}
+body{margin:0;min-width:320px;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
+  line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+[hidden]{display:none!important}
+.wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
+section{padding:clamp(64px,9vw,120px) 0;position:relative}
+
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 18px;
+  display:flex;align-items:center;gap:12px}
+.eyebrow::after{content:"";height:1px;width:48px;background:linear-gradient(90deg,var(--gold),transparent)}
+.h1,.h2,.h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0}
+.h1{font-size:clamp(46px,7.4vw,96px)}
+.h2{font-size:clamp(36px,5.2vw,64px);margin-bottom:16px}
+.h3{font-size:clamp(24px,2.8vw,32px)}
+.script{font-family:var(--script);font-weight:400;color:var(--gold);letter-spacing:0;line-height:.8}
+.lede{color:var(--muted);font-size:clamp(16px,1.8vw,18.5px);max-width:58ch;margin:0 0 28px}
+.gold{color:var(--gold)}
+
+/* buttons: pills, gold on black. Nothing skewed. */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;
+  padding:16px 28px;font-weight:800;font-size:15px;letter-spacing:.02em;border:1px solid transparent;cursor:pointer;
+  white-space:nowrap;transition:transform .15s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease}
+.btn svg{width:17px;height:17px;flex:0 0 auto}
+.btn:hover{transform:translateY(-1px)}
+.btn-gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1a1407;
+  box-shadow:0 10px 30px rgba(227,178,60,.22),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-gold:hover{box-shadow:0 14px 38px rgba(227,178,60,.32),inset 0 1px 0 rgba(255,255,255,.35)}
+.btn-gold:disabled{opacity:.5;cursor:default;transform:none}
+.btn-line{background:transparent;color:var(--ink);border-color:var(--line2)}
+.btn-line:hover{border-color:var(--gold);color:var(--gold-hi)}
+.btn-sm{padding:11px 18px;font-size:13.5px}
+.btn-lg{padding:19px 32px;font-size:16px}
+.btn-block{width:100%}
+.linkbtn{background:none;border:0;padding:6px 0;color:var(--muted);font-weight:700;font-size:13.5px;cursor:pointer;
+  text-decoration:underline;text-underline-offset:4px}
+.linkbtn:hover{color:var(--gold-hi)}
+
+/* ---------- preview ribbon ---------- */
+.preview{background:repeating-linear-gradient(135deg,#1b160a 0 14px,#16120a 14px 28px);border-bottom:1px solid #3b2f12;
+  color:#e9d49a;font-size:12.5px;font-weight:700;text-align:center;padding:8px 16px;letter-spacing:.02em}
+
+/* ---------- header ---------- */
+header.site{position:sticky;top:0;z-index:60;background:rgba(11,10,8,.82);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.hdr{display:flex;align-items:center;gap:26px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
+.brand img{height:54px;width:auto}
+.wordmark{display:flex;flex-direction:column;line-height:1}
+.wordmark b{font-family:var(--sans);font-weight:800;font-size:15px;letter-spacing:.22em;color:var(--ink)}
+.wordmark .script{font-size:34px;margin-top:3px;margin-left:18px}
+nav.main{display:flex;gap:28px}
+nav.main a{font-size:14px;font-weight:600;color:var(--muted);transition:color .15s}
+nav.main a:hover{color:var(--gold-hi)}
+.hdr-cta{display:flex;gap:10px}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(40px,6vw,80px) 0 clamp(56px,8vw,104px);overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(50% 60% at 78% 30%,rgba(227,178,60,.10),transparent 70%)}
+.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(30px,5vw,72px);align-items:center;position:relative}
+.hero-grid>*{min-width:0}
+.hero h1 .script{display:block;font-size:1.28em;margin:.06em 0 -.04em .1em}
+.hero .lede{margin-top:24px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.facts{display:flex;flex-wrap:wrap;gap:22px;margin:34px 0 0;padding:22px 0 0;border-top:1px solid var(--line);list-style:none}
+.facts li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--muted)}
+.facts svg{width:18px;height:18px;color:var(--gold)}
+.hero-photo{position:relative;aspect-ratio:5/4.6;border-radius:22px;overflow:hidden;
+  box-shadow:0 40px 90px rgba(0,0,0,.6);border:1px solid var(--line2)}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
+.hero-frame{position:absolute;inset:-14px -14px auto auto;width:62%;height:62%;border:1px solid rgba(227,178,60,.45);
+  border-radius:26px;z-index:-1}
+.hero-tag{position:absolute;left:20px;bottom:18px;right:20px;z-index:2;display:flex;justify-content:space-between;
+  align-items:flex-end;gap:12px}
+.hero-tag b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.1}
+.hero-tag span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi)}
+
+/* ---------- service ticker ---------- */
+.ticker{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 0}
+.ticker-track{display:flex;gap:44px;width:max-content;animation:tick 38s linear infinite}
+.ticker span{font-family:var(--serif);font-size:24px;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:44px}
+.ticker span::after{content:"✦";color:var(--gold);font-size:14px}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+/* ---------- menu (services) ---------- */
+.menu-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:40px}
+.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.menu>*{min-width:0}
+.dish{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;
+  flex-direction:column;position:relative;transition:border-color .2s}
+.dish:hover{border-color:var(--line2)}
+.dish.star{background:linear-gradient(180deg,#1f1a10,var(--panel) 60%);border-color:rgba(227,178,60,.45)}
+.dish .badge{position:absolute;top:-12px;left:28px;background:var(--gold);color:#1a1407;font-size:11px;font-weight:800;
+  letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
+.dish h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 4px;line-height:1.1}
+.dish .time{font-size:13px;color:var(--faint);font-weight:600;margin:0 0 18px}
+.dish .from{display:flex;align-items:baseline;gap:8px;margin:0 0 20px;padding-bottom:20px;border-bottom:1px dashed var(--line2)}
+.dish .from small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
+.dish .from b{font-family:var(--serif);font-weight:400;font-size:48px;line-height:1;color:var(--gold-hi)}
+.dish ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:9px;flex:1}
+.dish li{display:flex;gap:10px;font-size:14.5px;color:#ddd5c5}
+.dish li svg{width:15px;height:15px;color:var(--gold);flex:0 0 auto;margin-top:4px}
+.sizes{color:var(--faint);font-size:13.5px;margin:18px 0 0}
+
+.extras{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}
+.extras>*{min-width:0}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px}
+.card h4{font-family:var(--serif);font-weight:400;font-size:25px;margin:0 0 6px}
+.card .sub{color:var(--faint);font-size:14px;margin:0 0 18px}
+.leader{display:flex;align-items:baseline;gap:10px;padding:10px 0;font-size:15px}
+.leader+.leader{border-top:1px solid var(--line)}
+.leader i{flex:1;border-bottom:1px dotted var(--line2);transform:translateY(-4px)}
+.leader b{font-weight:700;color:var(--gold-hi);white-space:nowrap}
+.leader .q{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+
+/* ---------- work gallery ---------- */
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(150px,19vw,230px);gap:14px}
+.tile{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--panel2);
+  grid-column:span 4;grid-row:span 2;margin:0}
+.tile.wide{grid-column:span 8}
+.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.tile:hover img{transform:scale(1.04)}
+.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;font-size:13px;font-weight:700;
+  background:linear-gradient(180deg,transparent,rgba(0,0,0,.78))}
+.follow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;
+  color:var(--muted);font-size:14.5px}
+.follow a{color:var(--gold-hi);font-weight:700}
+
+/* ---------- about ---------- */
+.about{background:var(--bg2);border-block:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.about-grid>*{min-width:0}
+.about blockquote{margin:0;font-family:var(--serif);font-size:clamp(34px,4.6vw,58px);line-height:1.08}
+.about blockquote .script{display:block;font-size:1.3em;margin-top:6px}
+.about .sig{margin-top:22px;color:var(--faint);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+.about p{color:var(--muted);font-size:16.5px;margin:0 0 16px}
+.about p b{color:var(--ink);font-weight:700}
+.faith{display:inline-flex;align-items:center;gap:10px;margin-top:10px;padding:10px 16px;border-radius:999px;
+  border:1px solid rgba(227,178,60,.35);background:var(--gold-wash);color:#ecd9a6;font-size:14px;font-weight:600}
+
+/* ---------- how ---------- */
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s;margin-top:36px;border-top:1px solid var(--line2)}
+.how>div{padding:30px 28px 0 0;position:relative}
+.how>div::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:56px;color:var(--gold);
+  line-height:1;display:block;margin-bottom:14px}
+.how>div::after{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--gold)}
+.how h4{font-size:18px;font-weight:800;margin:0 0 6px}
+.how p{margin:0;color:var(--muted);font-size:15px;max-width:34ch}
+
+/* ---------- booking ---------- */
+.book-sec{background:linear-gradient(180deg,var(--bg),#0f0d09)}
+.book{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start;margin-top:36px}
+.book>*{min-width:0}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,32px)}
+.panel h4{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px}
+.panel .sub{color:var(--faint);font-size:14px;margin:0 0 22px}
+label,.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
+.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:20px}
+.seg button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:13px 15px;border-radius:12px;
+  border:1px solid var(--line2);background:#0c0b09;color:var(--ink);cursor:pointer;font-weight:700;font-size:14.5px;transition:.15s}
+.seg button small{font-size:12px;font-weight:500;color:var(--faint)}
+.seg button:hover{border-color:var(--gold-deep)}
+.seg button.sel{border-color:var(--gold);background:var(--gold-wash)}
+.seg button.sel small{color:#d9c38d}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.days::-webkit-scrollbar{display:none}
+.day{flex:0 0 auto;width:64px;padding:10px 0;border-radius:12px;border:1px solid var(--line2);background:#0c0b09;color:var(--ink);
+  cursor:pointer;text-align:center;transition:.15s}
+.day:hover{border-color:var(--gold-deep)}
+.day.sel{background:linear-gradient(180deg,var(--gold-hi),var(--gold));border-color:var(--gold);color:#1a1407}
+.day.off{opacity:.28;pointer-events:none}
+.day .dow{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.day .num{font-family:var(--serif);font-size:24px;line-height:1.1}
+.day .mon{font-size:10.5px;font-weight:700;opacity:.65;text-transform:uppercase}
+.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
+.slot{padding:13px 4px;border-radius:10px;border:1px solid var(--line2);background:#0c0b09;color:var(--ink);font-weight:700;
+  font-size:14.5px;cursor:pointer;transition:.15s;font-variant-numeric:tabular-nums}
+.slot:hover{border-color:var(--gold)}
+.slot.sel{background:var(--gold);border-color:var(--gold);color:#1a1407}
+.slot.taken{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.slots-empty{grid-column:1/-1;text-align:center;color:var(--faint);font-size:14px;padding:22px 6px}
+#step2{margin-top:24px;padding-top:24px;border-top:1px solid var(--line);animation:up .25s ease}
+@keyframes up{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.picked{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;
+  background:var(--gold-wash);border:1px solid rgba(227,178,60,.35);margin-bottom:20px}
+.picked b{font-family:var(--serif);font-weight:400;font-size:20px}
+.field{margin-bottom:14px}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.row2>*{min-width:0}
+input,select,textarea{width:100%;background:#0c0b09;border:1px solid var(--line2);border-radius:10px;color:var(--ink);
+  padding:14px 15px;font-size:16px;outline:none;transition:border-color .15s}
+textarea{resize:vertical;min-height:92px}
+input::placeholder,textarea::placeholder{color:#5d574b}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}
+select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b4ab99' stroke-width='2.4'><path d='M6 9l6 6 6-6'/></svg>");
+  background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px}
+.note{font-size:13px;color:var(--faint);margin:8px 0 0;line-height:1.5}
+.err{color:#ff9a8a;font-size:14px;margin:10px 0 0;min-height:1em}
+.done{display:none;margin-top:6px;padding:24px;border-radius:14px;background:rgba(127,212,154,.07);border:1px solid rgba(127,212,154,.3);
+  color:#d3ecd9;font-size:15px}
+.done.on{display:block}
+.done strong{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--ink);margin-bottom:10px}
+.done .when{display:block;color:var(--ink);font-weight:700}
+.done .pv{display:block;margin-top:14px;padding-top:12px;border-top:1px dashed rgba(127,212,154,.3);color:#e9d49a;font-size:13.5px}
+.side{display:grid;gap:18px}
+.callcard{text-align:left}
+.callcard .num{display:block;font-family:var(--serif);font-size:clamp(30px,3.6vw,40px);line-height:1.1;margin:6px 0 10px}
+.callcard p{color:var(--muted);font-size:14.5px;margin:0 0 18px}
+.callcard .actions .btn{flex:1}
+.dropcard p{color:var(--muted);font-size:14.5px;margin:0}
+.dropcard b{color:var(--ink)}
+
+/* ---------- quote ---------- */
+.quote{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,70px);align-items:start}
+.quote>*{min-width:0}
+.quote-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
+.quote-list li{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:15px}
+.quote-list li b{display:block;color:var(--ink);font-size:16px}
+.quote-list .ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;
+  background:var(--gold-wash);border:1px solid rgba(227,178,60,.3);color:var(--gold)}
+.quote-list .ico svg{width:19px;height:19px}
+
+/* ---------- area + faq ---------- */
+.info{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,70px)}
+.info>*{min-width:0}
+.area{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
+.area span{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);font-size:13.5px;font-weight:600;color:#d8d0c0}
+.area span.hub{border-color:var(--gold);color:var(--gold-hi)}
+.travel{margin-top:22px;padding:18px 20px;border-radius:14px;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:14.5px}
+.travel b{color:var(--ink)}
+.faq{display:grid;gap:0;border-top:1px solid var(--line2)}
+details.q{border-bottom:1px solid var(--line2)}
+details.q summary{list-style:none;cursor:pointer;padding:20px 0;display:flex;justify-content:space-between;gap:18px;
+  font-weight:700;font-size:16.5px}
+details.q summary::-webkit-details-marker{display:none}
+details.q summary::after{content:"+";font-family:var(--serif);font-size:28px;line-height:.8;color:var(--gold);transition:transform .2s}
+details.q[open] summary::after{transform:rotate(45deg)}
+details.q .a{padding:0 40px 22px 0;color:var(--muted);font-size:15px}
+
+/* ---------- finale + footer ---------- */
+.finale{text-align:center;overflow:hidden;border-top:1px solid var(--line)}
+.finale::before{content:"";position:absolute;inset:0;background:url(assets/chevy-c10.jpg) center 40%/cover;opacity:.16;filter:grayscale(.3)}
+.finale::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 50%,transparent,var(--bg) 85%)}
+.finale .wrap{position:relative;z-index:1}
+.finale .lede{margin-inline:auto}
+.finale .actions{justify-content:center}
+footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 120px}
+.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+.foot>*{min-width:0}
+.foot h5{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.foot a,.foot p{display:block;margin:0 0 8px;color:var(--muted);font-size:14.5px}
+.foot a:hover{color:var(--gold-hi)}
+.foot-bot{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.mobar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:10px;background:rgba(11,10,8,.94);
+  backdrop-filter:blur(14px);border-top:1px solid var(--line2);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.mobar .btn{flex:1}
+
+@media (max-width:980px){
+  nav.main{display:none}
+  .hero-grid,.about-grid,.book,.quote,.info,.extras{grid-template-columns:1fr}
+  .menu{grid-template-columns:1fr}
+  .menu-head{grid-template-columns:1fr}
+  .hero-photo{aspect-ratio:4/3}
+  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,40vw,260px)}
+  .tile,.tile.wide{grid-column:span 1;grid-row:span 1}
+  .tile.wide{grid-column:span 2}
+  .foot{grid-template-columns:1fr 1fr}
+}
+@media (max-width:640px){
+  html{scroll-padding-top:74px}
+  .hdr{height:66px}
+  .hdr-cta .btn-line{display:none}
+  .wordmark b{font-size:13px}
+  .wordmark .script{font-size:29px}
+  .actions .btn{flex:1 1 100%}
+  .how{grid-template-columns:1fr}
+  .how>div{padding-right:0;padding-bottom:26px}
+  .row2{grid-template-columns:1fr}
+  .slots{grid-template-columns:repeat(3,1fr)}
+  .foot{grid-template-columns:1fr}
+  .mobar{display:flex}
+  .facts{gap:14px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.5-5.4A8.5 8.5 0 1 1 21 12z"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></symbol>
+<symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.1 6.3L20.5 10l-6.4 1.7L12 18l-2.1-6.3L3.5 10l6.4-1.7z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+<symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+<symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></symbol>
+</defs></svg>
+
+<div class="preview" id="previewBar">Preview site. Prices, hours and the phone number are placeholders until the owner confirms them.</div>
+
+<header class="site">
+  <div class="wrap hdr">
+    <a class="brand" href="#top" aria-label="Mr. Auto Treatment home">
+      <img src="assets/logo.png" alt="Mr. Auto Treatment" onerror="this.remove();document.getElementById('wm').hidden=false">
+      <span class="wordmark" id="wm" hidden><b>MR. AUTO</b><span class="script">Treatment</span></span>
+    </a>
+    <nav class="main">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#quote">Quotes</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div class="hdr-cta">
+      <a class="btn btn-line btn-sm" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
+      <a class="btn btn-gold btn-sm" href="#book">Book a Detail</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">Mobile and drop-off detailing · Sacramento</p>
+      <h1 class="h1">Excellence isn't the goal. <span class="script">It's the standard.</span></h1>
+      <p class="lede">Interior and exterior details done right, at your house, at your job, or dropped off with us. Pick a time online and we'll text you to confirm.</p>
+      <div class="actions">
+        <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
+        <a class="btn btn-line btn-lg" href="#services">See Services</a>
+      </div>
+      <ul class="facts">
+        <li><svg><use href="#i-pin"/></svg>We come to you</li>
+        <li><svg><use href="#i-clock"/></svg>Open 7 days</li>
+        <li><svg><use href="#i-msg"/></svg>Text confirmation</li>
+      </ul>
+    </div>
+    <div style="position:relative">
+      <div class="hero-frame"></div>
+      <div class="hero-photo">
+        <img src="assets/porsche-foam.jpg" alt="Porsche covered in foam during an exterior detail by Mr. Auto Treatment">
+        <div class="hero-tag"><b>Foam bath, Porsche 718</b><span>Recent job</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span>Foam Bath</span><span>Interior Detail</span><span>Wheels</span><span>Paint Correction</span><span>Ceramic Coating</span><span>Headlight Restoration</span>
+    <span>Foam Bath</span><span>Interior Detail</span><span>Wheels</span><span>Paint Correction</span><span>Ceramic Coating</span><span>Headlight Restoration</span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="menu-head">
+      <div>
+        <p class="eyebrow">Services</p>
+        <h2 class="h2">Pick your treatment.</h2>
+        <p class="lede" style="margin:0">Three ways to book. Prices below are for a sedan or coupe.</p>
+      </div>
+    </div>
+
+    <div class="menu" id="menu"></div>
+    <p class="sizes" id="sizeNote"></p>
+
+    <div class="extras">
+      <div class="card">
+        <h4>Add-ons</h4>
+        <p class="sub">Add any of these when you book, or ask when we get there.</p>
+        <div id="addons"></div>
+      </div>
+      <div class="card">
+        <h4>By quote</h4>
+        <p class="sub">These depend on the car, so we look first and give you a real number.</p>
+        <div id="quoteOnly"></div>
+        <a class="btn btn-line btn-block" href="#quote" style="margin-top:18px">Get a Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work" style="padding-top:0">
+  <div class="wrap">
+    <p class="eyebrow">Recent work</p>
+    <h2 class="h2">Straight from the driveway.</h2>
+    <p class="lede">Real jobs, shot on the spot.</p>
+    <div class="gallery" id="gallery"></div>
+    <div class="follow">
+      <span>More on Instagram and Facebook.</span>
+      <a href="https://www.instagram.com/mrautotreatment_/" target="_blank" rel="noopener">@mrautotreatment_ →</a>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div>
+      <blockquote>Blessed hands. <span class="script">Unmatched results.</span></blockquote>
+      <p class="sig" id="ownerSig"></p>
+    </div>
+    <div>
+      <p class="eyebrow">About</p>
+      <p id="aboutText"></p>
+      <p>Every job gets the same care whether it's a daily driver, a work truck, or something you only take out on Sundays. If we think your car needs more time than you booked, we tell you before we start, not after.</p>
+      <span class="faith" id="faithLine" hidden><svg style="width:16px;height:16px"><use href="#i-spark"/></svg><span></span></span>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 class="h2">Booked in a minute.</h2>
+    <div class="how">
+      <div><h4>Pick a time</h4><p>Choose your service and an open slot below. No account and nothing to pay online.</p></div>
+      <div><h4>Get a text</h4><p>We text you to confirm, then remind you the day before and again an hour out.</p></div>
+      <div><h4>We pull up</h4><p>We come to your driveway or lot. Or drop the car off with us and grab it when it's done.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="book" class="book-sec">
+  <div class="wrap">
+    <p class="eyebrow">Book</p>
+    <h2 class="h2">Grab a spot.</h2>
+    <p class="lede" style="margin:0">Tap a service, a day and a time. Or call and we'll find one with you.</p>
+
+    <div class="book">
+      <div class="panel">
+        <h4 id="bookTitle">Book online</h4>
+        <p class="sub" id="bookSub">We text you to confirm. Nothing is charged online.</p>
+
+        <div id="picker">
+          <span class="lab">Service</span>
+          <div class="seg" id="segService"></div>
+          <span class="lab">Day</span>
+          <div class="days" id="days"></div>
+          <div class="slots" id="slots"></div>
+        </div>
+
+        <form id="bookForm" novalidate>
+          <div id="step2" hidden>
+            <div class="picked"><b id="pickedText"></b><button type="button" class="linkbtn" id="changeTime">Change</button></div>
+            <span class="lab">Where</span>
+            <div class="seg" id="segMode">
+              <button type="button" data-mode="mobile" class="sel">We come to you<small>Driveway, lot or work</small></button>
+              <button type="button" data-mode="dropoff">I'll drop it off<small>Address texted to you</small></button>
+            </div>
+            <div class="row2">
+              <div class="field"><label for="bName">Name</label><input id="bName" autocomplete="name" placeholder="Your name"></div>
+              <div class="field"><label for="bPhone">Mobile</label><input id="bPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
+            </div>
+            <div class="field"><label for="bVehicle">Vehicle</label><input id="bVehicle" placeholder="2020 Dodge Charger"></div>
+            <div class="field" id="addrField"><label for="bAddr">Address</label><input id="bAddr" autocomplete="street-address" placeholder="Street address, Sacramento">
+              <p class="note" id="travelNote"></p></div>
+            <button type="button" class="linkbtn" id="noteToggle">Add a note</button>
+            <div class="field" id="noteField" hidden style="margin-top:6px"><input id="bNotes" placeholder="Pet hair, tight driveway, second car"></div>
+            <button type="submit" class="btn btn-gold btn-lg btn-block" id="bookBtn" style="margin-top:12px">Book This Time</button>
+            <p class="err" id="bookErr"></p>
+          </div>
+        </form>
+        <div class="done" id="bookOk"></div>
+      </div>
+
+      <div class="side">
+        <div class="panel callcard">
+          <span class="lab">Rather talk?</span>
+          <span class="num" data-phone></span>
+          <p>Call or text and we'll find you a time. If we're under a car, the call still gets answered.</p>
+          <div class="actions">
+            <a class="btn btn-gold" data-tel><svg><use href="#i-phone"/></svg>Call</a>
+            <a class="btn btn-line" data-sms><svg><use href="#i-msg"/></svg>Text</a>
+          </div>
+        </div>
+        <div class="panel dropcard">
+          <span class="lab">Dropping off?</span>
+          <p id="dropText"></p>
+        </div>
+        <div class="panel dropcard">
+          <span class="lab">Hours</span>
+          <p id="hoursText"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quote">
+  <div class="wrap quote">
+    <div>
+      <p class="eyebrow">Quotes</p>
+      <h2 class="h2">Bigger jobs start with a look.</h2>
+      <p class="lede">Paint correction and ceramic coating depend on what your paint looks like today. Tell us about the car and we'll text you back with a price.</p>
+      <ul class="quote-list">
+        <li><span class="ico"><svg><use href="#i-sun"/></svg></span><span><b>Paint correction</b>Swirls, haze and light scratches taken out so the paint reflects again.</span></li>
+        <li><span class="ico"><svg><use href="#i-shield"/></svg></span><span><b>Ceramic coating</b>A hard layer over the paint that keeps it glossy and easier to wash.</span></li>
+        <li><span class="ico"><svg><use href="#i-spark"/></svg></span><span><b>Headlight restoration</b>Yellow, cloudy lenses brought back to clear.</span></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h4 id="quoteTitle">Request a quote</h4>
+      <p class="sub" id="quoteSub">Takes a minute. Photos help, and you can send them in the text.</p>
+      <form id="quoteForm" novalidate>
+        <span class="lab">What do you need?</span>
+        <div class="seg" id="segQuote"></div>
+        <div class="row2">
+          <div class="field"><label for="qName">Name</label><input id="qName" autocomplete="name" placeholder="Your name"></div>
+          <div class="field"><label for="qPhone">Mobile</label><input id="qPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
+        </div>
+        <div class="field"><label for="qVehicle">Vehicle</label><input id="qVehicle" placeholder="2017 BMW 3 Series, black"></div>
+        <div class="field"><label for="qDetails">What's going on with it?</label><textarea id="qDetails" placeholder="Swirls on the hood, parked outside, want it protected"></textarea></div>
+        <button type="submit" class="btn btn-gold btn-lg btn-block" id="quoteBtn">Send My Request</button>
+        <p class="err" id="quoteErr"></p>
+        <p class="note" style="text-align:center">This opens a text to us with your details filled in.</p>
+      </form>
+      <div class="done" id="quoteOk"></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="about">
+  <div class="wrap info">
+    <div>
+      <p class="eyebrow">Service area</p>
+      <h2 class="h2">Where we go.</h2>
+      <p style="color:var(--muted);margin:0" id="areaText"></p>
+      <div class="area" id="areaList"></div>
+      <div class="travel" id="travelText"></div>
+    </div>
+    <div>
+      <p class="eyebrow">FAQ</p>
+      <div class="faq" id="faqList"></div>
+    </div>
+  </div>
+</section>
+
+<section class="finale">
+  <div class="wrap">
+    <h2 class="h2">Give it the <span class="script" style="font-size:1.35em">treatment.</span></h2>
+    <p class="lede">Pick a time in under a minute. We'll text you to confirm.</p>
+    <div class="actions">
+      <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
+      <a class="btn btn-line btn-lg" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h5>Mr. Auto Treatment</h5>
+        <p style="max-width:38ch">Mobile and drop-off car detailing in Sacramento, California.</p>
+        <a href="https://www.instagram.com/mrautotreatment_/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px"><svg style="width:17px;height:17px"><use href="#i-ig"/></svg>@mrautotreatment_</a>
+        <a href="https://www.facebook.com/MrAutoTreatment" target="_blank" rel="noopener">Facebook</a>
+      </div>
+      <div>
+        <h5>Book</h5>
+        <a data-tel><span data-phone></span></a>
+        <a data-sms>Text us</a>
+        <a href="#book">Online booking</a>
+        <a href="#quote">Request a quote</a>
+      </div>
+      <div>
+        <h5>Info</h5>
+        <a href="#services">Services</a>
+        <a href="#work">Recent work</a>
+        <a href="#faq">FAQ</a>
+        <p id="footHours"></p>
+      </div>
+    </div>
+    <div class="foot-bot">
+      <span>© <span id="yr">2026</span> Mr. Auto Treatment · Sacramento, CA</span>
+      <span>Nothing charged online</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobar">
+  <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg>Call</a>
+  <a class="btn btn-gold" href="#book"><svg><use href="#i-cal"/></svg>Book</a>
+</div>
+
+<script>
+/* =====================================================================
+   MR. AUTO TREATMENT site config. Everything tweakable lives here.
+   Anything marked PLACEHOLDER is a guess until the owner confirms it.
+   ===================================================================== */
+const CFG = {
+  BUSINESS   : 'Mr. Auto Treatment',
+  PREVIEW    : true,                  // shows the placeholder ribbon; set false at launch
+  PHONE_E164 : '+19165550199',        // PLACEHOLDER: 555-01xx is a reserved fake number
+  PHONE_TEXT : '(916) 555-0199',
+  PHONE_IS_PLACEHOLDER: true,         // quote form won't text a fake number while true
+
+  OWNER_FIRST: 'Emmanuel',            // PLACEHOLDER: from his Facebook, confirm he wants it shown
+  ABOUT      : 'Mr. Auto Treatment is a Sacramento detailing business run by Emmanuel. Most jobs happen right in your driveway, and if that doesn\'t work for you, you can drop the car off instead.',
+  FAITH_LINE : 'God first, in the work and everything else.',   // PLACEHOLDER: ask how much faith to show; '' hides it
+
+  /* --- services -------------------------------------------------------
+     id and minutes must match booking_config.services on the dashboard
+     once the account exists. The server's copy wins for length.        */
+  SERVICES: [
+    { id:'full',     label:'The Full Treatment', minutes:180, from:160, time:'About 3 hours', star:true,   // PLACEHOLDER prices and times
+      blurb:'Inside and out',
+      items:['Everything in the exterior detail','Everything in the interior detail','Tire shine and trim dressing','Door jambs wiped down'] },
+    { id:'interior', label:'Interior Detail',    minutes:120, from:100, time:'About 2 hours',
+      blurb:'Inside only',
+      items:['Full vacuum, seats, carpet and trunk','Dash, console and door panels cleaned','Leather and vinyl wiped and dressed','Windows cleaned inside'] },
+    { id:'exterior', label:'Exterior Detail',    minutes:90,  from:70,  time:'About 1.5 hours',
+      blurb:'Outside only',
+      items:['Foam bath and full wash','Wheels, tires and wheel wells','Bug and road grime removed','Windows cleaned outside'] },
+  ],
+  SIZE_NOTE  : 'SUVs, trucks and 3-row vehicles cost a little more. We confirm the price by text before the job.',   // PLACEHOLDER
+  ADDONS: [                            // PLACEHOLDER: owner hasn't given add-ons yet
+    ['Pet hair removal','$30'], ['Seat and carpet shampoo','$45'], ['Engine bay','$35'], ['Odor removal','$40'],
+  ],
+  QUOTE_ONLY: ['Paint correction','Ceramic coating','Headlight restoration'],
+
+  /* --- booking backend -------------------------------------------------
+     The page asks the dashboard for this slug. If the slug doesn't exist
+     yet (404) it runs a preview calendar and saves nothing. The moment the
+     client account is created with this slug, bookings go live with no
+     redeploy.                                                              */
+  API_BASE   : 'https://dashboard.boyerscales.com',
+  SLUG       : 'mrautotreatment',
+  STEP_MIN   : 60,
+  HORIZON    : 14,
+  LEAD_HOURS : 24,                     // PLACEHOLDER: "at least a day"
+  HOURS      : {0:['08:00','18:00'],1:['08:00','18:00'],2:['08:00','18:00'],3:['08:00','18:00'],
+                4:['08:00','18:00'],5:['08:00','18:00'],6:['08:00','18:00']},   // PLACEHOLDER
+  HOURS_TEXT : 'Every day, 8am to 6pm.',
+
+  /* --- area --------------------------------------------------------------*/
+  HUB        : 'Sacramento',
+  RADIUS_MI  : 15,                     // PLACEHOLDER
+  TRAVEL_PER_MILE : 1.5,               // PLACEHOLDER
+  AREAS      : ['Downtown','Midtown','Land Park','Natomas','Arden-Arcade','Carmichael','Rancho Cordova','West Sacramento','Pocket','Florin','Elk Grove','Citrus Heights'],
+  DROPOFF    : 'South Sacramento',     // PLACEHOLDER: real spot unknown
+
+  /* --- photos: missing files just drop out of the grid ------------------ */
+  SHOTS: [
+    {src:'assets/chevy-c10.jpg',     cap:'Classic Chevy',  wide:false},
+    {src:'assets/headlight.jpg',     cap:'Headlights',                   wide:false},
+    {src:'assets/charger.jpg',       cap:'Dodge Charger, foam bath',     wide:false},
+    {src:'assets/porsche-tall.jpg',  cap:'Porsche 718, foam bath',       wide:false},
+    {src:'assets/odyssey.jpg',       cap:'Honda Odyssey',   wide:false},
+    {src:'assets/porsche-foam.jpg',  cap:'Porsche 718',        wide:false},
+  ],
+};
+
+const $  = (s, r=document) => r.querySelector(s);
+const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const pad = n => String(n).padStart(2,'0');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
+
+/* ---------------------------- static fill ----------------------------- */
+(function fill(){
+  $('#previewBar').hidden = !CFG.PREVIEW;
+  $$('[data-phone]').forEach(e => e.textContent = CFG.PHONE_TEXT);
+  $$('[data-tel]').forEach(e => e.href = 'tel:' + CFG.PHONE_E164);
+  $$('[data-sms]').forEach(e => e.href = 'sms:' + CFG.PHONE_E164);
+
+  $('#menu').innerHTML = CFG.SERVICES.map(s => `
+    <article class="dish${s.star ? ' star' : ''}">
+      ${s.star ? '<span class="badge">Most booked</span>' : ''}
+      <h3>${esc(s.label)}</h3>
+      <p class="time">${esc(s.time)}</p>
+      <div class="from"><small>From</small><b>$${s.from}</b></div>
+      <ul>${s.items.map(i => `<li><svg><use href="#i-check"/></svg>${esc(i)}</li>`).join('')}</ul>
+      <a class="btn ${s.star ? 'btn-gold' : 'btn-line'} btn-block" href="#book" data-pick="${s.id}">Book ${esc(s.label.replace(/^The /,''))}</a>
+    </article>`).join('');
+  $('#sizeNote').textContent = CFG.SIZE_NOTE;
+  $('#addons').innerHTML = CFG.ADDONS.map(([n,p]) => `<div class="leader"><span>${esc(n)}</span><i></i><b>${esc(p)}</b></div>`).join('');
+  $('#quoteOnly').innerHTML = CFG.QUOTE_ONLY.map(n => `<div class="leader"><span>${esc(n)}</span><i></i><span class="q">Quote</span></div>`).join('');
+
+  $('#ownerSig').textContent = CFG.OWNER_FIRST ? CFG.OWNER_FIRST + ', owner' : '';
+  $('#aboutText').textContent = CFG.ABOUT;
+  if (CFG.FAITH_LINE){ $('#faithLine span').textContent = CFG.FAITH_LINE; $('#faithLine').hidden = false; }
+
+  const past = CFG.RADIUS_MI + 5;
+  const travel = `Free within <b>${CFG.RADIUS_MI} miles</b> of ${CFG.HUB}. Past that it's <b>${money(CFG.TRAVEL_PER_MILE)} a mile</b> for the miles over ${CFG.RADIUS_MI}, so ${past} miles out adds ${money(5*CFG.TRAVEL_PER_MILE)}.`;
+  $('#travelNote').innerHTML = travel;
+  $('#travelText').innerHTML = travel + ' Farther than that? Book anyway and we\'ll call you to work it out.';
+  $('#areaText').textContent = `We're based in ${CFG.HUB} and cover the neighborhoods and cities around it.`;
+  $('#areaList').innerHTML = `<span class="hub">${esc(CFG.HUB)}</span>` + CFG.AREAS.map(a => `<span>${esc(a)}</span>`).join('');
+  $('#dropText').innerHTML = `Our drop-off spot is in <b>${esc(CFG.DROPOFF)}</b>. Pick "I'll drop it off" when you book and we text you the exact address.`;
+  $('#hoursText').textContent = CFG.HOURS_TEXT + ' Book at least a day ahead.';
+  $('#footHours').textContent = CFG.HOURS_TEXT;
+
+  const FAQ = [
+    ['Do you really come to me?', `Yes. Most jobs happen in the customer's driveway, apartment lot or work parking lot, anywhere within ${CFG.RADIUS_MI} miles of ${CFG.HUB} with no travel charge. If that doesn't work, drop the car off with us instead.`],
+    ['What do you need from me?', 'Just access to the car and a spot to work. If you\'re in a gated complex or a tight space, add a note when you book so we can plan for it.'],
+    ['How long does it take?', 'An exterior takes about an hour and a half, an interior about two, and the full treatment about three. A car that needs extra work can take longer, and we tell you before we start.'],
+    ['How do I pay?', 'After the job is done. Nothing is charged through this website.'],
+    ['What about paint correction or ceramic coating?', 'Those are priced by quote because every car\'s paint is different. Send a request with a few photos and we\'ll text you back with a price.'],
+    ['What if I need to reschedule?', 'Call or text us. If the weather looks bad we\'ll reach out the day before and move you to the next open time.'],
+  ];
+  $('#faqList').innerHTML = FAQ.map((q,i) => `<details class="q"${i===0?' open':''}><summary>${esc(q[0])}</summary><div class="a">${esc(q[1])}</div></details>`).join('');
+  $('#yr').textContent = new Date().getFullYear();
+})();
+
+/* ------------------------------ gallery ------------------------------- */
+(function gallery(){
+  const g = $('#gallery');
+  CFG.SHOTS.forEach(s => {
+    const f = document.createElement('figure');
+    f.className = 'tile';
+    f.innerHTML = `<img src="${s.src}" alt="${esc(s.cap)} by Mr. Auto Treatment" loading="lazy"><figcaption>${esc(s.cap)}</figcaption>`;
+    const img = f.firstElementChild;
+    img.addEventListener('error', () => { f.remove(); layout(); });
+    img.addEventListener('load', layout);
+    g.append(f);
+  });
+  // With whatever photos actually loaded, make one tile wide per row of three
+  // so the grid never ends on a lonely half-row.
+  function layout(){
+    const tiles = $$('.tile', g);
+    tiles.forEach(t => t.classList.remove('wide'));
+    if (tiles.length % 3 === 2) tiles[tiles.length - 1].classList.add('wide');
+    else if (tiles.length % 3 === 1 && tiles.length > 1) tiles[0].classList.add('wide');
+    $('#work').hidden = tiles.length === 0;
+  }
+  layout();
+})();
+
+/* ------------------------------ booking ------------------------------- */
+(function booking(){
+  const daysEl = $('#days'), slotsEl = $('#slots'), form = $('#bookForm'), step2 = $('#step2');
+  let cfg = { hours:CFG.HOURS, booked:[], stepMinutes:CFG.STEP_MIN, horizonDays:CFG.HORIZON,
+              leadHours:CFG.LEAD_HOURS, services:CFG.SERVICES.map(s => ({id:s.id, label:s.label, minutes:s.minutes})) };
+  let live = false, mode = 'mobile', pickedDay = null, picked = null;
+  let service = cfg.services[0];
+
+  const ymd  = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
+  const hm2m = s => (+s.slice(0,2))*60 + (+s.slice(3,5));
+  const label = m => { const h=Math.floor(m/60), mm=m%60, ap=h>=12?'PM':'AM', hh=h%12||12; return hh+(mm?':'+pad(mm):'')+' '+ap; };
+  const digits = s => (s||'').replace(/\D/g,'');
+  const copy = id => CFG.SERVICES.find(x => x.id === id) || {};
+
+  function renderServices(){
+    const el = $('#segService');
+    el.innerHTML = cfg.services.map(x => {
+      const c = copy(x.id);
+      return `<button type="button" data-svc="${x.id}"${x.id === service.id ? ' class="sel"' : ''}>${esc(c.label || x.label)}<small>${esc(c.blurb || '')}${c.from ? ' · from $' + c.from : ''}</small></button>`;
+    }).join('');
+    $$('button', el).forEach(b => b.addEventListener('click', () => choose(b.dataset.svc)));
+  }
+  function choose(id){
+    const hit = cfg.services.find(x => x.id === id);
+    if (!hit) return;
+    service = hit;
+    $$('#segService button').forEach(x => x.classList.toggle('sel', x.dataset.svc === id));
+    picked = null; step2.hidden = true;
+    renderDays();
+  }
+  // "Book Interior" on a menu card preselects that service.
+  $$('[data-pick]').forEach(a => a.addEventListener('click', () => choose(a.dataset.pick)));
+
+  $$('#segMode button').forEach(b => b.addEventListener('click', () => {
+    $$('#segMode button').forEach(x => x.classList.remove('sel'));
+    b.classList.add('sel');
+    mode = b.dataset.mode;
+    $('#addrField').hidden = mode !== 'mobile';
+  }));
+  $('#noteToggle').addEventListener('click', function(){ $('#noteField').hidden = false; this.hidden = true; $('#bNotes').focus(); });
+  $('#changeTime').addEventListener('click', () => {
+    picked = null; step2.hidden = true;
+    $$('.slot', slotsEl).forEach(x => x.classList.remove('sel'));
+    daysEl.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  // Busy blocks come back as {start:"YYYY-MM-DDTHH:MM", minutes}; overlap, never key-match.
+  function busy(){
+    return (cfg.booked || []).map(b => {
+      const s = typeof b === 'string' ? b : b && b.start;
+      const from = new Date(s).getTime();
+      if (!Number.isFinite(from)) return null;
+      const mins = (b && Number(b.minutes)) || service.minutes;
+      return { from, to: from + mins*60000 };
+    }).filter(Boolean);
+  }
+  function slotsFor(date){
+    const span = cfg.hours[date.getDay()];
+    if (!span) return [];
+    const job = service.minutes, step = cfg.stepMinutes || 60;
+    const floor = Date.now() + cfg.leadHours*3600000, blocks = busy(), out = [];
+    for (let m = hm2m(span[0]); m + job <= hm2m(span[1]); m += step){
+      const start = new Date(date); start.setHours(Math.floor(m/60), m%60, 0, 0);
+      const from = start.getTime();
+      if (from < floor) continue;
+      const to = from + job*60000;
+      out.push({ key: ymd(start)+'T'+pad(start.getHours())+':'+pad(start.getMinutes()), text: label(m), date: start,
+                 taken: blocks.some(b => b.from < to && from < b.to) });
+    }
+    return out;
+  }
+  // Preview only: a few believable busy slots so the calendar doesn't look empty.
+  function seedPreview(){
+    const booked = [];
+    for (let i = 1; i < cfg.horizonDays; i++){
+      const d = new Date(); d.setDate(d.getDate()+i);
+      if ((i*5) % 3 === 0) booked.push({ start: ymd(d)+'T'+pad(9 + (i % 4)*2)+':00', minutes: 120 });
+    }
+    cfg.booked = booked;
+  }
+
+  function renderDays(){
+    const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    daysEl.innerHTML = '';
+    let first = null;
+    for (let i = 0; i < cfg.horizonDays; i++){
+      const d = new Date(); d.setDate(d.getDate()+i); d.setHours(0,0,0,0);
+      const open = slotsFor(d).some(s => !s.taken);
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'day' + (open ? '' : ' off');
+      b.innerHTML = `<div class="dow">${i===0?'Today':i===1?'Tmrw':DOW[d.getDay()]}</div><div class="num">${d.getDate()}</div><div class="mon">${MON[d.getMonth()]}</div>`;
+      b.addEventListener('click', () => pickDay(d, b));
+      daysEl.append(b);
+      if (open && !first) first = [d, b];
+    }
+    if (first) pickDay(...first);
+    else slotsEl.innerHTML = `<div class="slots-empty">Nothing open in the next two weeks. Call ${CFG.PHONE_TEXT}.</div>`;
+  }
+  function pickDay(d, btn){
+    pickedDay = d; picked = null; step2.hidden = true;
+    $$('.day', daysEl).forEach(x => x.classList.remove('sel'));
+    btn.classList.add('sel');
+    const list = slotsFor(d);
+    slotsEl.innerHTML = '';
+    if (!list.some(s => !s.taken)){
+      slotsEl.innerHTML = `<div class="slots-empty">Nothing open that day. Try another, or call ${CFG.PHONE_TEXT}.</div>`;
+      return;
+    }
+    list.forEach(s => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'slot' + (s.taken ? ' taken' : ''); b.textContent = s.text;
+      if (s.taken){ b.disabled = true; b.setAttribute('aria-label', s.text + ', already booked'); }
+      else b.addEventListener('click', () => {
+        $$('.slot', slotsEl).forEach(x => x.classList.remove('sel'));
+        b.classList.add('sel'); picked = s;
+        $('#pickedText').textContent = (copy(service.id).label || service.label) + ' · ' +
+          s.date.toLocaleDateString('en-US',{weekday:'short', month:'short', day:'numeric'}) + ' at ' + s.text;
+        step2.hidden = false;
+        requestAnimationFrame(() => step2.scrollIntoView({behavior:'smooth', block:'nearest'}));
+      });
+      slotsEl.append(b);
+    });
+  }
+
+  async function load(){
+    try {
+      const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}`);
+      if (r.ok){
+        const j = await r.json();
+        live = true;
+        cfg = { hours:j.hours || cfg.hours, booked:j.booked || [], stepMinutes:j.stepMinutes || cfg.stepMinutes,
+                horizonDays:j.horizonDays || cfg.horizonDays, leadHours:j.leadHours ?? cfg.leadHours,
+                services:(j.services && j.services.length) ? j.services : cfg.services };
+        service = cfg.services.find(x => x.id === service.id) || cfg.services[0];
+      } else if (r.status === 404){
+        seedPreview();                 // no account yet: preview calendar, saves nothing
+      } else live = true;              // server trouble: stay "live" so a submit errors honestly
+    } catch (_) { live = true; }
+    renderServices();
+    renderDays();
+  }
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    const err = $('#bookErr'); err.textContent = '';
+    const name = $('#bName').value.trim(), phone = $('#bPhone').value.trim(), vehicle = $('#bVehicle').value.trim(),
+          addr = $('#bAddr').value.trim(), notes = $('#bNotes').value.trim();
+    if (!picked)                    return err.textContent = 'Pick a time first.';
+    if (!name)                      return err.textContent = 'We need a name for the appointment.';
+    if (digits(phone).length < 10)  return err.textContent = 'That number looks short. We text your confirmation there.';
+    if (!vehicle)                   return err.textContent = 'What are we working on? Year, make and model is perfect.';
+    if (mode === 'mobile' && !addr) return err.textContent = 'We need an address to come to you, or switch to drop-off.';
+
+    const btn = $('#bookBtn');
+    btn.disabled = true; btn.textContent = 'Booking';
+    let ok = true;
+    if (live){
+      try {
+        const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}/book`, {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({ name, phone, start:picked.key, vehicle, mode, address:addr, notes,
+                                 service_id:service.id, service:copy(service.id).label || service.label })
+        });
+        const j = await r.json().catch(() => ({}));
+        ok = r.ok && j.ok !== false;
+        if (!ok) err.textContent = j.error || 'That time just got taken. Pick another, or call us.';
+      } catch (_) {
+        ok = false; err.textContent = 'Couldn\'t reach the calendar. Please call ' + CFG.PHONE_TEXT + '.';
+      }
+    }
+    btn.disabled = false; btn.textContent = 'Book This Time';
+    if (!ok) return;
+
+    $('#picker').hidden = true; form.hidden = true; $('#bookSub').hidden = true;
+    $('#bookTitle').textContent = 'You\'re booked';
+    const first = name.split(' ')[0];
+    const box = $('#bookOk');
+    box.innerHTML = `<strong>Thank you, ${esc(first.charAt(0).toUpperCase() + first.slice(1))}.</strong>
+      <span class="when">${esc(copy(service.id).label || service.label)}</span>
+      <span class="when">${picked.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric'})} at ${picked.text}</span>
+      ${mode === 'mobile' ? 'We come to you' : 'Drop-off'} · ${esc(vehicle)}<br><br>
+      We'll text ${esc(phone)} shortly to confirm. Need to change it? Call or text <a href="tel:${CFG.PHONE_E164}" class="gold" style="font-weight:700">${CFG.PHONE_TEXT}</a>.
+      ${live ? '' : '<span class="pv">Preview mode: this booking was not saved and no text was sent.</span>'}`;
+    box.classList.add('on');
+    box.scrollIntoView({behavior:'smooth', block:'center'});
+  });
+
+  load();
+})();
+
+/* ------------------------------- quote -------------------------------- */
+(function quote(){
+  const opts = [...CFG.QUOTE_ONLY, 'Something else'];
+  let pick = opts[0];
+  const seg = $('#segQuote');
+  seg.innerHTML = opts.map((o,i) => `<button type="button"${i===0?' class="sel"':''}>${esc(o)}</button>`).join('');
+  $$('button', seg).forEach(b => b.addEventListener('click', () => {
+    $$('button', seg).forEach(x => x.classList.remove('sel'));
+    b.classList.add('sel'); pick = b.textContent;
+  }));
+
+  $('#quoteForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const err = $('#quoteErr'); err.textContent = '';
+    const name = $('#qName').value.trim(), phone = $('#qPhone').value.trim(),
+          vehicle = $('#qVehicle').value.trim(), details = $('#qDetails').value.trim();
+    if (!name) return err.textContent = 'What should we call you?';
+    if (phone.replace(/\D/g,'').length < 10) return err.textContent = 'We need a mobile number to text the quote to.';
+    if (!vehicle) return err.textContent = 'Tell us the vehicle so we can price it.';
+
+    const body = `Hi ${CFG.BUSINESS}, I'd like a quote for ${pick.toLowerCase()}.\n` +
+                 `Name: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}` + (details ? `\nDetails: ${details}` : '') +
+                 `\n(I can send photos too)`;
+    $('#quoteForm').hidden = true; $('#quoteSub').hidden = true;
+    $('#quoteTitle').textContent = 'Almost done';
+    const box = $('#quoteOk');
+    if (CFG.PHONE_IS_PLACEHOLDER){
+      box.innerHTML = `<strong>Thanks, ${esc(name.split(' ')[0])}.</strong>This opens a text to us with everything filled in, so you can attach photos and hit send.
+        <span class="pv">Preview mode: the real number isn't set yet, so no text was opened.</span>`;
+    } else {
+      box.innerHTML = `<strong>Thanks, ${esc(name.split(' ')[0])}.</strong>Your text app should be open with everything filled in. Attach a few photos of the paint and hit send. If nothing opened, text ${CFG.PHONE_TEXT}.`;
+      window.location.href = `sms:${CFG.PHONE_E164}?&body=${encodeURIComponent(body)}`;
+    }
+    box.classList.add('on');
+  });
+})();
+</script>
+</body>
+</html>
