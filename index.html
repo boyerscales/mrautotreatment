@@ -62,6 +62,10 @@ section{padding:clamp(64px,9vw,120px) 0;position:relative}
   box-shadow:0 10px 30px rgba(227,178,60,.22),inset 0 1px 0 rgba(255,255,255,.35)}
 .btn-gold:hover{box-shadow:0 14px 38px rgba(227,178,60,.32),inset 0 1px 0 rgba(255,255,255,.35)}
 .btn-gold:disabled{opacity:.5;cursor:default;transform:none}
+.btn-gold{position:relative;overflow:hidden}
+.btn-gold::after{content:"";position:absolute;inset:0;pointer-events:none;transform:translateX(-120%);
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transition:transform .75s ease}
+.btn-gold:hover::after{transform:translateX(120%)}
 .btn-line{background:transparent;color:var(--ink);border-color:var(--line2)}
 .btn-line:hover{border-color:var(--gold);color:var(--gold-hi)}
 .btn-sm{padding:11px 18px;font-size:13.5px}
@@ -87,6 +91,13 @@ header.site{position:sticky;top:0;z-index:60;background:rgba(11,10,8,.82);backdr
 nav.main{display:flex;gap:28px}
 nav.main a{font-size:14px;font-weight:600;color:var(--muted);transition:color .15s}
 nav.main a:hover{color:var(--gold-hi)}
+nav.main a{position:relative;padding:6px 0}
+nav.main a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);
+  transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+nav.main a:hover::after,nav.main a.on::after{transform:scaleX(1)}
+nav.main a.on{color:var(--gold-hi)}
+header.site{transition:background .35s ease,box-shadow .35s ease}
+header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,0,0,.5)}
 .hdr-cta{display:flex;gap:10px}
 
 /* ---------- hero ---------- */
@@ -103,7 +114,7 @@ nav.main a:hover{color:var(--gold-hi)}
 .facts svg{width:18px;height:18px;color:var(--gold)}
 .hero-photo{position:relative;aspect-ratio:5/4.6;border-radius:22px;overflow:hidden;
   box-shadow:0 40px 90px rgba(0,0,0,.6);border:1px solid var(--line2)}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.14);will-change:transform}
 .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
 .hero-frame{position:absolute;inset:-14px -14px auto auto;width:62%;height:62%;border:1px solid rgba(227,178,60,.45);
   border-radius:26px;z-index:-1}
@@ -124,8 +135,8 @@ nav.main a:hover{color:var(--gold-hi)}
 .menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 .menu>*{min-width:0}
 .dish{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;
-  flex-direction:column;position:relative;transition:border-color .2s}
-.dish:hover{border-color:var(--line2)}
+  flex-direction:column;position:relative;transition:border-color .2s,transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+.dish:hover{border-color:var(--line2);transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.45)}
 .dish.star{background:linear-gradient(180deg,#1f1a10,var(--panel) 60%);border-color:rgba(227,178,60,.45)}
 .dish .badge{position:absolute;top:-12px;left:28px;background:var(--gold);color:#1a1407;font-size:11px;font-weight:800;
   letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
@@ -319,7 +330,30 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
   .mobar{display:flex}
   .facts{gap:14px}
 }
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* ---------- motion ---------- */
+/* Elements only hide once the script has tagged them .rv, so if JS never runs
+   nothing is left invisible. */
+.js .rv{opacity:0;transform:translate3d(0,30px,0);filter:blur(6px);
+  transition:opacity .85s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform 1s cubic-bezier(.2,.7,.2,1) var(--d,0s),filter .85s ease var(--d,0s)}
+.js .rv-l{transform:translate3d(-42px,0,0)}
+.js .rv-r{transform:translate3d(42px,0,0)}
+.js .rv-zoom{transform:scale(.93)}
+.js .rv-pop{transform:translate3d(0,12px,0) scale(.9)}
+.js .rv.in{opacity:1;transform:none;filter:none}
+.js .hero-photo.rv{opacity:1;filter:none;transform:none;clip-path:inset(0 0 100% 0 round 22px);
+  transition:clip-path 1.25s cubic-bezier(.75,0,.2,1) var(--d,0s)}
+.js .hero-photo.rv.in{clip-path:inset(0 0 0 0 round 22px)}
+.js .eyebrow.rv::after{width:0;transition:width 1s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .35s)}
+.js .eyebrow.rv.in::after{width:48px}
+.day,.slot{animation:chip .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 28ms)}
+@keyframes chip{from{opacity:0;transform:translateY(10px)}}
+.done.on{animation:up .5s cubic-bezier(.2,.7,.2,1)}
+details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
+.mobar{animation:barIn .6s cubic-bezier(.2,.7,.2,1) .8s both}
+@keyframes barIn{from{transform:translateY(110%)}}
+
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}}
 </style>
 </head>
 <body>
@@ -860,7 +894,7 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
       const d = new Date(); d.setDate(d.getDate()+i); d.setHours(0,0,0,0);
       const open = slotsFor(d).some(s => !s.taken);
       const b = document.createElement('button');
-      b.type = 'button'; b.className = 'day' + (open ? '' : ' off');
+      b.type = 'button'; b.className = 'day' + (open ? '' : ' off'); b.style.setProperty('--i', i);
       b.innerHTML = `<div class="dow">${i===0?'Today':i===1?'Tmrw':DOW[d.getDay()]}</div><div class="num">${d.getDate()}</div><div class="mon">${MON[d.getMonth()]}</div>`;
       b.addEventListener('click', () => pickDay(d, b));
       daysEl.append(b);
@@ -879,9 +913,10 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
       slotsEl.innerHTML = `<div class="slots-empty">Nothing open that day. Try another, or call ${CFG.PHONE_TEXT}.</div>`;
       return;
     }
-    list.forEach(s => {
+    list.forEach((s, i) => {
       const b = document.createElement('button');
       b.type = 'button'; b.className = 'slot' + (s.taken ? ' taken' : ''); b.textContent = s.text;
+      b.style.setProperty('--i', i);
       if (s.taken){ b.disabled = true; b.setAttribute('aria-label', s.text + ', already booked'); }
       else b.addEventListener('click', () => {
         $$('.slot', slotsEl).forEach(x => x.classList.remove('sel'));
@@ -996,6 +1031,139 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
     }
     box.classList.add('on');
   });
+})();
+
+/* ------------------------------ motion -------------------------------- */
+(function motion(){
+  const root = document.documentElement, header = $('header.site');
+  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  root.classList.add('js');
+  root.style.scrollBehavior = 'auto';      // the glide below does the easing
+
+  /* Section links. The browser's own smooth scroll is fast enough that it
+     reads as the page teleporting, so jumps get a slower eased glide. */
+  let anim = 0;
+  const ease = t => t < .5 ? 8*t*t*t*t : 1 - Math.pow(-2*t + 2, 4) / 2;
+  function glide(y){
+    cancelAnimationFrame(anim);
+    const from = scrollY, dist = y - from;
+    if (calm || Math.abs(dist) < 4) return scrollTo(0, y);
+    const dur = Math.min(1400, Math.max(700, Math.abs(dist) * .35)), t0 = performance.now();
+    const step = now => {
+      const p = Math.min(1, (now - t0) / dur);
+      scrollTo(0, from + dist * ease(p));
+      if (p < 1) anim = requestAnimationFrame(step);
+    };
+    anim = requestAnimationFrame(step);
+  }
+  // Grabbing the wheel or the screen mid-glide hands control straight back.
+  ['wheel','touchstart'].forEach(ev => addEventListener(ev, () => cancelAnimationFrame(anim), {passive:true}));
+  document.addEventListener('click', e => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    const id = a.getAttribute('href');
+    const el = id.length > 1 && $(id);
+    if (!el) return;
+    e.preventDefault();
+    const y = id === '#top' ? 0 : el.getBoundingClientRect().top + scrollY - header.offsetHeight - 8;
+    glide(Math.max(0, y));
+    history.replaceState(null, '', id);
+  });
+
+  /* Header deepens once you leave the top; hero photo drifts a little slower
+     than the page. */
+  const photo = $('.hero-photo img');
+  let ticking = false;
+  function onScroll(){
+    ticking = false;
+    header.classList.toggle('scrolled', scrollY > 10);
+    if (photo && !calm && scrollY < innerHeight * 1.3)
+      photo.style.setProperty('--py', Math.min(44, scrollY * .07).toFixed(1) + 'px');
+  }
+  addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
+  onScroll();
+
+  // Nav underline follows whichever section is in the middle of the screen.
+  const links = $$('nav.main a');
+  const spy = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + en.target.id));
+  }), { rootMargin: '-45% 0px -50% 0px' });
+  $$('main section[id]').forEach(s => spy.observe(s));
+
+  /* Reveal on scroll. Siblings matched by the same rule stagger in order. */
+  function tag(sel, kind, step){
+    $$(sel).forEach(el => {
+      if (el.classList.contains('rv')) return;
+      const i = [...el.parentElement.children].filter(x => x.matches(sel)).indexOf(el);
+      el.classList.add('rv');
+      if (kind) el.classList.add(kind);
+      el.style.setProperty('--d', Math.min(i * (step || .08), .7).toFixed(2) + 's');
+    });
+  }
+  ['.hero .eyebrow', '.hero h1', '.hero .lede', '.hero .actions', '.hero .facts'].forEach((s, i) => {
+    const el = $(s);
+    if (el){ el.classList.add('rv'); el.style.setProperty('--d', (.1 + i * .13).toFixed(2) + 's'); }
+  });
+  const hp = $('.hero-photo');
+  if (hp){ hp.classList.add('rv'); hp.style.setProperty('--d', '.25s'); }
+  const hf = $('.hero-frame');
+  if (hf){ hf.classList.add('rv', 'rv-zoom'); hf.style.setProperty('--d', '.9s'); }
+
+  tag('main section:not(.hero) .eyebrow, main section:not(.hero) .h2, main section:not(.hero) .lede, .sizes', '', .1);
+  tag('.dish', '', .13);
+  tag('.extras .card', '', .13);
+  tag('.tile', 'rv-zoom', .09);
+  tag('.follow');
+  tag('.about blockquote, .about .sig', 'rv-l', .15);
+  tag('#about .about-grid > div:last-child > p, #faithLine', '', .1);
+  tag('.how > div', '', .15);
+  tag('.book > .panel', 'rv-l');
+  tag('.side > .panel', 'rv-r', .12);
+  tag('.quote-list li', 'rv-l', .1);
+  tag('.quote > .panel', 'rv-r');
+  tag('.area span', 'rv-pop', .035);
+  tag('.travel');
+  tag('details.q', '', .06);
+  tag('.finale .actions');
+  tag('.foot > div', '', .1);
+
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    io.unobserve(en.target);
+    const el = proxyOf.get(en.target) || en.target;
+    el.classList.add('in');
+    // Once it has landed, drop the reveal classes so hover transitions on
+    // cards and buttons work normally again.
+    const d = parseFloat(el.style.getPropertyValue('--d')) || 0;
+    setTimeout(() => {
+      el.classList.remove('rv', 'in', 'rv-l', 'rv-r', 'rv-zoom', 'rv-pop');
+      el.style.removeProperty('--d');
+    }, (d + 1.4) * 1000);
+  }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
+  /* The hero photo starts fully clipped, and Chrome counts a clipped box as
+     not on screen, so on phones (where the photo sits below the fold) it never
+     revealed. Watch its wrapper instead. */
+  const proxyOf = new Map();
+  $$('.rv').forEach(el => {
+    if (el.classList.contains('hero-photo')){ proxyOf.set(el.parentElement, el); io.observe(el.parentElement); }
+    else io.observe(el);
+  });
+
+  // Prices tick up to their number the first time they come into view.
+  const cio = new IntersectionObserver(entries => entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    cio.unobserve(en.target);
+    const b = en.target, to = parseInt(b.textContent.replace(/\D/g, ''), 10);
+    if (!to || calm) return;
+    const from = Math.round(to * .35), t0 = performance.now();
+    const run = now => {
+      const p = Math.min(1, (now - t0) / 1200);
+      b.textContent = '$' + Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(run);
+    };
+    requestAnimationFrame(run);
+  }), { threshold: .6 });
+  $$('.dish .from b').forEach(b => cio.observe(b));
 })();
 </script>
 </body>
