@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0b0a08">
 <title>Mr. Auto Treatment | Mobile Car Detailing in Sacramento</title>
-<meta name="description" content="Interior and exterior car detailing in Sacramento. We come to you, or drop it off with us. Book online in under a minute.">
+<meta name="description" content="Mobile car detailing in Sacramento. Essential and Executive packages, plus window tint, headlight restoration, curb rash and oil changes. We come to you. Book online in under a minute.">
 <!-- Preview build with placeholder prices and phone. Remove noindex when it goes live. -->
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mr. Auto Treatment | Sacramento Car Detailing">
-<meta property="og:description" content="Interior and exterior detailing. We come to you, or you drop it off. Book online.">
+<meta property="og:description" content="Essential and Executive detailing packages, plus tint, headlights and curb rash. We come to you. Book online.">
 <meta property="og:image" content="assets/porsche-foam.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -132,7 +132,7 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 
 /* ---------- menu (services) ---------- */
 .menu-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:40px}
-.menu{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
 .menu>*{min-width:0}
 .dish{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;
   flex-direction:column;position:relative;transition:border-color .2s,transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
@@ -148,7 +148,17 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 .dish ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:9px;flex:1}
 .dish li{display:flex;gap:10px;font-size:14.5px;color:#ddd5c5}
 .dish li svg{width:15px;height:15px;color:var(--gold);flex:0 0 auto;margin-top:4px}
-.sizes{color:var(--faint);font-size:13.5px;margin:18px 0 0}
+.dish .stage{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.dish .lead{color:var(--muted);font-size:15px;margin:0 0 20px;line-height:1.5}
+.dish .from.quote b{font-family:var(--sans);font-size:26px;font-weight:800;letter-spacing:-.01em}
+.dish .from.quote small{color:var(--gold)}
+.sizes{color:var(--faint);font-size:13.5px;margin:18px 0 0;max-width:72ch}
+.ala{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-bottom:18px}
+.ala span{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#ddd5c5}
+.ala svg{width:14px;height:14px;color:var(--gold);flex:0 0 auto;margin-top:5px}
+.cta-card{display:flex;flex-direction:column}
+.cta-card .btn+.btn{margin-top:10px}
+.cta-card .spacer{flex:1;min-height:8px}
 
 .extras{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}
 .extras>*{min-width:0}
@@ -210,6 +220,13 @@ label,.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;tex
 .seg button:hover{border-color:var(--gold-deep)}
 .seg button.sel{border-color:var(--gold);background:var(--gold-wash)}
 .seg button.sel small{color:#d9c38d}
+.seg.one{display:block}
+.svcone{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+  padding:16px 18px;border:1px solid rgba(227,178,60,.4);background:var(--gold-wash);border-radius:12px}
+.svcone .nm{font-family:var(--serif);font-size:22px;line-height:1.1}
+.svcone .mt{font-size:13.5px;font-weight:700;color:var(--gold-hi);white-space:nowrap}
+.svc-alt{margin:10px 0 20px}
+.svc-alt a{color:var(--gold-hi);font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
 .days::-webkit-scrollbar{display:none}
 .day{flex:0 0 auto;width:64px;padding:10px 0;border-radius:12px;border:1px solid var(--line2);background:#0c0b09;color:var(--ink);
@@ -308,6 +325,7 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
   nav.main{display:none}
   .hero-grid,.about-grid,.book,.quote,.info,.extras{grid-template-columns:1fr}
   .menu{grid-template-columns:1fr}
+  .ala{grid-template-columns:1fr}
   .menu-head{grid-template-columns:1fr}
   .hero-photo{aspect-ratio:4/3}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,40vw,260px)}
@@ -333,17 +351,17 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
 /* ---------- motion ---------- */
 /* Elements only hide once the script has tagged them .rv, so if JS never runs
    nothing is left invisible. */
-.js .rv{opacity:0;transform:translate3d(0,30px,0);filter:blur(6px);
-  transition:opacity .85s cubic-bezier(.2,.7,.2,1) var(--d,0s),transform 1s cubic-bezier(.2,.7,.2,1) var(--d,0s),filter .85s ease var(--d,0s)}
-.js .rv-l{transform:translate3d(-42px,0,0)}
-.js .rv-r{transform:translate3d(42px,0,0)}
-.js .rv-zoom{transform:scale(.93)}
-.js .rv-pop{transform:translate3d(0,12px,0) scale(.9)}
-.js .rv.in{opacity:1;transform:none;filter:none}
-.js .hero-photo.rv{opacity:1;filter:none;transform:none;clip-path:inset(0 0 100% 0 round 22px);
-  transition:clip-path 1.25s cubic-bezier(.75,0,.2,1) var(--d,0s)}
+.js .rv{opacity:0;transform:translate3d(0,14px,0);
+  transition:opacity .45s ease var(--d,0s),transform .6s cubic-bezier(.22,.72,.3,1) var(--d,0s)}
+.js .rv-l{transform:translate3d(-20px,0,0)}
+.js .rv-r{transform:translate3d(20px,0,0)}
+.js .rv-zoom{transform:scale(.975)}
+.js .rv-pop{transform:translate3d(0,8px,0) scale(.96)}
+.js .rv.in{opacity:1;transform:none}
+.js .hero-photo.rv{opacity:1;transform:none;clip-path:inset(0 0 100% 0 round 22px);
+  transition:clip-path .85s cubic-bezier(.62,0,.2,1) var(--d,0s)}
 .js .hero-photo.rv.in{clip-path:inset(0 0 0 0 round 22px)}
-.js .eyebrow.rv::after{width:0;transition:width 1s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .35s)}
+.js .eyebrow.rv::after{width:0;transition:width .6s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .2s)}
 .js .eyebrow.rv.in::after{width:48px}
 .day,.slot{animation:chip .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 28ms)}
 @keyframes chip{from{opacity:0;transform:translateY(10px)}}
@@ -353,7 +371,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 @keyframes barIn{from{transform:translateY(110%)}}
 
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .js .rv{opacity:1!important;transform:none!important;filter:none!important;clip-path:none!important}}
+  .js .rv{opacity:1!important;transform:none!important;clip-path:none!important}}
 </style>
 </head>
 <body>
@@ -369,10 +387,12 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
 <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
 <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
+<symbol id="i-wheel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v5.8M12 15.2V21M3 12h5.8M15.2 12H21"/></symbol>
+<symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6.2 6.6 6.2 11a6.2 6.2 0 0 1-12.4 0c0-4.4 6.2-11 6.2-11z"/></symbol>
 <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></symbol>
 </defs></svg>
 
-<div class="preview" id="previewBar">Preview site. Prices, hours and the phone number are placeholders until the owner confirms them.</div>
+<div class="preview" id="previewBar">Preview site. Phone, hours and packages are confirmed. The Executive price and the drop-off address are still open, and the calendar doesn't save yet.</div>
 
 <header class="site">
   <div class="wrap hdr">
@@ -401,14 +421,14 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
     <div>
       <p class="eyebrow">Mobile and drop-off detailing · Sacramento</p>
       <h1 class="h1">Excellence isn't the goal. <span class="script">It's the standard.</span></h1>
-      <p class="lede">Interior and exterior details done right, at your house, at your job, or dropped off with us. Pick a time online and we'll text you to confirm.</p>
+      <p class="lede">Interior and exterior detailing done right, at your house, at your job, or dropped off with us. Pick a time online and we'll text you to confirm.</p>
       <div class="actions">
         <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
         <a class="btn btn-line btn-lg" href="#services">See Services</a>
       </div>
       <ul class="facts">
         <li><svg><use href="#i-pin"/></svg>We come to you</li>
-        <li><svg><use href="#i-clock"/></svg>Open 7 days</li>
+        <li><svg><use href="#i-clock"/></svg>6am to 6pm, 7 days</li>
         <li><svg><use href="#i-msg"/></svg>Text confirmation</li>
       </ul>
     </div>
@@ -424,8 +444,8 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
-    <span>Foam Bath</span><span>Interior Detail</span><span>Wheels</span><span>Paint Correction</span><span>Ceramic Coating</span><span>Headlight Restoration</span>
-    <span>Foam Bath</span><span>Interior Detail</span><span>Wheels</span><span>Paint Correction</span><span>Ceramic Coating</span><span>Headlight Restoration</span>
+    <span>Foam Bath</span><span>Interior Detail</span><span>Headliner Shampoo</span><span>Steam Clean</span><span>Window Tint</span><span>Headlight Restoration</span><span>Curb Rash</span><span>Under Carriage</span>
+    <span>Foam Bath</span><span>Interior Detail</span><span>Headliner Shampoo</span><span>Steam Clean</span><span>Window Tint</span><span>Headlight Restoration</span><span>Curb Rash</span><span>Under Carriage</span>
   </div>
 </div>
 
@@ -433,9 +453,9 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
   <div class="wrap">
     <div class="menu-head">
       <div>
-        <p class="eyebrow">Services</p>
-        <h2 class="h2">Pick your treatment.</h2>
-        <p class="lede" style="margin:0">Three ways to book. Prices below are for a sedan or coupe.</p>
+        <p class="eyebrow">The menu</p>
+        <h2 class="h2">Two ways to get it done.</h2>
+        <p class="lede" style="margin:0">One to keep it looking right. One that leaves nothing on the table.</p>
       </div>
     </div>
 
@@ -444,15 +464,17 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 
     <div class="extras">
       <div class="card">
-        <h4>Add-ons</h4>
-        <p class="sub">Add any of these when you book, or ask when we get there.</p>
-        <div id="addons"></div>
+        <h4>Also on its own</h4>
+        <p class="sub">Every one of these is already inside the Executive package. We'll also do any of them on their own.</p>
+        <div class="ala" id="alaCarte"></div>
+        <p class="note" style="margin:0">Priced per vehicle, because a tint job on a coupe isn't a tint job on a Suburban. Send a photo and we'll text you a number.</p>
       </div>
-      <div class="card">
-        <h4>By quote</h4>
-        <p class="sub">These depend on the car, so we look first and give you a real number.</p>
-        <div id="quoteOnly"></div>
-        <a class="btn btn-line btn-block" href="#quote" style="margin-top:18px">Get a Quote</a>
+      <div class="card cta-card">
+        <h4>Not sure what it needs?</h4>
+        <p class="sub">Tell us what's bugging you about the car and send a couple of photos. You'll get a straight price back by text, no walkthrough required.</p>
+        <div class="spacer"></div>
+        <a class="btn btn-gold btn-block" href="#quote">Get a Price</a>
+        <a class="btn btn-line btn-block" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
       </div>
     </div>
   </div>
@@ -481,6 +503,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
       <p class="eyebrow">About</p>
       <p id="aboutText"></p>
       <p>Every job gets the same care whether it's a daily driver, a work truck, or something you only take out on Sundays. If we think your car needs more time than you booked, we tell you before we start, not after.</p>
+      <p>It isn't only soap and a vacuum either. Tint, headlights, curb rash and an oil change all happen in the same driveway, on the same visit.</p>
       <span class="faith" id="faithLine" hidden><svg style="width:16px;height:16px"><use href="#i-spark"/></svg><span></span></span>
     </div>
   </div>
@@ -491,7 +514,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
     <p class="eyebrow">How it works</p>
     <h2 class="h2">Booked in a minute.</h2>
     <div class="how">
-      <div><h4>Pick a time</h4><p>Choose your service and an open slot below. No account and nothing to pay online.</p></div>
+      <div><h4>Pick a time</h4><p>Pick an open slot below. No account, no card, nothing to pay online.</p></div>
       <div><h4>Get a text</h4><p>We text you to confirm, then remind you the day before and again an hour out.</p></div>
       <div><h4>We pull up</h4><p>We come to your driveway or lot. Or drop the car off with us and grab it when it's done.</p></div>
     </div>
@@ -502,7 +525,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
   <div class="wrap">
     <p class="eyebrow">Book</p>
     <h2 class="h2">Grab a spot.</h2>
-    <p class="lede" style="margin:0">Tap a service, a day and a time. Or call and we'll find one with you.</p>
+    <p class="lede" style="margin:0">Pick a day and a time. Or call and we'll find one with you.</p>
 
     <div class="book">
       <div class="panel">
@@ -512,6 +535,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
         <div id="picker">
           <span class="lab">Service</span>
           <div class="seg" id="segService"></div>
+          <p class="note svc-alt" id="svcAlt" hidden></p>
           <span class="lab">Day</span>
           <div class="days" id="days"></div>
           <div class="slots" id="slots"></div>
@@ -530,6 +554,8 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
               <div class="field"><label for="bPhone">Mobile</label><input id="bPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
             </div>
             <div class="field"><label for="bVehicle">Vehicle</label><input id="bVehicle" placeholder="2020 Dodge Charger"></div>
+            <span class="lab">Size</span>
+            <div class="seg" id="segSize"></div>
             <div class="field" id="addrField"><label for="bAddr">Address</label><input id="bAddr" autocomplete="street-address" placeholder="Street address, Sacramento">
               <p class="note" id="travelNote"></p></div>
             <button type="button" class="linkbtn" id="noteToggle">Add a note</button>
@@ -567,18 +593,20 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 <section id="quote">
   <div class="wrap quote">
     <div>
-      <p class="eyebrow">Quotes</p>
+      <p class="eyebrow">Get a price</p>
       <h2 class="h2">Bigger jobs start with a look.</h2>
-      <p class="lede">Paint correction and ceramic coating depend on what your paint looks like today. Tell us about the car and we'll text you back with a price.</p>
+      <p class="lede">The Executive package and anything off the à-la-carte list get priced per vehicle. Tell us what you've got and we'll text you back with a real number, not a range.</p>
       <ul class="quote-list">
-        <li><span class="ico"><svg><use href="#i-sun"/></svg></span><span><b>Paint correction</b>Swirls, haze and light scratches taken out so the paint reflects again.</span></li>
-        <li><span class="ico"><svg><use href="#i-shield"/></svg></span><span><b>Ceramic coating</b>A hard layer over the paint that keeps it glossy and easier to wash.</span></li>
-        <li><span class="ico"><svg><use href="#i-spark"/></svg></span><span><b>Headlight restoration</b>Yellow, cloudy lenses brought back to clear.</span></li>
+        <li><span class="ico"><svg><use href="#i-spark"/></svg></span><span><b>Executive Supreme Shine</b>Everything we do, on one car, in one day. Inside, outside, underneath.</span></li>
+        <li><span class="ico"><svg><use href="#i-shield"/></svg></span><span><b>Window tinting</b>Heat and glare cut down, and the cabin stops cooking in a Sacramento July.</span></li>
+        <li><span class="ico"><svg><use href="#i-sun"/></svg></span><span><b>Headlight restoration</b>Yellow, cloudy lenses brought back to clear, so you actually see at night.</span></li>
+        <li><span class="ico"><svg><use href="#i-wheel"/></svg></span><span><b>Curb rash correction</b>Scraped wheel lips cleaned up so they stop being the first thing you see.</span></li>
+        <li><span class="ico"><svg><use href="#i-drop"/></svg></span><span><b>Oil change</b>Done in your driveway while the car's already being worked on.</span></li>
       </ul>
     </div>
     <div class="panel">
       <h4 id="quoteTitle">Request a quote</h4>
-      <p class="sub" id="quoteSub">Takes a minute. Photos help, and you can send them in the text.</p>
+      <p class="sub" id="quoteSub">Takes about a minute. Photos help a lot, and you can attach them to the text.</p>
       <form id="quoteForm" novalidate>
         <span class="lab">What do you need?</span>
         <div class="seg" id="segQuote"></div>
@@ -587,10 +615,10 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
           <div class="field"><label for="qPhone">Mobile</label><input id="qPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
         </div>
         <div class="field"><label for="qVehicle">Vehicle</label><input id="qVehicle" placeholder="2017 BMW 3 Series, black"></div>
-        <div class="field"><label for="qDetails">What's going on with it?</label><textarea id="qDetails" placeholder="Swirls on the hood, parked outside, want it protected"></textarea></div>
+        <div class="field"><label for="qDetails">What's going on with it?</label><textarea id="qDetails" placeholder="Two kids and a dog, hasn't been cleaned since I bought it"></textarea></div>
         <button type="submit" class="btn btn-gold btn-lg btn-block" id="quoteBtn">Send My Request</button>
         <p class="err" id="quoteErr"></p>
-        <p class="note" style="text-align:center">This opens a text to us with your details filled in.</p>
+        <p class="note" style="text-align:center">This opens a text to us with your details already filled in.</p>
       </form>
       <div class="done" id="quoteOk"></div>
     </div>
@@ -630,7 +658,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
     <div class="foot">
       <div>
         <h5>Mr. Auto Treatment</h5>
-        <p style="max-width:38ch">Mobile and drop-off car detailing in Sacramento, California.</p>
+        <p style="max-width:38ch">Mobile and drop-off car detailing in Sacramento, California. Open every day, 6am to 6pm.</p>
         <a href="https://www.instagram.com/mrautotreatment_/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px"><svg style="width:17px;height:17px"><use href="#i-ig"/></svg>@mrautotreatment_</a>
         <a href="https://www.facebook.com/MrAutoTreatment" target="_blank" rel="noopener">Facebook</a>
       </div>
@@ -668,34 +696,42 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
    ===================================================================== */
 const CFG = {
   BUSINESS   : 'Mr. Auto Treatment',
-  PREVIEW    : true,                  // shows the placeholder ribbon; set false at launch
-  PHONE_E164 : '+19165550199',        // PLACEHOLDER: 555-01xx is a reserved fake number
-  PHONE_TEXT : '(916) 555-0199',
-  PHONE_IS_PLACEHOLDER: true,         // quote form won't text a fake number while true
+  PREVIEW    : true,                  // shows the ribbon; set false once prices + calendar are signed off
+  PHONE_E164 : '+19166136405',        // confirmed by the owner
+  PHONE_TEXT : '(916) 613-6405',
+  PHONE_IS_PLACEHOLDER: false,        // real number, so the quote form opens a real text
 
   OWNER_FIRST: 'Emmanuel',            // PLACEHOLDER: from his Facebook, confirm he wants it shown
   ABOUT      : 'Mr. Auto Treatment is a Sacramento detailing business run by Emmanuel. Most jobs happen right in your driveway, and if that doesn\'t work for you, you can drop the car off instead.',
   FAITH_LINE : 'God first, in the work and everything else.',   // PLACEHOLDER: ask how much faith to show; '' hides it
 
-  /* --- services -------------------------------------------------------
-     id and minutes must match booking_config.services on the dashboard
-     once the account exists. The server's copy wins for length.        */
+  /* --- the menu --------------------------------------------------------
+     Two packages, in the owner's own words. `book:true` puts a service in
+     the calendar; `book:false` sends it to the quote form instead.
+     An id and minutes here must match booking_config.services on the
+     dashboard once that account exists. The server's copy wins for length. */
   SERVICES: [
-    { id:'full',     label:'The Full Treatment', minutes:180, from:160, time:'About 3 hours', star:true,   // PLACEHOLDER prices and times
-      blurb:'Inside and out',
-      items:['Everything in the exterior detail','Everything in the interior detail','Tire shine and trim dressing','Door jambs wiped down'] },
-    { id:'interior', label:'Interior Detail',    minutes:120, from:100, time:'About 2 hours',
-      blurb:'Inside only',
-      items:['Full vacuum, seats, carpet and trunk','Dash, console and door panels cleaned','Leather and vinyl wiped and dressed','Windows cleaned inside'] },
-    { id:'exterior', label:'Exterior Detail',    minutes:90,  from:70,  time:'About 1.5 hours',
-      blurb:'Outside only',
-      items:['Foam bath and full wash','Wheels, tires and wheel wells','Bug and road grime removed','Windows cleaned outside'] },
+    { id:'essential', label:'Essential Supreme Shine', stage:'Stage 1', minutes:120, from:150, book:true,
+      time:'About 2 hours', blurb:'The maintenance detail',
+      lead:'The one you book every few weeks to keep it looking right.',
+      items:['Full exterior hand wash and dry','Wheels, tires and wheel wells','Full interior vacuum, seats and carpet',
+             'Dash, console and door panels cleaned','Windows in and out','Tire shine and trim dressing'] },
+
+    { id:'executive', label:'Executive Supreme Shine', stage:'Stage 2', minutes:480, from:null, book:false,
+      time:'A full day', blurb:'Everything we do', star:true,
+      lead:'The whole car, top to bottom. Nothing left on the table.',
+      items:['Full interior detail','Full exterior detail','Shampoo seats and carpets','Shampoo headliner',
+             'Steam clean seats, carpets and AC vents','Headlight restoration','Under carriage cleaning',
+             'Curb rash correction','Window tinting','Oil change'] },
   ],
-  SIZE_NOTE  : 'SUVs, trucks and 3-row vehicles cost a little more. We confirm the price by text before the job.',   // PLACEHOLDER
-  ADDONS: [                            // PLACEHOLDER: owner hasn't given add-ons yet
-    ['Pet hair removal','$30'], ['Seat and carpet shampoo','$45'], ['Engine bay','$35'], ['Odor removal','$40'],
+  SIZE_NOTE  : 'Prices are for a sedan or coupe. SUVs, trucks and 3-row vehicles run a little more, and we confirm the number by text before we start. Nothing changes on you mid-job.',
+
+  /* --- things he'll do on their own ------------------------------------
+     He hasn't priced these individually yet, so they're quote-only.      */
+  ALA_CARTE: [
+    'Window tinting', 'Headlight restoration', 'Curb rash correction', 'Oil change',
+    'Under carriage cleaning', 'Seat and carpet shampoo', 'Headliner shampoo', 'Steam clean and AC vents',
   ],
-  QUOTE_ONLY: ['Paint correction','Ceramic coating','Headlight restoration'],
 
   /* --- booking backend -------------------------------------------------
      The page asks the dashboard for this slug. If the slug doesn't exist
@@ -707,9 +743,12 @@ const CFG = {
   STEP_MIN   : 60,
   HORIZON    : 14,
   LEAD_HOURS : 24,                     // PLACEHOLDER: "at least a day"
-  HOURS      : {0:['08:00','18:00'],1:['08:00','18:00'],2:['08:00','18:00'],3:['08:00','18:00'],
-                4:['08:00','18:00'],5:['08:00','18:00'],6:['08:00','18:00']},   // PLACEHOLDER
-  HOURS_TEXT : 'Every day, 8am to 6pm.',
+  HOURS      : {0:['06:00','18:00'],1:['06:00','18:00'],2:['06:00','18:00'],3:['06:00','18:00'],
+                4:['06:00','18:00'],5:['06:00','18:00'],6:['06:00','18:00']},   // confirmed: "I typically do 6am to 6pm"
+  HOURS_TEXT : 'Every day, 6am to 6pm.',
+  SIZES      : ['Sedan or coupe','SUV or crossover','Truck or 3-row'],
+  QUOTE_OPTIONS: ['Executive Supreme Shine','Window tinting','Headlight restoration',
+                  'Curb rash correction','Oil change','Something else'],
 
   /* --- area --------------------------------------------------------------*/
   HUB        : 'Sacramento',
@@ -734,6 +773,23 @@ const $$ = (s, r=document) => [...r.querySelectorAll(s)];
 const pad = n => String(n).padStart(2,'0');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
+/* Types out as (916) 613-6405 while you go. Never fights the caret at the end,
+   and leaves anything that isn't a 10-digit US number alone. */
+const fmtPhone = v => {
+  const d = String(v||'').replace(/\D/g,'').replace(/^1(?=\d{10})/,'').slice(0,10);
+  if (d.length < 4) return d;
+  if (d.length < 7) return `(${d.slice(0,3)}) ${d.slice(3)}`;
+  return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
+};
+function livePhone(sel){
+  const el = document.querySelector(sel);
+  if (!el) return;
+  el.addEventListener('input', () => {
+    const atEnd = el.selectionStart === el.value.length;
+    el.value = fmtPhone(el.value);
+    if (atEnd) el.setSelectionRange(el.value.length, el.value.length);
+  });
+}
 
 /* ---------------------------- static fill ----------------------------- */
 (function fill(){
@@ -744,16 +800,21 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
 
   $('#menu').innerHTML = CFG.SERVICES.map(s => `
     <article class="dish${s.star ? ' star' : ''}">
-      ${s.star ? '<span class="badge">Most booked</span>' : ''}
+      ${s.star ? '<span class="badge">The works</span>' : ''}
+      <p class="stage">${esc(s.stage)} · ${esc(s.blurb)}</p>
       <h3>${esc(s.label)}</h3>
       <p class="time">${esc(s.time)}</p>
-      <div class="from"><small>From</small><b>$${s.from}</b></div>
+      <p class="lead">${esc(s.lead)}</p>
+      ${s.from
+        ? `<div class="from"><small>From</small><b>$${s.from}</b></div>`
+        : `<div class="from quote"><small>Price</small><b>By quote</b></div>`}
       <ul>${s.items.map(i => `<li><svg><use href="#i-check"/></svg>${esc(i)}</li>`).join('')}</ul>
-      <a class="btn ${s.star ? 'btn-gold' : 'btn-line'} btn-block" href="#book" data-pick="${s.id}">Book ${esc(s.label.replace(/^The /,''))}</a>
+      ${s.book
+        ? `<a class="btn btn-gold btn-block" href="#book" data-pick="${s.id}">Book this</a>`
+        : `<a class="btn btn-gold btn-block" href="#quote" data-quote="${esc(s.label)}">Get a Price</a>`}
     </article>`).join('');
   $('#sizeNote').textContent = CFG.SIZE_NOTE;
-  $('#addons').innerHTML = CFG.ADDONS.map(([n,p]) => `<div class="leader"><span>${esc(n)}</span><i></i><b>${esc(p)}</b></div>`).join('');
-  $('#quoteOnly').innerHTML = CFG.QUOTE_ONLY.map(n => `<div class="leader"><span>${esc(n)}</span><i></i><span class="q">Quote</span></div>`).join('');
+  $('#alaCarte').innerHTML = CFG.ALA_CARTE.map(n => `<span><svg><use href="#i-check"/></svg>${esc(n)}</span>`).join('');
 
   $('#ownerSig').textContent = CFG.OWNER_FIRST ? CFG.OWNER_FIRST + ', owner' : '';
   $('#aboutText').textContent = CFG.ABOUT;
@@ -770,12 +831,22 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
   $('#footHours').textContent = CFG.HOURS_TEXT;
 
   const FAQ = [
-    ['Do you really come to me?', `Yes. Most jobs happen in the customer's driveway, apartment lot or work parking lot, anywhere within ${CFG.RADIUS_MI} miles of ${CFG.HUB} with no travel charge. If that doesn't work, drop the car off with us instead.`],
-    ['What do you need from me?', 'Just access to the car and a spot to work. If you\'re in a gated complex or a tight space, add a note when you book so we can plan for it.'],
-    ['How long does it take?', 'An exterior takes about an hour and a half, an interior about two, and the full treatment about three. A car that needs extra work can take longer, and we tell you before we start.'],
-    ['How do I pay?', 'After the job is done. Nothing is charged through this website.'],
-    ['What about paint correction or ceramic coating?', 'Those are priced by quote because every car\'s paint is different. Send a request with a few photos and we\'ll text you back with a price.'],
-    ['What if I need to reschedule?', 'Call or text us. If the weather looks bad we\'ll reach out the day before and move you to the next open time.'],
+    ['What\'s the difference between the two packages?',
+     'Essential is the maintenance detail, inside and out, and it\'s the one most people book on a regular basis. Executive is the full day: everything in Essential plus shampooed seats, carpets and headliner, steam cleaning, headlights, under carriage, curb rash, tint and an oil change.'],
+    ['Do you really come to me?',
+     `Yes. Most jobs happen in the customer's driveway, apartment lot or work parking lot, anywhere within ${CFG.RADIUS_MI} miles of ${CFG.HUB} with no travel charge. If that doesn't work, drop the car off with us instead.`],
+    ['How long does it take?',
+     'Essential runs about two hours. Executive is a full day, because it genuinely is everything. A car that needs extra time gets flagged before we start, not after.'],
+    ['Why doesn\'t the Executive package show a price?',
+     'Because it covers tint, an oil change and curb rash on top of the detail, and all three depend on the car. Send a few photos through the quote form and you get one real number back, not a range.'],
+    ['What do you need from me?',
+     'Just access to the car and a spot to work. If you\'re in a gated complex or a tight space, add a note when you book so we can plan for it.'],
+    ['Do prices change for a truck or an SUV?',
+     'The prices on this page are sedan prices. Bigger vehicles run a little more, and we confirm the number by text before the job starts.'],
+    ['How do I pay?',
+     'After the job is done. Nothing is charged through this website.'],
+    ['What if I need to reschedule?',
+     'Call or text us. If the weather looks bad we\'ll reach out the day before and move you to the next open time.'],
   ];
   $('#faqList').innerHTML = FAQ.map((q,i) => `<details class="q"${i===0?' open':''}><summary>${esc(q[0])}</summary><div class="a">${esc(q[1])}</div></details>`).join('');
   $('#yr').textContent = new Date().getFullYear();
@@ -808,9 +879,10 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
 /* ------------------------------ booking ------------------------------- */
 (function booking(){
   const daysEl = $('#days'), slotsEl = $('#slots'), form = $('#bookForm'), step2 = $('#step2');
+  const bookable = CFG.SERVICES.filter(s => s.book);
   let cfg = { hours:CFG.HOURS, booked:[], stepMinutes:CFG.STEP_MIN, horizonDays:CFG.HORIZON,
-              leadHours:CFG.LEAD_HOURS, services:CFG.SERVICES.map(s => ({id:s.id, label:s.label, minutes:s.minutes})) };
-  let live = false, mode = 'mobile', pickedDay = null, picked = null;
+              leadHours:CFG.LEAD_HOURS, services:bookable.map(s => ({id:s.id, label:s.label, minutes:s.minutes})) };
+  let live = false, mode = 'mobile', pickedDay = null, picked = null, size = CFG.SIZES[0];
   let service = cfg.services[0];
 
   const ymd  = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
@@ -821,12 +893,39 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
 
   function renderServices(){
     const el = $('#segService');
+    // One bookable service is a statement, not a choice. Show it as one.
+    if (cfg.services.length === 1){
+      const x = cfg.services[0], c = copy(x.id);
+      el.classList.add('one');
+      el.innerHTML = `<div class="svcone"><span class="nm">${esc(c.label || x.label)}</span>` +
+        `<span class="mt">${esc(c.time || '')}${c.from ? ' · from $' + c.from : ''}</span></div>`;
+      return;
+    }
+    el.classList.remove('one');
     el.innerHTML = cfg.services.map(x => {
       const c = copy(x.id);
       return `<button type="button" data-svc="${x.id}"${x.id === service.id ? ' class="sel"' : ''}>${esc(c.label || x.label)}<small>${esc(c.blurb || '')}${c.from ? ' · from $' + c.from : ''}</small></button>`;
     }).join('');
     $$('button', el).forEach(b => b.addEventListener('click', () => choose(b.dataset.svc)));
   }
+  // Anything priced by quote gets pointed at the quote form rather than hidden.
+  (function altNote(){
+    const alt = CFG.SERVICES.filter(x => !x.book);
+    if (!alt.length) return;
+    $('#svcAlt').innerHTML = `After the <a href="#quote" data-quote="${esc(alt[0].label)}">${esc(alt[0].label)}</a> instead? ` +
+      `That one gets priced before it gets booked, and it only takes a minute.`;
+    $('#svcAlt').hidden = false;
+  })();
+  // Size matters: every price on this page is a sedan price.
+  (function renderSize(){
+    const el = $('#segSize');
+    el.innerHTML = CFG.SIZES.map((n,i) => `<button type="button" data-size="${esc(n)}"${i===0?' class="sel"':''}>${esc(n)}</button>`).join('');
+    $$('button', el).forEach(b => b.addEventListener('click', () => {
+      $$('button', el).forEach(x => x.classList.remove('sel'));
+      b.classList.add('sel'); size = b.dataset.size;
+    }));
+  })();
+  livePhone('#bPhone');
   function choose(id){
     const hit = cfg.services.find(x => x.id === id);
     if (!hit) return;
@@ -953,11 +1052,13 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
     const err = $('#bookErr'); err.textContent = '';
     const name = $('#bName').value.trim(), phone = $('#bPhone').value.trim(), vehicle = $('#bVehicle').value.trim(),
           addr = $('#bAddr').value.trim(), notes = $('#bNotes').value.trim();
-    if (!picked)                    return err.textContent = 'Pick a time first.';
-    if (!name)                      return err.textContent = 'We need a name for the appointment.';
-    if (digits(phone).length < 10)  return err.textContent = 'That number looks short. We text your confirmation there.';
-    if (!vehicle)                   return err.textContent = 'What are we working on? Year, make and model is perfect.';
-    if (mode === 'mobile' && !addr) return err.textContent = 'We need an address to come to you, or switch to drop-off.';
+    // Say what's wrong and put the cursor in the box that's wrong.
+    const fail = (msg, sel) => { err.textContent = msg; const el = sel && $(sel); if (el) el.focus({preventScroll:true}); return false; };
+    if (!picked)                    return fail('Pick a time first.');
+    if (!name)                      return fail('We need a name for the appointment.', '#bName');
+    if (digits(phone).length < 10)  return fail('That number looks short. We text your confirmation there.', '#bPhone');
+    if (!vehicle)                   return fail('What are we working on? Year, make and model is perfect.', '#bVehicle');
+    if (mode === 'mobile' && !addr) return fail('We need an address to come to you, or switch to drop-off.', '#bAddr');
 
     const btn = $('#bookBtn');
     btn.disabled = true; btn.textContent = 'Booking';
@@ -966,7 +1067,10 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
       try {
         const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}/book`, {
           method:'POST', headers:{'Content-Type':'application/json'},
-          body: JSON.stringify({ name, phone, start:picked.key, vehicle, mode, address:addr, notes,
+          // size also rides along inside notes, so it survives a backend that
+          // doesn't know the field yet.
+          body: JSON.stringify({ name, phone, start:picked.key, vehicle, mode, address:addr,
+                                 notes: [size, notes].filter(Boolean).join(' · '), vehicle_size:size,
                                  service_id:service.id, service:copy(service.id).label || service.label })
         });
         const j = await r.json().catch(() => ({}));
@@ -986,7 +1090,7 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
     box.innerHTML = `<strong>Thank you, ${esc(first.charAt(0).toUpperCase() + first.slice(1))}.</strong>
       <span class="when">${esc(copy(service.id).label || service.label)}</span>
       <span class="when">${picked.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric'})} at ${picked.text}</span>
-      ${mode === 'mobile' ? 'We come to you' : 'Drop-off'} · ${esc(vehicle)}<br><br>
+      ${mode === 'mobile' ? 'We come to you' : 'Drop-off'} · ${esc(vehicle)} · ${esc(size)}<br><br>
       We'll text ${esc(phone)} shortly to confirm. Need to change it? Call or text <a href="tel:${CFG.PHONE_E164}" class="gold" style="font-weight:700">${CFG.PHONE_TEXT}</a>.
       ${live ? '' : '<span class="pv">Preview mode: this booking was not saved and no text was sent.</span>'}`;
     box.classList.add('on');
@@ -998,14 +1102,20 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
 
 /* ------------------------------- quote -------------------------------- */
 (function quote(){
-  const opts = [...CFG.QUOTE_ONLY, 'Something else'];
+  const opts = CFG.QUOTE_OPTIONS;
   let pick = opts[0];
   const seg = $('#segQuote');
-  seg.innerHTML = opts.map((o,i) => `<button type="button"${i===0?' class="sel"':''}>${esc(o)}</button>`).join('');
-  $$('button', seg).forEach(b => b.addEventListener('click', () => {
+  seg.innerHTML = opts.map((o,i) => `<button type="button" data-q="${esc(o)}"${i===0?' class="sel"':''}>${esc(o)}</button>`).join('');
+  function select(name){
+    const b = $$('button', seg).find(x => x.dataset.q === name);
+    if (!b) return;
     $$('button', seg).forEach(x => x.classList.remove('sel'));
-    b.classList.add('sel'); pick = b.textContent;
-  }));
+    b.classList.add('sel'); pick = name;
+  }
+  $$('button', seg).forEach(b => b.addEventListener('click', () => select(b.dataset.q)));
+  livePhone('#qPhone');
+  // "Get a Price" on the Executive card lands here with that already ticked.
+  $$('[data-quote]').forEach(a => a.addEventListener('click', () => select(a.dataset.quote)));
 
   $('#quoteForm').addEventListener('submit', e => {
     e.preventDefault();
@@ -1097,40 +1207,40 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
       const i = [...el.parentElement.children].filter(x => x.matches(sel)).indexOf(el);
       el.classList.add('rv');
       if (kind) el.classList.add(kind);
-      el.style.setProperty('--d', Math.min(i * (step || .08), .7).toFixed(2) + 's');
+      el.style.setProperty('--d', Math.min(i * (step || .05), .3).toFixed(2) + 's');
     });
   }
   ['.hero .eyebrow', '.hero h1', '.hero .lede', '.hero .actions', '.hero .facts'].forEach((s, i) => {
     const el = $(s);
-    if (el){ el.classList.add('rv'); el.style.setProperty('--d', (.1 + i * .13).toFixed(2) + 's'); }
+    if (el){ el.classList.add('rv'); el.style.setProperty('--d', (.05 + i * .07).toFixed(2) + 's'); }
   });
   const hp = $('.hero-photo');
-  if (hp){ hp.classList.add('rv'); hp.style.setProperty('--d', '.25s'); }
+  if (hp){ hp.classList.add('rv'); hp.style.setProperty('--d', '.18s'); }
   const hf = $('.hero-frame');
-  if (hf){ hf.classList.add('rv', 'rv-zoom'); hf.style.setProperty('--d', '.9s'); }
+  if (hf){ hf.classList.add('rv', 'rv-zoom'); hf.style.setProperty('--d', '.5s'); }
 
-  tag('main section:not(.hero) .eyebrow, main section:not(.hero) .h2, main section:not(.hero) .lede, .sizes', '', .1);
-  tag('.dish', '', .13);
-  tag('.extras .card', '', .13);
-  tag('.tile', 'rv-zoom', .09);
+  tag('main section:not(.hero) .eyebrow, main section:not(.hero) .h2, main section:not(.hero) .lede, .sizes', '', .06);
+  tag('.dish', '', .08);
+  tag('.extras .card', '', .08);
+  tag('.tile', 'rv-zoom', .055);
   tag('.follow');
-  tag('.about blockquote, .about .sig', 'rv-l', .15);
-  tag('#about .about-grid > div:last-child > p, #faithLine', '', .1);
-  tag('.how > div', '', .15);
+  tag('.about blockquote, .about .sig', 'rv-l', .1);
+  tag('#about .about-grid > div:last-child > p, #faithLine', '', .06);
+  tag('.how > div', '', .09);
   tag('.book > .panel', 'rv-l');
-  tag('.side > .panel', 'rv-r', .12);
-  tag('.quote-list li', 'rv-l', .1);
+  tag('.side > .panel', 'rv-r', .07);
+  tag('.quote-list li', 'rv-l', .06);
   tag('.quote > .panel', 'rv-r');
-  tag('.area span', 'rv-pop', .035);
+  tag('.area span', 'rv-pop', .022);
   tag('.travel');
-  tag('details.q', '', .06);
+  tag('details.q', '', .04);
   tag('.finale .actions');
-  tag('.foot > div', '', .1);
+  tag('.foot > div', '', .06);
 
-  const io = new IntersectionObserver(entries => entries.forEach(en => {
-    if (!en.isIntersecting) return;
-    io.unobserve(en.target);
-    const el = proxyOf.get(en.target) || en.target;
+  function reveal(target){
+    io.unobserve(target);
+    const el = proxyOf.get(target) || target;
+    if (el.classList.contains('in')) return;
     el.classList.add('in');
     // Once it has landed, drop the reveal classes so hover transitions on
     // cards and buttons work normally again.
@@ -1138,7 +1248,10 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
     setTimeout(() => {
       el.classList.remove('rv', 'in', 'rv-l', 'rv-r', 'rv-zoom', 'rv-pop');
       el.style.removeProperty('--d');
-    }, (d + 1.4) * 1000);
+    }, (d + .9) * 1000);
+  }
+  const io = new IntersectionObserver(entries => entries.forEach(en => {
+    if (en.isIntersecting) reveal(en.target);
   }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
   /* The hero photo starts fully clipped, and Chrome counts a clipped box as
      not on screen, so on phones (where the photo sits below the fold) it never
@@ -1149,15 +1262,32 @@ const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
     else io.observe(el);
   });
 
+  /* Safety net. Opening the site straight on #book or #quote (the link he'd
+     text someone) scrolls the page after the observer has already taken its
+     first reading, and with no scroll left to trigger a second one the whole
+     section stayed at opacity 0. Anything sitting on screen gets revealed
+     outright instead of waiting to be observed. */
+  function settle(){
+    $$('.rv').forEach(el => {
+      const t = el.classList.contains('hero-photo') ? el.parentElement : el;
+      const r = t.getBoundingClientRect();
+      if (r.top < innerHeight && r.bottom > 0) reveal(t);
+    });
+  }
+  requestAnimationFrame(settle);
+  addEventListener('load', () => requestAnimationFrame(settle));
+
   // Prices tick up to their number the first time they come into view.
   const cio = new IntersectionObserver(entries => entries.forEach(en => {
     if (!en.isIntersecting) return;
     cio.unobserve(en.target);
     const b = en.target, to = parseInt(b.textContent.replace(/\D/g, ''), 10);
     if (!to || calm) return;
-    const from = Math.round(to * .35), t0 = performance.now();
+    // Starts close and settles fast. A price that visibly counts up from a
+    // number he doesn't charge is worse than no effect at all.
+    const from = Math.round(to * .8), t0 = performance.now();
     const run = now => {
-      const p = Math.min(1, (now - t0) / 1200);
+      const p = Math.min(1, (now - t0) / 650);
       b.textContent = '$' + Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
       if (p < 1) requestAnimationFrame(run);
     };
