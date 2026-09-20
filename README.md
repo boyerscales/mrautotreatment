@@ -9,7 +9,9 @@ marked `PLACEHOLDER` is still a guess.
 - Phone: **(916) 613-6405**
 - Hours: **6am to 6pm, every day** ("I typically do 6am to 6pm")
 - **Stage 1 — Essential Supreme Shine**, $150 for a sedan, shown as "from $150".
-  His maintenance package.
+  His maintenance package. NOTE: he gave the name and the price only. The six
+  bullet points on that card are a reasonable guess at a maintenance detail and
+  have NOT been confirmed. Check them with him before anyone relies on them.
 - **Executive Supreme Shine** — "I do everything": headlight restoration, under
   carriage cleaning, full interior, full exterior, shampoo seats and carpets,
   shampoo headliner, steam clean seats/carpets/AC vents, window tinting, oil

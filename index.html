@@ -27,7 +27,10 @@
   --script:"Allura","Snell Roundhand","Brush Script MT",cursive;
   --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
   --wrap:1180px;
-  --r:14px;
+  /* Two radii and a pill. Everything on the page is one of these three. */
+  --r-sm:12px;   /* controls: inputs, slots, day chips, seg buttons, icons */
+  --r-lg:18px;   /* containers: cards, panels, photos, tiles */
+  --r:var(--r-lg);
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%;overflow-x:clip}
@@ -41,9 +44,7 @@ button,input,select,textarea{font-family:inherit;font-size:inherit}
 .wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
 section{padding:clamp(64px,9vw,120px) 0;position:relative}
 
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 18px;
-  display:flex;align-items:center;gap:12px}
-.eyebrow::after{content:"";height:1px;width:48px;background:linear-gradient(90deg,var(--gold),transparent)}
+.eyebrow{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
 .h1,.h2,.h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0}
 .h1{font-size:clamp(46px,7.4vw,96px)}
 .h2{font-size:clamp(36px,5.2vw,64px);margin-bottom:16px}
@@ -112,12 +113,10 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 .facts{display:flex;flex-wrap:wrap;gap:22px;margin:34px 0 0;padding:22px 0 0;border-top:1px solid var(--line);list-style:none}
 .facts li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--muted)}
 .facts svg{width:18px;height:18px;color:var(--gold)}
-.hero-photo{position:relative;aspect-ratio:5/4.6;border-radius:22px;overflow:hidden;
+.hero-photo{position:relative;aspect-ratio:5/4.6;border-radius:var(--r-lg);overflow:hidden;
   box-shadow:0 40px 90px rgba(0,0,0,.6);border:1px solid var(--line2)}
 .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.14);will-change:transform}
 .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
-.hero-frame{position:absolute;inset:-14px -14px auto auto;width:62%;height:62%;border:1px solid rgba(227,178,60,.45);
-  border-radius:26px;z-index:-1}
 .hero-tag{position:absolute;left:20px;bottom:18px;right:20px;z-index:2;display:flex;justify-content:space-between;
   align-items:flex-end;gap:12px}
 .hero-tag b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.1}
@@ -138,22 +137,19 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
   flex-direction:column;position:relative;transition:border-color .2s,transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
 .dish:hover{border-color:var(--line2);transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.45)}
 .dish.star{background:linear-gradient(180deg,#1f1a10,var(--panel) 60%);border-color:rgba(227,178,60,.45)}
-.dish .badge{position:absolute;top:-12px;left:28px;background:var(--gold);color:#1a1407;font-size:11px;font-weight:800;
-  letter-spacing:.14em;text-transform:uppercase;padding:5px 12px;border-radius:999px}
 .dish h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 4px;line-height:1.1}
 .dish .time{font-size:13px;color:var(--faint);font-weight:600;margin:0 0 18px}
-.dish .from{display:flex;align-items:baseline;gap:8px;margin:0 0 20px;padding-bottom:20px;border-bottom:1px dashed var(--line2)}
-.dish .from small{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--faint)}
-.dish .from b{font-family:var(--serif);font-weight:400;font-size:48px;line-height:1;color:var(--gold-hi)}
-.dish ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:9px;flex:1}
+.dish .from{display:flex;align-items:baseline;gap:10px;margin:0 0 22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
+.dish .from small{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+.dish .from b{font-family:var(--serif);font-weight:400;font-size:44px;line-height:1;color:var(--gold-hi)}
+.dish ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;align-content:start;flex:1}
 .dish li{display:flex;gap:10px;font-size:14.5px;color:#ddd5c5}
 .dish li svg{width:15px;height:15px;color:var(--gold);flex:0 0 auto;margin-top:4px}
-.dish .stage{font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin:0 0 10px}
+.dish .stage{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
 .dish .lead{color:var(--muted);font-size:15px;margin:0 0 20px;line-height:1.5}
-.dish .from.quote b{font-family:var(--sans);font-size:26px;font-weight:800;letter-spacing:-.01em}
-.dish .from.quote small{color:var(--gold)}
+.dish .from.quote b{font-size:40px}
 .sizes{color:var(--faint);font-size:13.5px;margin:18px 0 0;max-width:72ch}
-.ala{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin-bottom:18px}
+.ala{display:grid;grid-template-columns:1fr 1fr;gap:11px 20px;align-content:start;margin-bottom:18px}
 .ala span{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#ddd5c5}
 .ala svg{width:14px;height:14px;color:var(--gold);flex:0 0 auto;margin-top:5px}
 .cta-card{display:flex;flex-direction:column}
@@ -209,27 +205,30 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 .book-sec{background:linear-gradient(180deg,var(--bg),#0f0d09)}
 .book{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start;margin-top:36px}
 .book>*{min-width:0}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:clamp(20px,3vw,32px)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,3vw,32px)}
 .panel h4{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px}
 .panel .sub{color:var(--faint);font-size:14px;margin:0 0 22px}
 label,.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
-.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:20px}
-.seg button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:13px 15px;border-radius:12px;
+.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-bottom:20px}
+.seg button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:13px 15px;border-radius:var(--r-sm);
   border:1px solid var(--line2);background:#0c0b09;color:var(--ink);cursor:pointer;font-weight:700;font-size:14.5px;transition:.15s}
 .seg button small{font-size:12px;font-weight:500;color:var(--faint)}
 .seg button:hover{border-color:var(--gold-deep)}
 .seg button.sel{border-color:var(--gold);background:var(--gold-wash)}
 .seg button.sel small{color:#d9c38d}
 .seg.one{display:block}
-.svcone{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
-  padding:16px 18px;border:1px solid rgba(227,178,60,.4);background:var(--gold-wash);border-radius:12px}
-.svcone .nm{font-family:var(--serif);font-size:22px;line-height:1.1}
+.svcone{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
+  padding:0 0 16px;border-bottom:1px solid var(--line2)}
+.svcone .nm{font-family:var(--serif);font-size:23px;line-height:1.1}
 .svcone .mt{font-size:13.5px;font-weight:700;color:var(--gold-hi);white-space:nowrap}
-.svc-alt{margin:10px 0 20px}
+/* .note is declared further down, so this needs the extra class to win. */
+p.note.svc-alt{margin:14px 0 26px}
 .svc-alt a{color:var(--gold-hi);font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;
+  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);
+  mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}
 .days::-webkit-scrollbar{display:none}
-.day{flex:0 0 auto;width:64px;padding:10px 0;border-radius:12px;border:1px solid var(--line2);background:#0c0b09;color:var(--ink);
+.day{flex:0 0 auto;width:64px;padding:10px 0;border-radius:var(--r-sm);border:1px solid var(--line2);background:#0c0b09;color:var(--ink);
   cursor:pointer;text-align:center;transition:.15s}
 .day:hover{border-color:var(--gold-deep)}
 .day.sel{background:linear-gradient(180deg,var(--gold-hi),var(--gold));border-color:var(--gold);color:#1a1407}
@@ -237,8 +236,8 @@ label,.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;tex
 .day .dow{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
 .day .num{font-family:var(--serif);font-size:24px;line-height:1.1}
 .day .mon{font-size:10.5px;font-weight:700;opacity:.65;text-transform:uppercase}
-.slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}
-.slot{padding:13px 4px;border-radius:10px;border:1px solid var(--line2);background:#0c0b09;color:var(--ink);font-weight:700;
+.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-top:16px}
+.slot{padding:13px 4px;border-radius:var(--r-sm);border:1px solid var(--line2);background:#0c0b09;color:var(--ink);font-weight:700;
   font-size:14.5px;cursor:pointer;transition:.15s;font-variant-numeric:tabular-nums}
 .slot:hover{border-color:var(--gold)}
 .slot.sel{background:var(--gold);border-color:var(--gold);color:#1a1407}
@@ -246,13 +245,13 @@ label,.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;tex
 .slots-empty{grid-column:1/-1;text-align:center;color:var(--faint);font-size:14px;padding:22px 6px}
 #step2{margin-top:24px;padding-top:24px;border-top:1px solid var(--line);animation:up .25s ease}
 @keyframes up{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.picked{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:12px;
+.picked{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--r-sm);
   background:var(--gold-wash);border:1px solid rgba(227,178,60,.35);margin-bottom:20px}
 .picked b{font-family:var(--serif);font-weight:400;font-size:20px}
 .field{margin-bottom:14px}
 .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .row2>*{min-width:0}
-input,select,textarea{width:100%;background:#0c0b09;border:1px solid var(--line2);border-radius:10px;color:var(--ink);
+input,select,textarea{width:100%;background:#0c0b09;border:1px solid var(--line2);border-radius:var(--r-sm);color:var(--ink);
   padding:14px 15px;font-size:16px;outline:none;transition:border-color .15s}
 textarea{resize:vertical;min-height:92px}
 input::placeholder,textarea::placeholder{color:#5d574b}
@@ -261,7 +260,7 @@ select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns=
   background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px}
 .note{font-size:13px;color:var(--faint);margin:8px 0 0;line-height:1.5}
 .err{color:#ff9a8a;font-size:14px;margin:10px 0 0;min-height:1em}
-.done{display:none;margin-top:6px;padding:24px;border-radius:14px;background:rgba(127,212,154,.07);border:1px solid rgba(127,212,154,.3);
+.done{display:none;margin-top:6px;padding:24px;border-radius:var(--r-lg);background:rgba(127,212,154,.07);border:1px solid rgba(127,212,154,.3);
   color:#d3ecd9;font-size:15px}
 .done.on{display:block}
 .done strong{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--ink);margin-bottom:10px}
@@ -274,6 +273,7 @@ select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns=
 .callcard .actions .btn{flex:1}
 .dropcard p{color:var(--muted);font-size:14.5px;margin:0}
 .dropcard b{color:var(--ink)}
+.drow+.drow{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
 
 /* ---------- quote ---------- */
 .quote{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,70px);align-items:start}
@@ -281,7 +281,7 @@ select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns=
 .quote-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
 .quote-list li{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:15px}
 .quote-list li b{display:block;color:var(--ink);font-size:16px}
-.quote-list .ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;
+.quote-list .ico{width:40px;height:40px;border-radius:var(--r-sm);display:grid;place-items:center;flex:0 0 auto;
   background:var(--gold-wash);border:1px solid rgba(227,178,60,.3);color:var(--gold)}
 .quote-list .ico svg{width:19px;height:19px}
 
@@ -291,7 +291,7 @@ select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns=
 .area{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
 .area span{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);font-size:13.5px;font-weight:600;color:#d8d0c0}
 .area span.hub{border-color:var(--gold);color:var(--gold-hi)}
-.travel{margin-top:22px;padding:18px 20px;border-radius:14px;background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:14.5px}
+.travel{margin-top:22px;padding:18px 20px;border-radius:var(--r-lg);background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:14.5px}
 .travel b{color:var(--ink)}
 .faq{display:grid;gap:0;border-top:1px solid var(--line2)}
 details.q{border-bottom:1px solid var(--line2)}
@@ -344,6 +344,10 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
   .how>div{padding-right:0;padding-bottom:26px}
   .row2{grid-template-columns:1fr}
   .slots{grid-template-columns:repeat(3,1fr)}
+  /* 170px is wider than a phone panel, so every picker would drop to one
+     column and the quote list would become six full-width bars. */
+  .seg{grid-template-columns:1fr 1fr}
+  #segSize{grid-template-columns:repeat(3,1fr)}
   .foot{grid-template-columns:1fr}
   .mobar{display:flex}
   .facts{gap:14px}
@@ -358,11 +362,9 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
 .js .rv-zoom{transform:scale(.975)}
 .js .rv-pop{transform:translate3d(0,8px,0) scale(.96)}
 .js .rv.in{opacity:1;transform:none}
-.js .hero-photo.rv{opacity:1;transform:none;clip-path:inset(0 0 100% 0 round 22px);
+.js .hero-photo.rv{opacity:1;transform:none;clip-path:inset(0 0 100% 0 round 18px);
   transition:clip-path .85s cubic-bezier(.62,0,.2,1) var(--d,0s)}
-.js .hero-photo.rv.in{clip-path:inset(0 0 0 0 round 22px)}
-.js .eyebrow.rv::after{width:0;transition:width .6s cubic-bezier(.2,.7,.2,1) calc(var(--d,0s) + .2s)}
-.js .eyebrow.rv.in::after{width:48px}
+.js .hero-photo.rv.in{clip-path:inset(0 0 0 0 round 18px)}
 .day,.slot{animation:chip .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 28ms)}
 @keyframes chip{from{opacity:0;transform:translateY(10px)}}
 .done.on{animation:up .5s cubic-bezier(.2,.7,.2,1)}
@@ -433,7 +435,6 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
       </ul>
     </div>
     <div style="position:relative">
-      <div class="hero-frame"></div>
       <div class="hero-photo">
         <img src="assets/porsche-foam.jpg" alt="Porsche covered in foam during an exterior detail by Mr. Auto Treatment">
         <div class="hero-tag"><b>Foam bath, Porsche 718</b><span>Recent job</span></div>
@@ -578,12 +579,8 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
           </div>
         </div>
         <div class="panel dropcard">
-          <span class="lab">Dropping off?</span>
-          <p id="dropText"></p>
-        </div>
-        <div class="panel dropcard">
-          <span class="lab">Hours</span>
-          <p id="hoursText"></p>
+          <div class="drow"><span class="lab">Dropping off?</span><p id="dropText"></p></div>
+          <div class="drow"><span class="lab">Hours</span><p id="hoursText"></p></div>
         </div>
       </div>
     </div>
@@ -718,7 +715,7 @@ const CFG = {
              'Dash, console and door panels cleaned','Windows in and out','Tire shine and trim dressing'] },
 
     { id:'executive', label:'Executive Supreme Shine', stage:'Stage 2', minutes:480, from:null, book:false,
-      time:'A full day', blurb:'Everything we do', star:true,
+      time:'A full day', blurb:'Everything we do', star:true, quoteAs:'Executive package',
       lead:'The whole car, top to bottom. Nothing left on the table.',
       items:['Full interior detail','Full exterior detail','Shampoo seats and carpets','Shampoo headliner',
              'Steam clean seats, carpets and AC vents','Headlight restoration','Under carriage cleaning',
@@ -746,8 +743,10 @@ const CFG = {
   HOURS      : {0:['06:00','18:00'],1:['06:00','18:00'],2:['06:00','18:00'],3:['06:00','18:00'],
                 4:['06:00','18:00'],5:['06:00','18:00'],6:['06:00','18:00']},   // confirmed: "I typically do 6am to 6pm"
   HOURS_TEXT : 'Every day, 6am to 6pm.',
-  SIZES      : ['Sedan or coupe','SUV or crossover','Truck or 3-row'],
-  QUOTE_OPTIONS: ['Executive Supreme Shine','Window tinting','Headlight restoration',
+  /* [tag, note]. The tag is what rides along to his booking notes, so it
+     stays short enough to read at a glance on a phone. */
+  SIZES      : [['Sedan','or coupe'],['SUV','or crossover'],['Truck','or 3-row']],
+  QUOTE_OPTIONS: ['Executive package','Window tinting','Headlight restoration',
                   'Curb rash correction','Oil change','Something else'],
 
   /* --- area --------------------------------------------------------------*/
@@ -800,7 +799,6 @@ function livePhone(sel){
 
   $('#menu').innerHTML = CFG.SERVICES.map(s => `
     <article class="dish${s.star ? ' star' : ''}">
-      ${s.star ? '<span class="badge">The works</span>' : ''}
       <p class="stage">${esc(s.stage)} · ${esc(s.blurb)}</p>
       <h3>${esc(s.label)}</h3>
       <p class="time">${esc(s.time)}</p>
@@ -811,7 +809,7 @@ function livePhone(sel){
       <ul>${s.items.map(i => `<li><svg><use href="#i-check"/></svg>${esc(i)}</li>`).join('')}</ul>
       ${s.book
         ? `<a class="btn btn-gold btn-block" href="#book" data-pick="${s.id}">Book this</a>`
-        : `<a class="btn btn-gold btn-block" href="#quote" data-quote="${esc(s.label)}">Get a Price</a>`}
+        : `<a class="btn btn-line btn-block" href="#quote" data-quote="${esc(s.quoteAs || s.label)}">Get a Price</a>`}
     </article>`).join('');
   $('#sizeNote').textContent = CFG.SIZE_NOTE;
   $('#alaCarte').innerHTML = CFG.ALA_CARTE.map(n => `<span><svg><use href="#i-check"/></svg>${esc(n)}</span>`).join('');
@@ -882,7 +880,7 @@ function livePhone(sel){
   const bookable = CFG.SERVICES.filter(s => s.book);
   let cfg = { hours:CFG.HOURS, booked:[], stepMinutes:CFG.STEP_MIN, horizonDays:CFG.HORIZON,
               leadHours:CFG.LEAD_HOURS, services:bookable.map(s => ({id:s.id, label:s.label, minutes:s.minutes})) };
-  let live = false, mode = 'mobile', pickedDay = null, picked = null, size = CFG.SIZES[0];
+  let live = false, mode = 'mobile', pickedDay = null, picked = null, size = CFG.SIZES[0][0];
   let service = cfg.services[0];
 
   const ymd  = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
@@ -912,14 +910,14 @@ function livePhone(sel){
   (function altNote(){
     const alt = CFG.SERVICES.filter(x => !x.book);
     if (!alt.length) return;
-    $('#svcAlt').innerHTML = `After the <a href="#quote" data-quote="${esc(alt[0].label)}">${esc(alt[0].label)}</a> instead? ` +
+    $('#svcAlt').innerHTML = `After the <a href="#quote" data-quote="${esc(alt[0].quoteAs || alt[0].label)}">${esc(alt[0].label)}</a> instead? ` +
       `That one gets priced before it gets booked, and it only takes a minute.`;
     $('#svcAlt').hidden = false;
   })();
   // Size matters: every price on this page is a sedan price.
   (function renderSize(){
     const el = $('#segSize');
-    el.innerHTML = CFG.SIZES.map((n,i) => `<button type="button" data-size="${esc(n)}"${i===0?' class="sel"':''}>${esc(n)}</button>`).join('');
+    el.innerHTML = CFG.SIZES.map(([n,sub],i) => `<button type="button" data-size="${esc(n)}"${i===0?' class="sel"':''}>${esc(n)}<small>${esc(sub)}</small></button>`).join('');
     $$('button', el).forEach(b => b.addEventListener('click', () => {
       $$('button', el).forEach(x => x.classList.remove('sel'));
       b.classList.add('sel'); size = b.dataset.size;
@@ -1216,8 +1214,6 @@ function livePhone(sel){
   });
   const hp = $('.hero-photo');
   if (hp){ hp.classList.add('rv'); hp.style.setProperty('--d', '.18s'); }
-  const hf = $('.hero-frame');
-  if (hf){ hf.classList.add('rv', 'rv-zoom'); hf.style.setProperty('--d', '.5s'); }
 
   tag('main section:not(.hero) .eyebrow, main section:not(.hero) .h2, main section:not(.hero) .lede, .sizes', '', .06);
   tag('.dish', '', .08);
