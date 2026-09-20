@@ -263,6 +263,12 @@ input:focus,select:focus,textarea:focus{border-color:var(--gold)}
 select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b4ab99' stroke-width='2.4'><path d='M6 9l6 6 6-6'/></svg>");
   background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px}
 .note{font-size:13px;color:var(--faint);margin:8px 0 0;line-height:1.5}
+/* The old wording sat under the button in faint grey, so nobody met it until
+   the texting app had already taken over the screen. */
+.handoff{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;padding:12px 14px;
+  border:1px solid rgba(227,178,60,.3);background:var(--gold-wash);border-radius:var(--r-sm);
+  color:#e7d5a6;font-size:13.5px;line-height:1.45}
+.handoff svg{width:16px;height:16px;color:var(--gold);flex:0 0 auto;margin-top:2px}
 .err{color:#ff9a8a;font-size:14px;margin:10px 0 0;min-height:1em}
 .done{display:none;margin-top:6px;padding:24px;border-radius:var(--r-lg);background:rgba(127,212,154,.07);border:1px solid rgba(127,212,154,.3);
   color:#d3ecd9;font-size:15px}
@@ -681,7 +687,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
     </div>
     <div class="panel">
       <h4 id="quoteTitle">Request a quote</h4>
-      <p class="sub" id="quoteSub">Takes about a minute. Photos help a lot, and you can attach them to the text.</p>
+      <p class="sub" id="quoteSub">Fill this in and it opens a text to us with your answers already written out. Attach a photo of the car and hit send.</p>
       <form id="quoteForm" novalidate>
         <span class="lab">What do you need?</span>
         <div class="seg" id="segQuote"></div>
@@ -691,9 +697,10 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
         </div>
         <div class="field"><label for="qVehicle">Vehicle</label><input id="qVehicle" placeholder="2017 BMW 3 Series, black"></div>
         <div class="field"><label for="qDetails">What's going on with it?</label><textarea id="qDetails" placeholder="Two kids and a dog, hasn't been cleaned since I bought it"></textarea></div>
-        <button type="submit" class="btn btn-gold btn-lg btn-block" id="quoteBtn">Send My Request</button>
+        <p class="handoff"><svg><use href="#i-msg"/></svg>Next step opens your texting app with a message to us, ready to send.</p>
+        <button type="submit" class="btn btn-gold btn-lg btn-block" id="quoteBtn"><svg><use href="#i-msg"/></svg>Open My Text</button>
         <p class="err" id="quoteErr"></p>
-        <p class="note" style="text-align:center">This opens a text to us with your details already filled in.</p>
+        <p class="note" style="text-align:center">Nothing sends until you press send yourself.</p>
       </form>
       <div class="done" id="quoteOk"></div>
     </div>
