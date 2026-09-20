@@ -105,8 +105,10 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 .hero{padding:clamp(40px,6vw,80px) 0 clamp(56px,8vw,104px);overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;pointer-events:none;
   background:radial-gradient(50% 60% at 78% 30%,rgba(227,178,60,.10),transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:clamp(30px,5vw,72px);align-items:center;position:relative}
-.hero-grid>*{min-width:0}
+.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;column-gap:clamp(30px,5vw,72px);
+  align-items:start;align-content:center;position:relative}
+.hero-grid>*{min-width:0;grid-column:1}
+.hero-media{grid-column:2;grid-row:1/6;align-self:center}
 .hero h1 .script{display:block;font-size:1.28em;margin:.06em 0 -.04em .1em}
 .hero .lede{margin-top:24px}
 .actions{display:flex;flex-wrap:wrap;gap:12px}
@@ -114,7 +116,7 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 .facts li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--muted)}
 .facts svg{width:18px;height:18px;color:var(--gold)}
 .hero-photo{position:relative;aspect-ratio:5/4.6;border-radius:var(--r-lg);overflow:hidden;
-  box-shadow:0 40px 90px rgba(0,0,0,.6);border:1px solid var(--line2)}
+  box-shadow:0 40px 90px rgba(0,0,0,.6)}
 .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.14);will-change:transform}
 .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
 .hero-tag{position:absolute;left:20px;bottom:18px;right:20px;z-index:2;display:flex;justify-content:space-between;
@@ -172,6 +174,8 @@ header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,
 .tile{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--panel2);
   grid-column:span 4;grid-row:span 2;margin:0}
 .tile.wide{grid-column:span 8}
+/* An odd count used to strand the last photo alone on its row. */
+.gallery .tile:last-child:nth-child(odd){grid-column:span 8}
 .tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
 .tile:hover img{transform:scale(1.04)}
 .tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;font-size:13px;font-weight:700;
@@ -281,6 +285,7 @@ select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns=
 .quote-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
 .quote-list li{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:15px}
 .quote-list li b{display:block;color:var(--ink);font-size:16px}
+.quote-list li i{font-style:normal;display:block}
 .quote-list .ico{width:40px;height:40px;border-radius:var(--r-sm);display:grid;place-items:center;flex:0 0 auto;
   background:var(--gold-wash);border:1px solid rgba(227,178,60,.3);color:var(--gold)}
 .quote-list .ico svg{width:19px;height:19px}
@@ -328,9 +333,11 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
   .ala{grid-template-columns:1fr}
   .menu-head{grid-template-columns:1fr}
   .hero-photo{aspect-ratio:4/3}
+  /* photo drops out of its column and lands between the headline and the pitch */
+  .hero-media{grid-column:1;grid-row:auto;align-self:auto;margin:4px 0 2px}
   .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,40vw,260px)}
   .tile,.tile.wide{grid-column:span 1;grid-row:span 1}
-  .tile.wide{grid-column:span 2}
+  .tile.wide,.gallery .tile:last-child:nth-child(odd){grid-column:span 2}
   .foot{grid-template-columns:1fr 1fr}
 }
 @media (max-width:640px){
@@ -339,7 +346,6 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
   .hdr-cta .btn-line{display:none}
   .wordmark b{font-size:13px}
   .wordmark .script{font-size:29px}
-  .actions .btn{flex:1 1 100%}
   .how{grid-template-columns:1fr}
   .how>div{padding-right:0;padding-bottom:26px}
   .row2{grid-template-columns:1fr}
@@ -350,7 +356,81 @@ footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 1
   #segSize{grid-template-columns:repeat(3,1fr)}
   .foot{grid-template-columns:1fr}
   .mobar{display:flex}
-  .facts{gap:14px}
+
+  /* ---- phone scale ----------------------------------------------------
+     All of this is about getting a car onto the first screen. The desktop
+     sizes put the hero photo 900px down the page, which on a phone is two
+     thumb-flicks of black before you see anything. */
+  .preview{font-size:11.5px;padding:7px 14px;line-height:1.45}
+  .wrap{width:min(100% - 32px,var(--wrap))}
+  section{padding:54px 0}
+  .hero{padding:24px 0 44px}
+  .h1{font-size:37px}
+  .hero h1 .script{font-size:1.2em;margin:.04em 0 -.02em .08em}
+  .h2{font-size:32px}
+  .eyebrow{font-size:10.5px;letter-spacing:.16em;margin-bottom:14px}
+  .hero .lede{margin-top:18px}
+  .lede{font-size:15.5px;margin-bottom:22px}
+  /* side by side, not two stacked bars: that alone was 90px of the fold */
+  .actions{gap:10px}
+  .actions .btn{flex:1 1 0}
+  .btn-lg{padding:16px 14px;font-size:14.5px}
+  .facts{gap:10px 18px;margin-top:24px;padding-top:18px;font-size:13px}
+  .hero-tag{left:14px;right:14px;bottom:13px}
+  .hero-tag b{font-size:17px}
+  .hero-tag span{font-size:9.5px;letter-spacing:.12em}
+
+  .ticker{padding:13px 0}
+  .ticker-track{gap:28px}
+  .ticker span{font-size:18px;gap:28px}
+
+  .dish{padding:24px 20px}
+  .dish h3{font-size:25px}
+  .dish .lead{font-size:14.5px;margin-bottom:16px}
+  .dish .from{margin-bottom:18px;padding-bottom:18px}
+  .dish .from b{font-size:36px}
+  .dish ul{margin-bottom:20px}
+  .card{padding:22px 20px}
+  .panel{padding:22px 18px}
+  .about blockquote{font-size:31px}
+  .callcard .num{font-size:30px}
+
+  /* ---- density -------------------------------------------------------
+     Long is fine, airy-and-long is a scrolling simulator. These are the
+     four tallest sections on a phone. */
+  section{padding:46px 0}
+  .dish li{font-size:14px}
+  .dish ul{gap:9px}
+  .ala{gap:9px 16px;font-size:14px}
+  .ala span{font-size:14px}
+  .about p{font-size:15.5px;margin-bottom:13px}
+  .how{margin-top:26px}
+  .how>div{padding-bottom:20px;padding-top:24px}
+  .how>div::before{font-size:38px;margin-bottom:9px}
+  .how p{font-size:14.5px}
+  .quote-list{gap:12px;margin-top:20px}
+  .quote-list li{font-size:14.5px}
+  .quote-list .ico{width:34px;height:34px}
+  .quote-list .ico svg{width:17px;height:17px}
+  details.q summary{padding:16px 0;font-size:15.5px;gap:14px}
+  details.q .a{padding-bottom:18px;font-size:14.5px}
+  .area{gap:7px;margin-top:16px}
+  .area span{padding:7px 12px;font-size:13px}
+  .travel{margin-top:18px;padding:15px 17px;font-size:14px}
+  .field{margin-bottom:12px}
+  input,select,textarea{padding:13px 14px}
+  textarea{min-height:78px}
+  .follow{margin-top:18px}
+
+  /* Both of these restate the service cards further up the page. Worth the
+     words on a desktop column, just re-reading on a phone. */
+  .quote-list li i{display:none}
+  .quote-list li b{font-size:15px}
+  .quote-list{gap:10px}
+  .ala{grid-template-columns:1fr 1fr;gap:8px 14px}
+
+  /* a 20px sideways slide on a 375px screen is just noise */
+  .js .rv-l,.js .rv-r{transform:translate3d(0,12px,0)}
 }
 /* ---------- motion ---------- */
 /* Elements only hide once the script has tagged them .rv, so if JS never runs
@@ -394,7 +474,7 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 <symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></symbol>
 </defs></svg>
 
-<div class="preview" id="previewBar">Preview site. Phone, hours and packages are confirmed. The Executive price and the drop-off address are still open, and the calendar doesn't save yet.</div>
+<div class="preview" id="previewBar">Preview. The Executive price and drop-off spot aren't set, and bookings don't save yet.</div>
 
 <header class="site">
   <div class="wrap hdr">
@@ -420,26 +500,24 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
 
 <section class="hero">
   <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow">Mobile and drop-off detailing · Sacramento</p>
-      <h1 class="h1">Excellence isn't the goal. <span class="script">It's the standard.</span></h1>
-      <p class="lede">Interior and exterior detailing done right, at your house, at your job, or dropped off with us. Pick a time online and we'll text you to confirm.</p>
-      <div class="actions">
-        <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
-        <a class="btn btn-line btn-lg" href="#services">See Services</a>
-      </div>
-      <ul class="facts">
-        <li><svg><use href="#i-pin"/></svg>We come to you</li>
-        <li><svg><use href="#i-clock"/></svg>6am to 6pm, 7 days</li>
-        <li><svg><use href="#i-msg"/></svg>Text confirmation</li>
-      </ul>
-    </div>
-    <div style="position:relative">
+    <p class="eyebrow">Mobile and drop-off detailing · Sacramento</p>
+    <h1 class="h1">Excellence isn't the goal. <span class="script">It's the standard.</span></h1>
+    <div class="hero-media">
       <div class="hero-photo">
         <img src="assets/porsche-foam.jpg" alt="Porsche covered in foam during an exterior detail by Mr. Auto Treatment">
         <div class="hero-tag"><b>Foam bath, Porsche 718</b><span>Recent job</span></div>
       </div>
     </div>
+    <p class="lede">Interior and exterior detailing done right, at your house, at your job, or dropped off with us. Pick a time online and we'll text you to confirm.</p>
+    <div class="actions">
+      <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
+      <a class="btn btn-line btn-lg" href="#services">See Services</a>
+    </div>
+    <ul class="facts">
+      <li><svg><use href="#i-pin"/></svg>We come to you</li>
+      <li><svg><use href="#i-clock"/></svg>6am to 6pm, 7 days</li>
+      <li><svg><use href="#i-msg"/></svg>Text confirmation</li>
+    </ul>
   </div>
 </section>
 
@@ -594,11 +672,11 @@ details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
       <h2 class="h2">Bigger jobs start with a look.</h2>
       <p class="lede">The Executive package and anything off the à-la-carte list get priced per vehicle. Tell us what you've got and we'll text you back with a real number, not a range.</p>
       <ul class="quote-list">
-        <li><span class="ico"><svg><use href="#i-spark"/></svg></span><span><b>Executive Supreme Shine</b>Everything we do, on one car, in one day. Inside, outside, underneath.</span></li>
-        <li><span class="ico"><svg><use href="#i-shield"/></svg></span><span><b>Window tinting</b>Heat and glare cut down, and the cabin stops cooking in a Sacramento July.</span></li>
-        <li><span class="ico"><svg><use href="#i-sun"/></svg></span><span><b>Headlight restoration</b>Yellow, cloudy lenses brought back to clear, so you actually see at night.</span></li>
-        <li><span class="ico"><svg><use href="#i-wheel"/></svg></span><span><b>Curb rash correction</b>Scraped wheel lips cleaned up so they stop being the first thing you see.</span></li>
-        <li><span class="ico"><svg><use href="#i-drop"/></svg></span><span><b>Oil change</b>Done in your driveway while the car's already being worked on.</span></li>
+        <li><span class="ico"><svg><use href="#i-spark"/></svg></span><span><b>Executive Supreme Shine</b><i>Everything we do, on one car, in one day. Inside, outside, underneath.</i></span></li>
+        <li><span class="ico"><svg><use href="#i-shield"/></svg></span><span><b>Window tinting</b><i>Heat and glare cut down, and the cabin stops cooking in a Sacramento July.</i></span></li>
+        <li><span class="ico"><svg><use href="#i-sun"/></svg></span><span><b>Headlight restoration</b><i>Yellow, cloudy lenses brought back to clear, so you actually see at night.</i></span></li>
+        <li><span class="ico"><svg><use href="#i-wheel"/></svg></span><span><b>Curb rash correction</b><i>Scraped wheel lips cleaned up so they stop being the first thing you see.</i></span></li>
+        <li><span class="ico"><svg><use href="#i-drop"/></svg></span><span><b>Oil change</b><i>Done in your driveway while the car's already being worked on.</i></span></li>
       </ul>
     </div>
     <div class="panel">
