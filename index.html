@@ -834,13 +834,13 @@ const CFG = {
   ],
 
   /* --- deposit -----------------------------------------------------------
-     URL: a Stripe Payment Link for $25 made from HIS Stripe account. Leave ''
-     until it exists: bookings still save and the confirmation says we'll text
-     a deposit link. Set the link's after-payment redirect to
-     <site>/?deposit=paid#book and the page thanks them when they come back. */
+     Taken by the BoyerScales dashboard through his own Stripe (Connect). Once
+     he's connected, a booking sends the customer straight to a $25 checkout
+     and the job only lands on his schedule when it's paid; Stripe sends them
+     back here with ?deposit=paid or ?deposit=canceled. Until he's connected,
+     bookings save as before and the confirmation says we'll text a link. */
   DEPOSIT: {
     AMOUNT : 25,
-    URL    : '',
     // PLACEHOLDER: he asked for the deposit, not this exact policy. Confirm it.
     POLICY : 'It goes toward your total. Text us at least 24 hours ahead to move your time and it carries over. No-shows lose it.',
   },
@@ -959,11 +959,14 @@ const fmtPhone = v => {
   $('#faqList').innerHTML = FAQ.map(q => `<details class="q"><summary>${esc(q[0])}</summary><div class="a">${q[1]}</div></details>`).join('');
   $('#yr').textContent = new Date().getFullYear();
 
-  // Back from paying the deposit.
-  if (new URLSearchParams(location.search).get('deposit') === 'paid'){
+  // Back from Stripe: paid, or backed out (the slot was already freed).
+  const back = new URLSearchParams(location.search).get('deposit');
+  if (back === 'paid' || back === 'canceled'){
     const t = document.createElement('div');
     t.className = 'toast'; t.setAttribute('role','status');
-    t.innerHTML = '<svg><use href="#i-check"/></svg>Deposit received. Your spot is locked in.';
+    t.innerHTML = back === 'paid'
+      ? '<svg><use href="#i-check"/></svg>Deposit received. You\'re booked, and we\'ll text you a confirmation.'
+      : '<svg><use href="#i-lock"/></svg>No deposit, so that time wasn\'t held. Pick a time to try again.';
     document.body.append(t);
     setTimeout(() => t.remove(), 9000);
     history.replaceState(null, '', location.pathname + location.hash);
@@ -1279,7 +1282,7 @@ const fmtPhone = v => {
     const z = sizeOf(size), p = price(service, size);
     const btn = $('#bookBtn');
     btn.disabled = true; btn.textContent = 'Holding your spot…';
-    let ok = true;
+    let ok = true, checkout = '';
     if (live){
       try {
         const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}/book`, {
@@ -1287,32 +1290,29 @@ const fmtPhone = v => {
           // Size, price and deposit ride in notes so he sees them on the job,
           // since the dashboard keeps one price per service.
           body: JSON.stringify({ name, phone, start:picked.key, vehicle, mode:'mobile', address:addr,
-                                 notes: [`${z.label}, from ${p}`, `$${D} deposit ${CFG.DEPOSIT.URL ? 'sent to pay link' : 'to collect'}`, notes].filter(Boolean).join(' · '),
+                                 notes: [`${z.label}, from ${p}`, notes].filter(Boolean).join(' · '),
                                  vehicle_size:z.label, service_id:service.id, service:service.label })
         });
         const j = await r.json().catch(() => ({}));
         ok = r.ok && j.ok !== false;
         if (!ok) err.textContent = j.error || 'That time just got taken. Pick another, or call us.';
+        if (ok && /^https:\/\/checkout\.stripe\.com\//.test(j.checkout_url || '')) checkout = j.checkout_url;
       } catch (_) {
         ok = false; err.textContent = 'Couldn\'t reach the calendar. Please call ' + CFG.PHONE_TEXT + '.';
       }
     }
+    if (checkout){ btn.innerHTML = 'Opening secure checkout…'; location.href = checkout; return; }
     btn.disabled = false; renderSum();
     if (!ok) return;
 
     $('#picker').hidden = true; form.hidden = true; $('#bookSub').hidden = true;
     $('#bookTitle').textContent = 'Your spot is held';
     const first = name.split(' ')[0];
-    const ref = 'MRA-' + picked.key.replace(/\D/g,'').slice(2) + '-' + digits(phone).slice(-4);
-    const link = CFG.DEPOSIT.URL ? CFG.DEPOSIT.URL + (CFG.DEPOSIT.URL.includes('?') ? '&' : '?') + 'client_reference_id=' + encodeURIComponent(ref) : '';
     const box = $('#bookOk');
     box.innerHTML = `<strong>Thanks, ${esc(first.charAt(0).toUpperCase() + first.slice(1))}.</strong>
       <span class="ok-when">${picked.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric'})} at ${picked.text}</span>
       <span>${esc(service.label)} · ${esc(z.label)} · from ${p}<br>${esc(vehicle)} · ${esc(addr)}</span>
-      <div class="ok-pay">${link
-        ? `<b>Last step: the $${D} deposit.</b>It locks in your time and goes toward your total.
-           <a class="btn btn-gold btn-block" href="${esc(link)}"><svg><use href="#i-lock"/></svg>Pay $${D} deposit</a>`
-        : `<b>Last step: the $${D} deposit.</b>We'll text ${esc(phone)} a secure link to pay it. Your time is locked in once it's paid, and it goes toward your total.`}</div>
+      <div class="ok-pay"><b>Last step: the $${D} deposit.</b>We'll text ${esc(phone)} a secure link to pay it. Your time is locked in once it's paid, and it goes toward your total.</div>
       Need to change something? Call or text <a href="tel:${CFG.PHONE_E164}" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">${CFG.PHONE_TEXT}</a>.
       ${live ? '' : '<span class="ok-pv">Preview mode: this booking was not saved and no text was sent.</span>'}`;
     box.classList.add('on');
