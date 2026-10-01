@@ -3,1037 +3,1176 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0b0a08">
+<meta name="theme-color" content="#0b0b0c">
 <title>Mr. Auto Treatment | Mobile Car Detailing in Sacramento</title>
-<meta name="description" content="Mobile car detailing in Sacramento. Essential and Executive packages, plus window tint, headlight restoration, curb rash and oil changes. We come to you. Book online in under a minute.">
-<!-- Preview build with placeholder prices and phone. Remove noindex when it goes live. -->
+<meta name="description" content="Elite mobile car detailing in Sacramento and the surrounding area. Executive Bronze from $150, Elite Platinum from $300. We come to you. Book online and hold your spot with a $25 deposit.">
+<!-- Still noindex until his domain is pointed here. Remove this line on launch day. -->
 <meta name="robots" content="noindex">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Mr. Auto Treatment | Sacramento Car Detailing">
-<meta property="og:description" content="Essential and Executive detailing packages, plus tint, headlights and curb rash. We come to you. Book online.">
+<meta property="og:title" content="Mr. Auto Treatment | Mobile Detailing, Sacramento">
+<meta property="og:description" content="Elite detailing by hand, inside and out, wherever your car is parked. Book online.">
 <meta property="og:image" content="assets/porsche-foam.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Allura&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://dashboard.boyerscales.com" crossorigin>
+<link rel="preload" as="image" media="(max-width:759px)" href="assets/cayman-foam.jpg">
+<link rel="preload" as="image" media="(min-width:760px)" href="assets/porsche-foam.jpg">
+<script>document.documentElement.classList.add('js')</script>
 <style>
+/* Built on the same system as Valley Details. One family, three voices:
+   labels  - Archivo expanded, tracked out
+   heads   - Archivo normal width, sentence case, tight
+   body    - Archivo normal width, regular
+   Gold is for the book buttons, the logo and a few small marks. Selected states are white. */
 :root{
-  color-scheme:dark;
-  --bg:#0b0a08; --bg2:#100e0b; --panel:#15130f; --panel2:#1c1914;
-  --line:#2a261e; --line2:#3a3428;
-  --ink:#f6f1e7; --muted:#b4ab99; --faint:#7f7766;
-  --gold:#e3b23c; --gold-hi:#f4cd67; --gold-deep:#a97d17; --gold-wash:rgba(227,178,60,.10);
-  --ok:#7fd49a;
-  --serif:"DM Serif Display",Georgia,"Times New Roman",serif;
-  --script:"Allura","Snell Roundhand","Brush Script MT",cursive;
-  --sans:"Manrope",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
-  --wrap:1180px;
-  /* Two radii and a pill. Everything on the page is one of these three. */
-  --r-sm:12px;   /* controls: inputs, slots, day chips, seg buttons, icons */
-  --r-lg:18px;   /* containers: cards, panels, photos, tiles */
-  --r:var(--r-lg);
+  --bg:#0b0b0c; --bg2:#121214; --bg3:#1a1a1d;
+  --line:rgba(255,255,255,.09); --line2:rgba(255,255,255,.17);
+  --ink:#f3f1ed; --ink2:#b4b1ab; --ink3:#7d7a75;
+  --gold:#e3b23c; --gold2:#f0c552; --bad:#ff7a70;
+  --font:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --gut:20px; --wrap:1180px;
+  --ease:cubic-bezier(.2,.7,.2,1);
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:88px;-webkit-text-size-adjust:100%;overflow-x:clip}
-body{margin:0;min-width:320px;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;
-  line-height:1.65;overflow-x:clip;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-a{color:inherit;text-decoration:none}
-button,input,select,textarea{font-family:inherit;font-size:inherit}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
 [hidden]{display:none!important}
-.wrap{width:min(100% - 40px,var(--wrap));margin-inline:auto}
-section{padding:clamp(64px,9vw,120px) 0;position:relative}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:76px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16.5px/1.55 var(--font);
+  font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
 
-.eyebrow{font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
-.h1,.h2,.h3{font-family:var(--serif);font-weight:400;letter-spacing:-.01em;line-height:1.02;margin:0}
-.h1{font-size:clamp(46px,7.4vw,96px)}
-.h2{font-size:clamp(36px,5.2vw,64px);margin-bottom:16px}
-.h3{font-size:clamp(24px,2.8vw,32px)}
-.script{font-family:var(--script);font-weight:400;color:var(--gold);letter-spacing:0;line-height:.8}
-.lede{color:var(--muted);font-size:clamp(16px,1.8vw,18.5px);max-width:58ch;margin:0 0 28px}
-.gold{color:var(--gold)}
+.label{font-size:11.5px;font-weight:600;letter-spacing:.17em;text-transform:uppercase;
+  font-variation-settings:"wdth" 125;color:var(--ink2);margin:0}
+.head{font-weight:600;letter-spacing:-.035em;line-height:1.02;margin:0;text-wrap:balance}
 
-/* buttons: pills, gold on black. Nothing skewed. */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;
-  padding:16px 28px;font-weight:800;font-size:15px;letter-spacing:.02em;border:1px solid transparent;cursor:pointer;
-  white-space:nowrap;transition:transform .15s ease,background .15s ease,border-color .15s ease,box-shadow .15s ease}
-.btn svg{width:17px;height:17px;flex:0 0 auto}
-.btn:hover{transform:translateY(-1px)}
-.btn-gold{background:linear-gradient(180deg,var(--gold-hi),var(--gold));color:#1a1407;
-  box-shadow:0 10px 30px rgba(227,178,60,.22),inset 0 1px 0 rgba(255,255,255,.35)}
-.btn-gold:hover{box-shadow:0 14px 38px rgba(227,178,60,.32),inset 0 1px 0 rgba(255,255,255,.35)}
-.btn-gold:disabled{opacity:.5;cursor:default;transform:none}
-.btn-gold{position:relative;overflow:hidden}
-.btn-gold::after{content:"";position:absolute;inset:0;pointer-events:none;transform:translateX(-120%);
-  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);transition:transform .75s ease}
-.btn-gold:hover::after{transform:translateX(120%)}
-.btn-line{background:transparent;color:var(--ink);border-color:var(--line2)}
-.btn-line:hover{border-color:var(--gold);color:var(--gold-hi)}
-.btn-sm{padding:11px 18px;font-size:13.5px}
-.btn-lg{padding:19px 32px;font-size:16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;height:56px;padding:0 28px;
+  border-radius:2px;border:0;cursor:pointer;font:600 13px/1 var(--font);font-variation-settings:"wdth" 125;
+  letter-spacing:.14em;text-transform:uppercase;transition:background .18s,color .18s,border-color .18s,transform .18s}
+.btn:active{transform:scale(.985)}
+.btn-gold{background:var(--gold);color:#16120a}
+.btn-gold:hover{background:var(--gold2)}
+.btn-line{background:transparent;color:var(--ink);border:1px solid var(--line2)}
+.btn-line:hover{border-color:var(--ink)}
 .btn-block{width:100%}
-.linkbtn{background:none;border:0;padding:6px 0;color:var(--muted);font-weight:700;font-size:13.5px;cursor:pointer;
-  text-decoration:underline;text-underline-offset:4px}
-.linkbtn:hover{color:var(--gold-hi)}
+.btn svg{width:17px;height:17px;flex:0 0 auto}
+.btn[disabled]{opacity:.6;cursor:default}
+.arrow{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--ink);background:none;border:0;padding:0 0 3px;
+  border-bottom:1px solid var(--line2);cursor:pointer;transition:border-color .18s,gap .18s}
+.arrow:hover{border-color:var(--ink);gap:11px}
+.arrow svg{width:15px;height:15px}
 
-/* ---------- preview ribbon ---------- */
-.preview{background:repeating-linear-gradient(135deg,#1b160a 0 14px,#16120a 14px 28px);border-bottom:1px solid #3b2f12;
-  color:#e9d49a;font-size:12.5px;font-weight:700;text-align:center;padding:8px 16px;letter-spacing:.02em}
+/* the logo is a round badge on black, so it always sits in a circle */
+.logo{display:block;border-radius:50%;overflow:hidden;background:#000;flex:0 0 auto}
+.logo img{width:100%;height:100%;object-fit:cover;transform:scale(1.04)}
+
+/* ---------- motion ----------
+   Everything below is gated on .js, so with scripts off the page is simply there. */
+@media (prefers-reduced-motion:reduce){.hero-img::after{display:none}}
+.js .rv{opacity:0;transform:translate3d(0,20px,0);transition:opacity .8s var(--ease),transform .8s var(--ease);
+  transition-delay:calc(var(--d,0) * 80ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv-clip{clip-path:inset(14% 0 0 0);transition:clip-path 1.3s var(--ease)}
+.js .rv-clip.in{clip-path:inset(0 0 0 0)}
+/* Photos fade in when they arrive over a faint moving sheen, so a slow connection
+   looks like loading rather than a black box. */
+.ph{position:relative;overflow:hidden;background:var(--bg2)}
+.ph::before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 30%,rgba(255,255,255,.045) 50%,transparent 70%);
+  background-size:220% 100%;animation:sheen 1.6s linear infinite}
+.ph.done::before{display:none}
+@keyframes sheen{from{background-position:120% 0}to{background-position:-120% 0}}
+.js .ph img{opacity:0;transition:opacity .7s ease,transform .8s var(--ease)}
+.js .ph.done img{opacity:1}
 
 /* ---------- header ---------- */
-header.site{position:sticky;top:0;z-index:60;background:rgba(11,10,8,.82);backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--line)}
-.hdr{display:flex;align-items:center;gap:26px;height:76px}
-.brand{display:flex;align-items:center;gap:12px;margin-right:auto}
-.brand img{height:54px;width:auto}
-.wordmark{display:flex;flex-direction:column;line-height:1}
-.wordmark b{font-family:var(--sans);font-weight:800;font-size:15px;letter-spacing:.22em;color:var(--ink)}
-.wordmark .script{font-size:34px;margin-top:3px;margin-left:18px}
-nav.main{display:flex;gap:28px}
-nav.main a{font-size:14px;font-weight:600;color:var(--muted);transition:color .15s}
-nav.main a:hover{color:var(--gold-hi)}
-nav.main a{position:relative;padding:6px 0}
-nav.main a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--gold);
-  transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
-nav.main a:hover::after,nav.main a.on::after{transform:scaleX(1)}
-nav.main a.on{color:var(--gold-hi)}
-header.site{transition:background .35s ease,box-shadow .35s ease}
-header.site.scrolled{background:rgba(11,10,8,.95);box-shadow:0 12px 34px rgba(0,0,0,.5)}
-.hdr-cta{display:flex;gap:10px}
+.hdr{position:fixed;inset:0 0 auto;z-index:50;transition:background .3s,border-color .3s;
+  border-bottom:1px solid transparent;padding-top:env(safe-area-inset-top)}
+.hdr.solid{background:rgba(11,11,12,.86);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.hdr-in{display:flex;align-items:center;height:68px;gap:28px}
+.brand{margin-right:auto;display:flex;align-items:center;gap:12px}
+.brand .logo{width:46px;height:46px;box-shadow:0 2px 14px rgba(0,0,0,.5)}
+.brand-name{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-variation-settings:"wdth" 125;line-height:1.25}
+.brand-name span{display:block;color:var(--gold);font-size:10.5px;letter-spacing:.28em}
+.nav{display:none;gap:28px}
+.nav a{font-size:14px;color:var(--ink2);transition:color .15s}
+.nav a:hover{color:var(--ink)}
+.hdr-ig{display:grid;place-items:center;width:40px;height:40px;color:var(--ink);opacity:.9}
+.hdr-ig svg{width:21px;height:21px}
+.hdr .btn{display:none;height:44px;padding:0 20px;font-size:12px}
+.hdr-tel{display:none;font-size:14px;color:var(--ink2)}
+
+/* ---------- toast (back from paying the deposit) ---------- */
+.toast{position:fixed;left:50%;top:84px;z-index:90;transform:translateX(-50%);display:flex;gap:10px;align-items:center;
+  padding:14px 18px;border-radius:2px;background:var(--bg3);border:1px solid var(--line2);font-size:15px;
+  box-shadow:0 20px 50px rgba(0,0,0,.6);width:max-content;max-width:calc(100% - 32px)}
+.toast svg{width:18px;height:18px;color:var(--gold);flex:0 0 auto}
 
 /* ---------- hero ---------- */
-.hero{padding:clamp(40px,6vw,80px) 0 clamp(56px,8vw,104px);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(50% 60% at 78% 30%,rgba(227,178,60,.10),transparent 70%)}
-.hero-grid{display:grid;grid-template-columns:1fr 1.02fr;column-gap:clamp(30px,5vw,72px);
-  align-items:start;align-content:center;position:relative}
-.hero-grid>*{min-width:0;grid-column:1}
-.hero-media{grid-column:2;grid-row:1/6;align-self:center}
-.hero h1 .script{display:block;font-size:1.28em;margin:.06em 0 -.04em .1em}
-.hero .lede{margin-top:24px}
-.actions{display:flex;flex-wrap:wrap;gap:12px}
-.facts{display:flex;flex-wrap:wrap;gap:22px;margin:34px 0 0;padding:22px 0 0;border-top:1px solid var(--line);list-style:none}
-.facts li{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:var(--muted)}
-.facts svg{width:18px;height:18px;color:var(--gold)}
-.hero-photo{position:relative;aspect-ratio:5/4.6;border-radius:var(--r-lg);overflow:hidden;
-  box-shadow:0 40px 90px rgba(0,0,0,.6)}
-.hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:translate3d(0,var(--py,0px),0) scale(1.14);will-change:transform}
-.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.72))}
-.hero-tag{position:absolute;left:20px;bottom:18px;right:20px;z-index:2;display:flex;justify-content:space-between;
-  align-items:flex-end;gap:12px}
-.hero-tag b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1.1}
-.hero-tag span{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-hi)}
+.hero{position:relative;min-height:100vh;min-height:100svh;max-height:980px;display:flex;align-items:flex-end;
+  isolation:isolate;overflow:hidden}
+/* On a phone the photo fills the top 80% and the words sit where it fades out,
+   so the car is never under the headline. */
+.hero-img{position:absolute;inset:0 0 auto;height:80%;z-index:-2;display:block;will-change:transform}
+.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 40%;animation:settle 2.4s var(--ease) both}
+@keyframes settle{from{transform:scale(1.07);opacity:.35}to{transform:none;opacity:1}}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,11,12,.55) 0,rgba(11,11,12,0) 14%,rgba(11,11,12,0) 44%,
+    rgba(11,11,12,.78) 64%,var(--bg) 80%)}
+.hero-copy{width:100%;padding-bottom:30px;will-change:opacity,transform}
+.hero .label{color:var(--ink)}
+.hero .head{font-size:clamp(44px,12vw,104px);margin-top:16px}
+.hero-sub{font-size:17.5px;color:var(--ink2);margin:16px 0 26px;max-width:36ch}
+.hero-cta{display:flex;flex-direction:column;gap:14px;align-items:stretch}
+.hero-note{font-size:14px;color:var(--ink3);margin:0;text-align:center}
+.hero-note b{color:var(--ink);font-weight:500}
+.hero .up{animation:up 1.1s var(--ease) both;animation-delay:calc(.35s + var(--d,0) * .1s)}
+@keyframes up{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
 
-/* ---------- service ticker ---------- */
-.ticker{border-block:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:18px 0}
-.ticker-track{display:flex;gap:44px;width:max-content;animation:tick 38s linear infinite}
-.ticker span{font-family:var(--serif);font-size:24px;color:var(--ink);white-space:nowrap;display:flex;align-items:center;gap:44px}
-.ticker span::after{content:"✦";color:var(--gold);font-size:14px}
-@keyframes tick{to{transform:translateX(-50%)}}
+/* ---------- his touches ----------
+   The parts that are his and not Valley Details: the italic out of his logo,
+   a light glint across fresh paint, his seal, and a little more gold. */
+.hero .head em{font-style:italic;font-weight:600;color:var(--gold);font-variation-settings:"wdth" 108;letter-spacing:-.03em;padding-right:.04em}
+.hero-img{overflow:hidden}
+.hero-img::after{content:"";position:absolute;inset:0;pointer-events:none;transform:translateX(-110%);
+  background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.16) 50%,transparent 62%);
+  animation:glint 1.9s 1.7s cubic-bezier(.5,0,.3,1) forwards}
+@keyframes glint{to{transform:translateX(110%)}}
+.seal{display:none;position:absolute;right:var(--gut);bottom:72px;width:138px;aspect-ratio:1;z-index:1;
+  animation:up 1.1s var(--ease) both;animation-delay:.9s}
+.seal svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 30s linear infinite}
+.seal text{font:600 9.4px var(--font);letter-spacing:2.4px;fill:var(--ink);font-variation-settings:"wdth" 125;text-transform:uppercase}
+.seal .logo{position:absolute;inset:19%;box-shadow:0 0 0 1px rgba(227,178,60,.5),0 14px 40px rgba(0,0,0,.6)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hdr::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--gold);
+  transform:scaleX(var(--p,0));transform-origin:left;pointer-events:none}
+.marq{border-bottom:1px solid var(--line);overflow:hidden;padding:18px 0;user-select:none}
+.marq-track{display:flex;width:max-content;animation:marq 46s linear infinite}
+.marq span{display:flex;align-items:center;gap:34px;padding-right:34px;white-space:nowrap;font-size:19px;font-weight:700;
+  font-style:italic;text-transform:uppercase;letter-spacing:.02em;font-variation-settings:"wdth" 118;color:var(--ink2)}
+.marq span::after{content:"";width:6px;height:6px;transform:rotate(45deg);background:var(--gold)}
+@keyframes marq{to{transform:translateX(-50%)}}
+.statement .w{transition:color .35s ease;color:var(--ink3)}
+.statement .w.lit{color:var(--ink)}
+.tag{display:inline-block;margin-left:12px;padding:5px 9px;border:1px solid rgba(227,178,60,.55);border-radius:2px;color:var(--gold);
+  font-size:10px;letter-spacing:.16em;vertical-align:1px}
+#platinum .prices{border-top-color:var(--gold)}
+.finale{border-top:1px solid var(--line);text-align:center;overflow:hidden;position:relative}
+.finale .logo{width:92px;height:92px;margin:0 auto 34px;box-shadow:0 0 0 1px rgba(227,178,60,.35),0 20px 60px rgba(0,0,0,.6)}
+.finale .big{font-size:clamp(46px,11vw,128px);font-weight:600;letter-spacing:-.04em;line-height:.98;margin:0 0 30px;text-wrap:balance}
+.finale .big em{font-style:italic;color:var(--gold);font-variation-settings:"wdth" 108}
+.finale p{color:var(--ink2);font-size:17px;margin:0 auto 34px;max-width:40ch}
+.finale .acts{display:flex;flex-direction:column;gap:12px;align-items:stretch;max-width:420px;margin:0 auto}
 
-/* ---------- menu (services) ---------- */
-.menu-head{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:40px}
-.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
-.menu>*{min-width:0}
-.dish{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:30px 28px;display:flex;
-  flex-direction:column;position:relative;transition:border-color .2s,transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
-.dish:hover{border-color:var(--line2);transform:translateY(-6px);box-shadow:0 24px 50px rgba(0,0,0,.45)}
-.dish.star{background:linear-gradient(180deg,#1f1a10,var(--panel) 60%);border-color:rgba(227,178,60,.45)}
-.dish h3{font-family:var(--serif);font-weight:400;font-size:30px;margin:0 0 4px;line-height:1.1}
-.dish .time{font-size:13px;color:var(--faint);font-weight:600;margin:0 0 18px}
-.dish .from{display:flex;align-items:baseline;gap:10px;margin:0 0 22px;padding-bottom:22px;border-bottom:1px solid var(--line)}
-.dish .from small{font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-.dish .from b{font-family:var(--serif);font-weight:400;font-size:44px;line-height:1;color:var(--gold-hi)}
-.dish ul{list-style:none;margin:0 0 24px;padding:0;display:grid;gap:10px;align-content:start;flex:1}
-.dish li{display:flex;gap:10px;font-size:14.5px;color:#ddd5c5}
-.dish li svg{width:15px;height:15px;color:var(--gold);flex:0 0 auto;margin-top:4px}
-.dish .stage{font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin:0 0 12px}
-.dish .lead{color:var(--muted);font-size:15px;margin:0 0 20px;line-height:1.5}
-.dish .from.quote b{font-size:40px}
-.sizes{color:var(--faint);font-size:13.5px;margin:18px 0 0;max-width:72ch}
-.ala{display:grid;grid-template-columns:1fr 1fr;gap:11px 20px;align-content:start;margin-bottom:18px}
-.ala span{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#ddd5c5}
-.ala svg{width:14px;height:14px;color:var(--gold);flex:0 0 auto;margin-top:5px}
-.cta-card{display:flex;flex-direction:column}
-.cta-card .btn+.btn{margin-top:10px}
-.cta-card .spacer{flex:1;min-height:8px}
+/* ---------- proof ---------- */
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof-in{display:flex;flex-direction:column}
+.proof-item{display:flex;align-items:center;gap:12px;padding:16px 0;font-size:14.5px;color:var(--ink2)}
+.proof-item+.proof-item{border-top:1px solid var(--line)}
+.proof-item b{color:var(--ink);font-weight:500}
+.proof-item svg{width:18px;height:18px;color:var(--gold);flex:0 0 auto}
 
-.extras{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:18px}
-.extras>*{min-width:0}
-.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:28px}
-.card h4{font-family:var(--serif);font-weight:400;font-size:25px;margin:0 0 6px}
-.card .sub{color:var(--faint);font-size:14px;margin:0 0 18px}
-.leader{display:flex;align-items:baseline;gap:10px;padding:10px 0;font-size:15px}
-.leader+.leader{border-top:1px solid var(--line)}
-.leader i{flex:1;border-bottom:1px dotted var(--line2);transform:translateY(-4px)}
-.leader b{font-weight:700;color:var(--gold-hi);white-space:nowrap}
-.leader .q{font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold)}
+/* ---------- sections ---------- */
+section{padding:88px 0}
+.sec-head{margin-bottom:36px}
+.sec-head .label{margin-bottom:14px}
+.sec-head .head{font-size:clamp(32px,8vw,56px)}
+.sec-head p.lead{color:var(--ink2);font-size:17px;margin:16px 0 0;max-width:46ch}
 
-/* ---------- work gallery ---------- */
-.gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:clamp(150px,19vw,230px);gap:14px}
-.tile{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--panel2);
-  grid-column:span 4;grid-row:span 2;margin:0}
-.tile.wide{grid-column:span 8}
-/* An odd count used to strand the last photo alone on its row. */
-.gallery .tile:last-child:nth-child(odd){grid-column:span 8}
-.tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.tile:hover img{transform:scale(1.04)}
-.tile figcaption{position:absolute;left:0;right:0;bottom:0;padding:40px 18px 14px;font-size:13px;font-weight:700;
-  background:linear-gradient(180deg,transparent,rgba(0,0,0,.78))}
-.follow{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:22px;
-  color:var(--muted);font-size:14.5px}
-.follow a{color:var(--gold-hi);font-weight:700}
+.statement{padding:72px 0 0}
+.statement p{font-size:clamp(26px,6.6vw,44px);font-weight:500;letter-spacing:-.025em;line-height:1.18;margin:0;
+  max-width:24ch;text-wrap:pretty}
+.statement p span{color:var(--ink3)}
+
+/* ---------- the two packages ---------- */
+.pkg+.pkg{padding-top:0}
+.fd-pic{margin:0 calc(var(--gut)*-1) 32px;aspect-ratio:4/5}
+/* Taller than its frame so it can drift a little as the page scrolls past it. */
+.fd-pic img{position:absolute;left:0;top:-8%;width:100%;height:116%;object-fit:cover;will-change:transform}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line2);border-bottom:1px solid var(--line);
+  margin-bottom:34px}
+.prices div{padding:18px 0 16px;min-width:0}
+.prices div+div{padding-left:12px;border-left:1px solid var(--line)}
+.prices b{display:block;font-size:26px;font-weight:500;letter-spacing:-.02em;line-height:1;
+  font-variation-settings:"wdth" 112;font-variant-numeric:tabular-nums;white-space:nowrap}
+.prices span{display:block;font-size:12px;color:var(--ink3);margin-top:8px}
+.prices small{font-size:.6em;color:var(--ink3);margin-left:1px}
+.fd-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:14px;color:var(--ink2);margin:-14px 0 34px}
+.fd-meta span{display:inline-flex;align-items:center;gap:8px}
+.fd-meta span::before{content:"";width:5px;height:5px;background:var(--gold);border-radius:50%}
+.fd-lead{color:var(--ink2);font-size:17px;margin:-8px 0 30px;max-width:46ch}
+.incl{display:grid;gap:34px;margin-bottom:40px}
+.incl h3{margin:0 0 6px}
+.incl ol{list-style:none;margin:0;padding:0;counter-reset:n}
+.incl li{counter-increment:n;display:grid;grid-template-columns:34px 1fr;padding:13px 0;border-bottom:1px solid var(--line);font-size:16px}
+.incl li::before{content:counter(n,decimal-leading-zero);font-size:12px;color:var(--ink3);padding-top:3px;
+  font-variation-settings:"wdth" 125;letter-spacing:.06em;font-variant-numeric:tabular-nums}
+.fd-cta{display:flex;flex-direction:column;gap:18px;align-items:stretch}
+.fd-cta .arrow{align-self:center}
+.tier{display:inline-flex;align-items:center;gap:10px}
+.tier::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c)}
+
+/* ---------- work ----------
+   A row you swipe. Cards ease down a touch as they slide off the left edge. */
+.work{padding-bottom:72px;border-top:1px solid var(--line)}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:82%;gap:12px;overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;padding:0 var(--gut) 6px;margin:0 calc(var(--gut)*-1);scrollbar-width:none;
+  scroll-padding:0 var(--gut);-webkit-overflow-scrolling:touch}
+.rail::-webkit-scrollbar{display:none}
+.rail figure{margin:0;scroll-snap-align:start}
+.rail .ph{aspect-ratio:4/5;transform-origin:50% 50%;will-change:transform}
+.rail img{width:100%;height:100%;object-fit:cover}
+.rail figure:hover img,.rail figure:active img{transform:scale(1.04)}
+.rail figcaption{display:flex;justify-content:space-between;gap:12px;font-size:14px;padding:12px 2px 0}
+.rail figcaption span{color:var(--ink3)}
+.rail .more{display:flex;flex-direction:column;justify-content:flex-end;gap:14px;padding:26px;aspect-ratio:4/5;
+  background:var(--bg2);border:1px solid var(--line)}
+.rail .more .logo{width:64px;height:64px;margin-bottom:auto}
+.rail .more b{font-size:26px;font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.rail .more span{color:var(--ink2);font-size:15px}
+.rail .more .arrow{align-self:flex-start;margin-top:6px;color:var(--ink)}
+.rail-foot{display:flex;justify-content:space-between;align-items:center;margin-top:26px;font-size:14px;color:var(--ink3)}
+.dots{display:flex;gap:6px}
+.dots i{width:18px;height:2px;background:var(--line2);transition:background .3s,width .3s}
+.dots i.on{background:var(--ink);width:30px}
+
+/* ---------- specialty work ---------- */
+.others{background:var(--bg2);border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:1fr auto;gap:4px 18px;padding:20px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.svc:first-of-type{border-top:1px solid var(--line2)}
+.svc h3{margin:0;font-size:21px;font-weight:600;letter-spacing:-.02em}
+.svc p{grid-column:1;margin:2px 0 0;color:var(--ink2);font-size:15px;max-width:52ch}
+.svc .arrow{grid-column:2;grid-row:1/3;align-self:center;font-size:14px;white-space:nowrap}
+.sizes{font-size:14px;color:var(--ink3);margin:22px 0 0}
+.sizes b{color:var(--ink2);font-weight:500}
 
 /* ---------- about ---------- */
-.about{background:var(--bg2);border-block:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,90px);align-items:center}
-.about-grid>*{min-width:0}
-.about blockquote{margin:0;font-family:var(--serif);font-size:clamp(34px,4.6vw,58px);line-height:1.08}
-.about blockquote .script{display:block;font-size:1.3em;margin-top:6px}
-.about .sig{margin-top:22px;color:var(--faint);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.about p{color:var(--muted);font-size:16.5px;margin:0 0 16px}
-.about p b{color:var(--ink);font-weight:700}
-.faith{display:inline-flex;align-items:center;gap:10px;margin-top:10px;padding:10px 16px;border-radius:999px;
-  border:1px solid rgba(227,178,60,.35);background:var(--gold-wash);color:#ecd9a6;font-size:14px;font-weight:600}
+.about{border-top:1px solid var(--line)}
+.about-in{display:grid;gap:40px}
+.about .logo{width:min(64vw,300px);aspect-ratio:1;height:auto;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.about-copy p{color:var(--ink2);font-size:17px;margin:0 0 16px;max-width:54ch}
+.about-copy p b{color:var(--ink);font-weight:500}
+.sig{margin:24px 0 0;font-size:14px;color:var(--ink3)}
+.sig b{color:var(--ink);font-weight:500}
+.marks{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line2);margin-top:34px}
+.marks div{padding:18px 0;border-bottom:1px solid var(--line)}
+.marks div:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.marks b{display:block;font-size:15.5px;font-weight:500}
+.marks span{display:block;font-size:13.5px;color:var(--ink3);margin-top:3px}
 
-/* ---------- how ---------- */
-.how{display:grid;grid-template-columns:repeat(3,1fr);gap:0;counter-reset:s;margin-top:36px;border-top:1px solid var(--line2)}
-.how>div{padding:30px 28px 0 0;position:relative}
-.how>div::before{counter-increment:s;content:"0" counter(s);font-family:var(--serif);font-size:56px;color:var(--gold);
-  line-height:1;display:block;margin-bottom:14px}
-.how>div::after{content:"";position:absolute;top:-5px;left:0;width:9px;height:9px;border-radius:50%;background:var(--gold)}
-.how h4{font-size:18px;font-weight:800;margin:0 0 6px}
-.how p{margin:0;color:var(--muted);font-size:15px;max-width:34ch}
+/* ---------- how it works ---------- */
+.how{border-top:1px solid var(--line)}
+.steps{display:grid;gap:0;counter-reset:s}
+.step{display:grid;grid-template-columns:52px 1fr;padding:26px 0;border-top:1px solid var(--line)}
+.step:last-child{border-bottom:1px solid var(--line)}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-size:13px;color:var(--ink3);padding-top:5px;
+  font-variation-settings:"wdth" 125;letter-spacing:.08em}
+.step h3{margin:0 0 6px;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.step p{margin:0;color:var(--ink2);font-size:15.5px;max-width:48ch}
 
 /* ---------- booking ---------- */
-.book-sec{background:linear-gradient(180deg,var(--bg),#0f0d09)}
-.book{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start;margin-top:36px}
-.book>*{min-width:0}
-.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r-lg);padding:clamp(20px,3vw,32px)}
-.panel h4{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 4px}
-.panel .sub{color:var(--faint);font-size:14px;margin:0 0 22px}
-label,.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);margin:0 0 8px}
-.seg{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-bottom:20px}
-.seg button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;padding:13px 15px;border-radius:var(--r-sm);
-  border:1px solid var(--line2);background:#0c0b09;color:var(--ink);cursor:pointer;font-weight:700;font-size:14.5px;transition:.15s}
-.seg button small{font-size:12px;font-weight:500;color:var(--faint)}
-.seg button:hover{border-color:var(--gold-deep)}
-.seg button.sel{border-color:var(--gold);background:var(--gold-wash)}
-.seg button.sel small{color:#d9c38d}
-.seg.one{display:block}
-.svcone{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;
-  padding:0 0 16px;border-bottom:1px solid var(--line2)}
-.svcone .nm{font-family:var(--serif);font-size:23px;line-height:1.1}
-.svcone .mt{font-size:13.5px;font-weight:700;color:var(--gold-hi);white-space:nowrap}
-/* .note is declared further down, so this needs the extra class to win. */
-p.note.svc-alt{margin:14px 0 26px}
-.svc-alt a{color:var(--gold-hi);font-weight:700;text-decoration:underline;text-underline-offset:3px}
-.days{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;
-  -webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent);
-  mask-image:linear-gradient(90deg,#000 calc(100% - 44px),transparent)}
+.book-sec{background:var(--bg2);border-top:1px solid var(--line)}
+.book{display:grid;gap:28px}
+/* Grid children default to their widest content; the day row would stretch the page. */
+.book>*,.fd>*,.faq-wrap>*,.others .wrap>*,.how .wrap>*,.about-in>*{min-width:0}
+.panel{background:var(--bg);border:1px solid var(--line);border-radius:2px;padding:22px 18px 26px}
+.panel-hd{display:flex;align-items:center;gap:14px;margin:0 0 4px}
+.panel-hd .logo{width:44px;height:44px}
+.panel h4{margin:0;font-size:22px;font-weight:600;letter-spacing:-.02em}
+.ph-sub{margin:10px 0 22px;color:var(--ink3);font-size:14.5px}
+.svc-label,.panel label{display:block;font-size:12px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;
+  font-variation-settings:"wdth" 125;color:var(--ink2);margin:0 0 10px}
+.seg{display:grid;gap:8px;margin-bottom:22px}
+#segService{grid-template-columns:1fr 1fr}
+#segSize{grid-template-columns:1fr 1fr}
+.seg button{background:transparent;border:1px solid var(--line2);border-radius:2px;padding:13px 12px;text-align:left;cursor:pointer;
+  transition:border-color .15s,background .15s;display:flex;flex-direction:column;gap:3px;font-size:15px;font-weight:500}
+.seg button:hover{border-color:rgba(255,255,255,.35)}
+.seg button.sel{border-color:var(--ink);background:var(--bg3);box-shadow:inset 0 0 0 1px var(--ink)}
+.seg small{font-size:12.5px;color:var(--ink3);font-weight:400}
+.seg small b{color:var(--ink2);font-weight:500}
+.days{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;margin:8px -18px 12px;padding:2px 18px}
 .days::-webkit-scrollbar{display:none}
-.day{flex:0 0 auto;width:64px;padding:10px 0;border-radius:var(--r-sm);border:1px solid var(--line2);background:#0c0b09;color:var(--ink);
-  cursor:pointer;text-align:center;transition:.15s}
-.day:hover{border-color:var(--gold-deep)}
-.day.sel{background:linear-gradient(180deg,var(--gold-hi),var(--gold));border-color:var(--gold);color:#1a1407}
-.day.off{opacity:.28;pointer-events:none}
-.day .dow{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
-.day .num{font-family:var(--serif);font-size:24px;line-height:1.1}
-.day .mon{font-size:10.5px;font-weight:700;opacity:.65;text-transform:uppercase}
-.slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:8px;margin-top:16px}
-.slot{padding:13px 4px;border-radius:var(--r-sm);border:1px solid var(--line2);background:#0c0b09;color:var(--ink);font-weight:700;
-  font-size:14.5px;cursor:pointer;transition:.15s;font-variant-numeric:tabular-nums}
-.slot:hover{border-color:var(--gold)}
-.slot.sel{background:var(--gold);border-color:var(--gold);color:#1a1407}
-.slot.taken{opacity:.35;text-decoration:line-through;cursor:not-allowed}
-.slots-empty{grid-column:1/-1;text-align:center;color:var(--faint);font-size:14px;padding:22px 6px}
-#step2{margin-top:24px;padding-top:24px;border-top:1px solid var(--line)}
-.picked{animation:up .25s ease}
-@keyframes up{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
-.picked{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--r-sm);
-  background:var(--gold-wash);border:1px solid rgba(227,178,60,.35);margin-bottom:20px}
-.picked b{font-family:var(--serif);font-weight:400;font-size:20px}
-.field{margin-bottom:14px}
-.row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.row2>*{min-width:0}
-input,select,textarea{width:100%;background:#0c0b09;border:1px solid var(--line2);border-radius:var(--r-sm);color:var(--ink);
-  padding:14px 15px;font-size:16px;outline:none;transition:border-color .15s}
-textarea{resize:vertical;min-height:92px}
-input::placeholder,textarea::placeholder{color:#5d574b}
-input:focus,select:focus,textarea:focus{border-color:var(--gold)}
-select{appearance:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b4ab99' stroke-width='2.4'><path d='M6 9l6 6 6-6'/></svg>");
-  background-repeat:no-repeat;background-position:right 14px center;background-size:16px;padding-right:40px}
-.note{font-size:13px;color:var(--faint);margin:8px 0 0;line-height:1.5}
-/* The old wording sat under the button in faint grey, so nobody met it until
-   the texting app had already taken over the screen. */
-.handoff{display:flex;gap:10px;align-items:flex-start;margin:0 0 12px;padding:12px 14px;
-  border:1px solid rgba(227,178,60,.3);background:var(--gold-wash);border-radius:var(--r-sm);
-  color:#e7d5a6;font-size:13.5px;line-height:1.45}
-.handoff svg{width:16px;height:16px;color:var(--gold);flex:0 0 auto;margin-top:2px}
-.err{color:#ff9a8a;font-size:14px;margin:10px 0 0;min-height:1em}
-.done{display:none;margin-top:6px;padding:24px;border-radius:var(--r-lg);background:rgba(127,212,154,.07);border:1px solid rgba(127,212,154,.3);
-  color:#d3ecd9;font-size:15px}
-.done.on{display:block}
-.done strong{display:block;font-family:var(--serif);font-weight:400;font-size:26px;color:var(--ink);margin-bottom:10px}
-.done .when{display:block;color:var(--ink);font-weight:700}
-.done .pv{display:block;margin-top:14px;padding-top:12px;border-top:1px dashed rgba(127,212,154,.3);color:#e9d49a;font-size:13.5px}
-.side{display:grid;gap:18px}
-.callcard{text-align:left}
-.callcard .num{display:block;font-family:var(--serif);font-size:clamp(30px,3.6vw,40px);line-height:1.1;margin:6px 0 10px}
-.callcard p{color:var(--muted);font-size:14.5px;margin:0 0 18px}
-.callcard .actions .btn{flex:1}
-.dropcard p{color:var(--muted);font-size:14.5px;margin:0}
-.dropcard b{color:var(--ink)}
-.drow+.drow{margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.day{flex:0 0 64px;border:1px solid var(--line2);background:none;border-radius:2px;padding:10px 0 9px;cursor:pointer;text-align:center;
+  transition:background .15s,border-color .15s,color .15s}
+.day .dow{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-variation-settings:"wdth" 125;color:var(--ink3)}
+.day .num{font-size:22px;font-weight:600;line-height:1.2;margin:3px 0 1px}
+.day .mon{font-size:11.5px;color:var(--ink3)}
+.day.off{opacity:.3;pointer-events:none}
+.day.sel{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.day.sel .dow,.day.sel .mon{color:#55524d}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:18px}
+.slot{border:1px solid var(--line2);background:none;border-radius:2px;padding:13px 4px;cursor:pointer;font-size:15px;font-weight:500;
+  font-variant-numeric:tabular-nums;transition:background .15s,border-color .15s,color .15s}
+.slot:hover:not(:disabled){border-color:rgba(255,255,255,.4)}
+.slot.taken{opacity:.28;text-decoration:line-through;cursor:default}
+.slot.sel{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.slots-empty{grid-column:1/-1;color:var(--ink3);font-size:14.5px;padding:10px 0}
+.picked{display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line2);padding:14px 16px;
+  border-radius:2px;margin:6px 0 22px}
+.picked b{font-weight:600}
+.linkbtn{background:none;border:0;padding:0;color:var(--ink2);text-decoration:underline;text-underline-offset:3px;cursor:pointer;font-size:14.5px}
+.linkbtn:hover{color:var(--ink)}
+.row2{display:grid;gap:0 12px}
+.field{margin-bottom:16px}
+.field input{width:100%;height:52px;background:var(--bg2);border:1px solid var(--line2);border-radius:2px;padding:0 14px;
+  font-size:16px;outline:none;transition:border-color .15s}
+.field input::placeholder{color:#5c5a56}
+.field input:focus{border-color:var(--ink)}
+.fieldnote{font-size:13px;color:var(--ink3);margin:8px 0 0}
+.sum{border-top:1px solid var(--line2);margin:22px 0 0}
+.sum div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink2)}
+.sum div b{color:var(--ink);font-weight:500;text-align:right}
+.sum .due{color:var(--ink)}
+.sum .due b{font-size:20px;font-weight:600;font-variation-settings:"wdth" 112}
+.err-msg{color:var(--bad);font-size:14.5px;margin:12px 0 0;min-height:1px}
+.formnote{font-size:13px;color:var(--ink3);margin:12px 0 0;text-align:center}
+.ok-msg{display:none;font-size:15px;color:var(--ink2);line-height:1.6}
+.ok-msg.on{display:block;animation:up .6s var(--ease) both}
+.ok-msg strong{display:block;color:var(--ink);margin-bottom:6px;font-size:18px}
+.ok-msg span{display:block;margin-bottom:10px}
+.ok-when{font-size:20px;color:var(--ink);font-weight:500}
+.ok-pay{border:1px solid var(--line2);padding:16px;margin:16px 0}
+.ok-pay b{display:block;color:var(--ink);margin-bottom:4px}
+.ok-pay .btn{margin-top:14px}
+.ok-pv{display:block;margin-top:14px;padding-top:12px;border-top:1px solid var(--line);color:var(--ink3);font-size:13.5px}
+/* On a phone the form comes first and already says "Book online", so the big
+   heading would only repeat it underneath. It returns beside the form on wide screens. */
+.book-side .sec-head{display:none}
+.callcard{border-top:1px solid var(--line2);padding-top:22px}
+.callcard .big{display:block;font-size:30px;font-weight:500;letter-spacing:-.02em;font-variation-settings:"wdth" 112;margin:10px 0 6px}
+.callcard p{color:var(--ink2);font-size:15px;margin:0 0 18px}
+.callcard .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.area{margin-top:30px;font-size:14px;color:var(--ink3);line-height:1.7}
+.area b{color:var(--ink2);font-weight:500}
 
-/* ---------- quote ---------- */
-.quote{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(24px,5vw,70px);align-items:start}
-.quote>*{min-width:0}
-.quote-list{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:14px}
-.quote-list li{display:flex;gap:14px;align-items:flex-start;color:var(--muted);font-size:15px}
-.quote-list li b{display:block;color:var(--ink);font-size:16px}
-.quote-list li i{font-style:normal;display:block}
-.quote-list .ico{width:40px;height:40px;border-radius:var(--r-sm);display:grid;place-items:center;flex:0 0 auto;
-  background:var(--gold-wash);border:1px solid rgba(227,178,60,.3);color:var(--gold)}
-.quote-list .ico svg{width:19px;height:19px}
+/* ---------- reviews ---------- */
+.reviews{border-top:1px solid var(--line)}
+.revs{display:grid;gap:0}
+.rev{margin:0;padding:28px 0;border-top:1px solid var(--line)}
+.rev:last-child{border-bottom:1px solid var(--line)}
+.rev p{font-size:clamp(21px,5.4vw,26px);font-weight:500;letter-spacing:-.02em;line-height:1.3;margin:12px 0 16px;text-wrap:pretty}
+.rev cite{font-style:normal;font-size:14px;color:var(--ink3)}
+.rev cite b{color:var(--ink);font-weight:500}
+.stars{display:inline-flex;gap:2px;color:var(--gold)}
+.stars svg{width:15px;height:15px}
+.ask{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:center;padding:28px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line)}
+.ask .logo{width:64px;height:64px}
+.ask p{margin:0;color:var(--ink2);font-size:16px;max-width:52ch}
+.ask p b{display:block;color:var(--ink);font-size:21px;font-weight:600;letter-spacing:-.02em;margin-bottom:4px}
+.ask .links{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:14px 28px}
 
-/* ---------- area + faq ---------- */
-.info{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(24px,5vw,70px)}
-.info>*{min-width:0}
-.area{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 0}
-.area span{padding:8px 14px;border-radius:999px;border:1px solid var(--line2);font-size:13.5px;font-weight:600;color:#d8d0c0}
-.area span.hub{border-color:var(--gold);color:var(--gold-hi)}
-.travel{margin-top:22px;padding:18px 20px;border-radius:var(--r-lg);background:var(--panel);border:1px solid var(--line);color:var(--muted);font-size:14.5px}
-.travel b{color:var(--ink)}
-.faq{display:grid;gap:0;border-top:1px solid var(--line2)}
-details.q{border-bottom:1px solid var(--line2)}
-details.q summary{list-style:none;cursor:pointer;padding:20px 0;display:flex;justify-content:space-between;gap:18px;
-  font-weight:700;font-size:16.5px}
-details.q summary::-webkit-details-marker{display:none}
-details.q summary::after{content:"+";font-family:var(--serif);font-size:28px;line-height:.8;color:var(--gold);transition:transform .2s}
-details.q[open] summary::after{transform:rotate(45deg)}
-details.q .a{padding:0 40px 22px 0;color:var(--muted);font-size:15px}
+/* ---------- faq ---------- */
+.faq{border-top:1px solid var(--line2)}
+.q{border-bottom:1px solid var(--line)}
+.q summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;
+  font-size:17.5px;font-weight:500;letter-spacing:-.01em}
+.q summary::-webkit-details-marker{display:none}
+.q summary::after{content:"";width:11px;height:11px;flex:0 0 auto;border-right:1.5px solid var(--ink2);border-bottom:1.5px solid var(--ink2);
+  transform:translateY(-3px) rotate(45deg);transition:transform .25s var(--ease)}
+.q[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.q .a{color:var(--ink2);font-size:15.5px;padding:0 0 22px;max-width:62ch}
+.q .a b{color:var(--ink);font-weight:500}
 
-/* ---------- finale + footer ---------- */
-.finale{text-align:center;overflow:hidden;border-top:1px solid var(--line)}
-.finale::before{content:"";position:absolute;inset:0;background:url(assets/chevy-c10.jpg) center 40%/cover;opacity:.16;filter:grayscale(.3)}
-.finale::after{content:"";position:absolute;inset:0;background:radial-gradient(60% 80% at 50% 50%,transparent,var(--bg) 85%)}
-.finale .wrap{position:relative;z-index:1}
-.finale .lede{margin-inline:auto}
-.finale .actions{justify-content:center}
-footer.site{background:#070605;border-top:1px solid var(--line);padding:56px 0 120px}
-.foot{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
-.foot>*{min-width:0}
-.foot h5{margin:0 0 12px;font-size:12px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
-.foot a,.foot p{display:block;margin:0 0 8px;color:var(--muted);font-size:14.5px}
-.foot a:hover{color:var(--gold-hi)}
-.foot-bot{margin-top:34px;padding-top:20px;border-top:1px solid var(--line);color:var(--faint);font-size:13px;
-  display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
-.mobar{position:fixed;left:0;right:0;bottom:0;z-index:80;display:none;gap:10px;background:rgba(11,10,8,.94);
-  backdrop-filter:blur(14px);border-top:1px solid var(--line2);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
-.mobar .btn{flex:1}
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;color:var(--ink3)}
+.foot{display:grid;gap:28px}
+.foot .logo{width:64px;height:64px;margin-bottom:14px}
+.foot h4{margin:0 0 10px;color:var(--ink);font-size:12px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-variation-settings:"wdth" 125}
+.foot a{display:block;color:var(--ink2);padding:3px 0}
+.foot a:hover{color:var(--ink)}
+.foot p{margin:0;line-height:1.7}
+.fine{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
 
-@media (max-width:980px){
-  nav.main{display:none}
-  .hero-grid,.about-grid,.book,.quote,.info,.extras{grid-template-columns:1fr}
-  .menu{grid-template-columns:1fr}
-  .ala{grid-template-columns:1fr}
-  .menu-head{grid-template-columns:1fr}
-  .hero-photo{aspect-ratio:4/3}
-  /* photo drops out of its column and lands between the headline and the pitch */
-  .hero-media{grid-column:1;grid-row:auto;align-self:auto;margin:4px 0 2px}
-  .gallery{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(150px,40vw,260px)}
-  .tile,.tile.wide{grid-column:span 1;grid-row:span 1}
-  .tile.wide,.gallery .tile:last-child:nth-child(odd){grid-column:span 2}
-  .foot{grid-template-columns:1fr 1fr}
+/* ---------- phone bar ----------
+   Hidden while the hero's own button is on screen, and again inside the booking
+   section, so there is never a second copy of a button you are looking at. */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:grid;grid-template-columns:1fr 1.4fr;gap:8px;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));background:rgba(11,11,12,.9);
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid var(--line);
+  transform:translateY(105%);transition:transform .35s var(--ease)}
+.bar.on{transform:none}
+.bar .btn{height:52px;padding:0 12px}
+
+/* ---------- larger screens ---------- */
+@media (min-width:760px){
+  :root{--gut:40px}
+  .hdr-in{height:84px}
+  .brand .logo{width:56px;height:56px}
+  /* The wide shot is nearly square, so it sits on the right two thirds at close to its
+     own size (sharp) and fades into the black under the headline. */
+  .hero-img{height:100%;left:auto;right:0;width:min(70%,1100px)}
+  .hero-img img{object-position:50% 60%}
+  .hero::after{background:linear-gradient(90deg,var(--bg) 0,var(--bg) 30%,rgba(11,11,12,.55) 46%,rgba(11,11,12,0) 66%),
+    linear-gradient(180deg,rgba(11,11,12,.6) 0,rgba(11,11,12,0) 18%,rgba(11,11,12,0) 62%,var(--bg) 100%)}
+  .hero-copy{padding-bottom:76px}
+  .hero .head{max-width:11ch}
+  .hero-cta{flex-direction:row;align-items:center;gap:26px}
+  .hero-note{text-align:left}
+  .proof-in{flex-direction:row}
+  .proof-item{flex:1;padding:22px 0}
+  .proof-item+.proof-item{border-top:0;border-left:1px solid var(--line);padding-left:28px}
+  section{padding:130px 0}
+  .fd{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
+  .fd-pic{margin:0;position:sticky;top:110px}
+  .fd.flip .fd-pic{order:2}
+  .prices b{font-size:32px}
+  .prices div+div{padding-left:16px}
+  .incl{grid-template-columns:1fr 1fr;gap:32px}
+  .fd-cta{flex-direction:row;align-items:center;gap:28px}
+  .fd-cta .arrow{align-self:auto}
+  .rail{grid-auto-columns:calc((100% - 36px)/3.3)}
+  .revs{grid-template-columns:repeat(3,1fr);gap:40px}
+  .rev,.rev:last-child{border-bottom:0}
+  .others .wrap,.how .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  .others .sec-head,.how .sec-head{position:sticky;top:120px}
+  .about-in{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:center}
+  .about .logo{width:100%;max-width:400px}
+  .ask{grid-template-columns:auto 1fr auto}
+  .ask .links{grid-column:auto;flex-direction:column;align-items:flex-end;gap:12px}
+  .book{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
+  .book-side{position:sticky;top:120px;order:-1}
+  .book-side .sec-head{display:block}
+  .panel{padding:34px 34px 36px}
+  .days{margin:8px -34px 12px;padding:2px 34px}
+  .row2{grid-template-columns:1fr 1fr}
+  .slots{grid-template-columns:repeat(4,1fr)}
+  #segSize{grid-template-columns:repeat(4,1fr)}
+  .faq-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px}
+  .faq-wrap .sec-head{position:sticky;top:120px;align-self:start}
+  .foot{grid-template-columns:1.6fr 1fr 1fr}
+  .bar{display:none}
+  .swipe{visibility:hidden}
+  .seal{display:block}
+  .marq span{font-size:24px}
+  .finale .acts{flex-direction:row;justify-content:center;max-width:none}
 }
-@media (max-width:640px){
-  html{scroll-padding-top:74px}
-  .hdr{height:66px}
-  .hdr-cta .btn-line{display:none}
-  .wordmark b{font-size:13px}
-  .wordmark .script{font-size:29px}
-  .how{grid-template-columns:1fr}
-  .how>div{padding-right:0;padding-bottom:26px}
-  .row2{grid-template-columns:1fr}
-  .slots{grid-template-columns:repeat(3,1fr)}
-  /* 170px is wider than a phone panel, so every picker would drop to one
-     column and the quote list would become six full-width bars. */
-  .seg{grid-template-columns:1fr 1fr}
-  #segSize{grid-template-columns:repeat(3,1fr)}
-  .foot{grid-template-columns:1fr}
-  .mobar{display:flex}
-
-  /* ---- phone scale ----------------------------------------------------
-     All of this is about getting a car onto the first screen. The desktop
-     sizes put the hero photo 900px down the page, which on a phone is two
-     thumb-flicks of black before you see anything. */
-  .preview{font-size:11.5px;padding:7px 14px;line-height:1.45}
-  .wrap{width:min(100% - 32px,var(--wrap))}
-  section{padding:54px 0}
-  .hero{padding:24px 0 44px}
-  .h1{font-size:37px}
-  .hero h1 .script{font-size:1.2em;margin:.04em 0 -.02em .08em}
-  .h2{font-size:32px}
-  .eyebrow{font-size:10.5px;letter-spacing:.16em;margin-bottom:14px}
-  .hero .lede{margin-top:18px}
-  .lede{font-size:15.5px;margin-bottom:22px}
-  /* side by side, not two stacked bars: that alone was 90px of the fold */
-  .actions{gap:10px}
-  .actions .btn{flex:1 1 0}
-  .btn-lg{padding:16px 14px;font-size:14.5px}
-  .facts{gap:10px 18px;margin-top:24px;padding-top:18px;font-size:13px}
-  .hero-tag{left:14px;right:14px;bottom:13px}
-  .hero-tag b{font-size:17px}
-  .hero-tag span{font-size:9.5px;letter-spacing:.12em}
-
-  .ticker{padding:13px 0}
-  .ticker-track{gap:28px}
-  .ticker span{font-size:18px;gap:28px}
-
-  .dish{padding:24px 20px}
-  .dish h3{font-size:25px}
-  .dish .lead{font-size:14.5px;margin-bottom:16px}
-  .dish .from{margin-bottom:18px;padding-bottom:18px}
-  .dish .from b{font-size:36px}
-  .dish ul{margin-bottom:20px}
-  .card{padding:22px 20px}
-  .panel{padding:22px 18px}
-  .about blockquote{font-size:31px}
-  .callcard .num{font-size:30px}
-
-  /* ---- density -------------------------------------------------------
-     Long is fine, airy-and-long is a scrolling simulator. These are the
-     four tallest sections on a phone. */
-  section{padding:46px 0}
-  .dish li{font-size:14px}
-  .dish ul{gap:9px}
-  .ala{gap:9px 16px;font-size:14px}
-  .ala span{font-size:14px}
-  .about p{font-size:15.5px;margin-bottom:13px}
-  .how{margin-top:26px}
-  .how>div{padding-bottom:20px;padding-top:24px}
-  .how>div::before{font-size:38px;margin-bottom:9px}
-  .how p{font-size:14.5px}
-  .quote-list{gap:12px;margin-top:20px}
-  .quote-list li{font-size:14.5px}
-  .quote-list .ico{width:34px;height:34px}
-  .quote-list .ico svg{width:17px;height:17px}
-  details.q summary{padding:16px 0;font-size:15.5px;gap:14px}
-  details.q .a{padding-bottom:18px;font-size:14.5px}
-  .area{gap:7px;margin-top:16px}
-  .area span{padding:7px 12px;font-size:13px}
-  .travel{margin-top:18px;padding:15px 17px;font-size:14px}
-  .field{margin-bottom:12px}
-  input,select,textarea{padding:13px 14px}
-  textarea{min-height:78px}
-  .follow{margin-top:18px}
-
-  /* Both of these restate the service cards further up the page. Worth the
-     words on a desktop column, just re-reading on a phone. */
-  .quote-list li i{display:none}
-  .quote-list li b{font-size:15px}
-  .quote-list{gap:10px}
-  .ala{grid-template-columns:1fr 1fr;gap:8px 14px}
-
-  /* a 20px sideways slide on a 375px screen is just noise */
-  .js .rv-l,.js .rv-r{transform:translate3d(0,12px,0)}
+@media (min-width:1000px){
+  .nav,.hdr .btn,.hdr-tel{display:flex}
+  .hdr-ig{display:none}
 }
-/* ---------- motion ---------- */
-/* Elements only hide once the script has tagged them .rv, so if JS never runs
-   nothing is left invisible. */
-.js .rv{opacity:0;transform:translate3d(0,14px,0);
-  transition:opacity .45s ease var(--d,0s),transform .6s cubic-bezier(.22,.72,.3,1) var(--d,0s)}
-.js .rv-l{transform:translate3d(-20px,0,0)}
-.js .rv-r{transform:translate3d(20px,0,0)}
-.js .rv-zoom{transform:scale(.975)}
-.js .rv-pop{transform:translate3d(0,8px,0) scale(.96)}
-.js .rv.in{opacity:1;transform:none}
-.js .hero-photo.rv{opacity:1;transform:none;clip-path:inset(0 0 100% 0 round 18px);
-  transition:clip-path .85s cubic-bezier(.62,0,.2,1) var(--d,0s)}
-.js .hero-photo.rv.in{clip-path:inset(0 0 0 0 round 18px)}
-.day,.slot{animation:chip .45s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 28ms)}
-@keyframes chip{from{opacity:0;transform:translateY(10px)}}
-.done.on{animation:up .5s cubic-bezier(.2,.7,.2,1)}
-details.q[open] .a{animation:up .4s cubic-bezier(.2,.7,.2,1)}
-.mobar{animation:barIn .6s cubic-bezier(.2,.7,.2,1) .8s both}
-@keyframes barIn{from{transform:translateY(110%)}}
-
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .js .rv{opacity:1!important;transform:none!important;clip-path:none!important}}
+@media (max-width:420px){
+  .brand-name{display:none}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before{animation:none!important;transition:none!important}
+  .js .rv,.js .rv-clip{opacity:1;transform:none;clip-path:none}
+}
 </style>
 </head>
 <body>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
-<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
-<symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8.5 8.5 0 0 1-12.4 7.5L3 21l1.5-5.4A8.5 8.5 0 1 1 21 12z"/></symbol>
-<symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
-<symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/></symbol>
-<symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 1.9"/></symbol>
-<symbol id="i-spark" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.1 6.3L20.5 10l-6.4 1.7L12 18l-2.1-6.3L3.5 10l6.4-1.7z"/></symbol>
-<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
-<symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
-<symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></symbol>
-<symbol id="i-wheel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.2"/><path d="M12 3v5.8M12 15.2V21M3 12h5.8M15.2 12H21"/></symbol>
-<symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.7s6.2 6.6 6.2 11a6.2 6.2 0 0 1-12.4 0c0-4.4 6.2-11 6.2-11z"/></symbol>
-<symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5-4.8-4.6 6.6-.9z"/></symbol>
+<symbol id="i-ig" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></symbol>
+<symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="2.8"/></symbol>
+<symbol id="i-lock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></symbol>
 </defs></svg>
 
-<div class="preview" id="previewBar">Preview. The Executive price and drop-off spot aren't set yet.</div>
-
-<header class="site">
-  <div class="wrap hdr">
+<header class="hdr" id="hdr">
+  <div class="wrap hdr-in">
     <a class="brand" href="#top" aria-label="Mr. Auto Treatment home">
-      <img src="assets/logo.png" alt="Mr. Auto Treatment" onerror="this.remove();document.getElementById('wm').hidden=false">
-      <span class="wordmark" id="wm" hidden><b>MR. AUTO</b><span class="script">Treatment</span></span>
+      <span class="logo"><img src="assets/logo.jpg" alt="Mr. Auto Treatment" width="56" height="56"></span>
+      <span class="brand-name">Mr. Auto<span>Treatment</span></span>
     </a>
-    <nav class="main">
-      <a href="#services">Services</a>
-      <a href="#work">Work</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#bronze">Packages</a>
+      <a href="#work">Our Work</a>
+      <a href="#services">Specialty</a>
       <a href="#about">About</a>
-      <a href="#quote">Quotes</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <div class="hdr-cta">
-      <a class="btn btn-line btn-sm" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
-      <a class="btn btn-gold btn-sm" href="#book">Book a Detail</a>
-    </div>
+    <a class="hdr-tel" data-tel><span data-phone></span></a>
+    <a class="btn btn-gold" href="#book">Book</a>
+    <a class="hdr-ig" data-ig target="_blank" rel="noopener" aria-label="Mr. Auto Treatment on Instagram"><svg><use href="#i-ig"/></svg></a>
   </div>
 </header>
 
 <main id="top">
 
-<section class="hero">
-  <div class="wrap hero-grid">
-    <p class="eyebrow">Mobile and drop-off detailing · Sacramento</p>
-    <h1 class="h1">Excellence isn't the goal. <span class="script">It's the standard.</span></h1>
-    <div class="hero-media">
-      <div class="hero-photo">
-        <img src="assets/porsche-foam.jpg" alt="Porsche covered in foam during an exterior detail by Mr. Auto Treatment">
-        <div class="hero-tag"><b>Foam bath, Porsche 718</b><span>Recent job</span></div>
-      </div>
+<section class="hero" style="padding:0">
+  <!-- Phones get the portrait Cayman, native portrait so it stays sharp. Wide screens get the wider crop. -->
+  <picture class="hero-img" id="heroImg">
+    <source media="(min-width:760px)" srcset="assets/porsche-foam.jpg">
+    <img src="assets/cayman-foam.jpg" alt="Porsche Cayman GT4 covered in thick foam during a Mr. Auto Treatment detail" fetchpriority="high">
+  </picture>
+  <div class="wrap hero-copy" id="heroCopy">
+    <h1 class="label up">Mobile detailing · Sacramento</h1>
+    <p class="head up" style="--d:1">Give it the <em>treatment.</em></p>
+    <p class="hero-sub up" style="--d:2">Elite detailing by hand, inside and out, wherever your car is parked.</p>
+    <div class="hero-cta up" style="--d:3">
+      <a class="btn btn-gold" id="heroBook" href="#book">Book a detail</a>
+      <p class="hero-note">Bronze from <b>$150</b> · <b>$25</b> holds your spot</p>
     </div>
-    <p class="lede">Interior and exterior detailing done right, at your house, at your job, or dropped off with us. Pick a time online and we'll text you to confirm.</p>
-    <div class="actions">
-      <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
-      <a class="btn btn-line btn-lg" href="#services">See Services</a>
-    </div>
-    <ul class="facts">
-      <li><svg><use href="#i-pin"/></svg>We come to you</li>
-      <li><svg><use href="#i-clock"/></svg>6am to 6pm, 7 days</li>
-      <li><svg><use href="#i-msg"/></svg>Text confirmation</li>
-    </ul>
+  </div>
+  <div class="seal" aria-hidden="true">
+    <svg viewBox="0 0 160 160"><defs><path id="ring" d="M80,80 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0"/></defs>
+      <text><textPath href="#ring">Mr. Auto Treatment · Elite detailing · Sacramento ·</textPath></text></svg>
+    <span class="logo"><img src="assets/logo.jpg" alt=""></span>
   </div>
 </section>
 
-<div class="ticker" aria-hidden="true">
-  <div class="ticker-track">
-    <span>Foam Bath</span><span>Interior Detail</span><span>Headliner Shampoo</span><span>Steam Clean</span><span>Window Tint</span><span>Headlight Restoration</span><span>Curb Rash</span><span>Under Carriage</span>
-    <span>Foam Bath</span><span>Interior Detail</span><span>Headliner Shampoo</span><span>Steam Clean</span><span>Window Tint</span><span>Headlight Restoration</span><span>Curb Rash</span><span>Under Carriage</span>
+<div class="proof">
+  <div class="wrap proof-in">
+    <div class="proof-item"><svg><use href="#i-shield"/></svg><span><b>Licensed and insured.</b> Your vehicle is in good hands</span></div>
+    <div class="proof-item"><svg><use href="#i-pin"/></svg><span><b>We come to you.</b> Sacramento and the surrounding area</span></div>
+    <div class="proof-item"><svg><use href="#i-lock"/></svg><span><b>$25 holds your spot.</b> The rest when it's done</span></div>
   </div>
 </div>
 
-<section id="services">
+<div class="marq" aria-hidden="true"><div class="marq-track" id="marq"></div></div>
+
+<div class="statement">
   <div class="wrap">
-    <div class="menu-head">
-      <div>
-        <p class="eyebrow">The menu</p>
-        <h2 class="h2">Two ways to get it done.</h2>
-        <p class="lede" style="margin:0">One to keep it looking right. One that leaves nothing on the table.</p>
-      </div>
-    </div>
-
-    <div class="menu" id="menu"></div>
-    <p class="sizes" id="sizeNote"></p>
-
-    <div class="extras">
-      <div class="card">
-        <h4>Also on its own</h4>
-        <p class="sub">Every one of these is already inside the Executive package. We'll also do any of them on their own.</p>
-        <div class="ala" id="alaCarte"></div>
-        <p class="note" style="margin:0">Priced per vehicle, because a tint job on a coupe isn't a tint job on a Suburban. Send a photo and we'll text you a number.</p>
-      </div>
-      <div class="card cta-card">
-        <h4>Not sure what it needs?</h4>
-        <p class="sub">Tell us what's bugging you about the car and send a couple of photos. You'll get a straight price back by text, no walkthrough required.</p>
-        <div class="spacer"></div>
-        <a class="btn btn-gold btn-block" href="#quote">Get a Price</a>
-        <a class="btn btn-line btn-block" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
-      </div>
-    </div>
+    <p class="rv" id="statement">Excellence isn't the goal, it's the standard. Every car gets the same care, whether it's a daily driver, a work truck or the one you only take out on Sundays.</p>
   </div>
-</section>
+</div>
 
-<section id="work" style="padding-top:0">
-  <div class="wrap">
-    <p class="eyebrow">Recent work</p>
-    <h2 class="h2">Straight from the driveway.</h2>
-    <p class="lede">Real jobs, shot on the spot.</p>
-    <div class="gallery" id="gallery"></div>
-    <div class="follow">
-      <span>More on Instagram and Facebook.</span>
-      <a href="https://www.instagram.com/mrautotreatment_/" target="_blank" rel="noopener">@mrautotreatment_ →</a>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="about">
-  <div class="wrap about-grid">
-    <div>
-      <blockquote>Blessed hands. <span class="script">Unmatched results.</span></blockquote>
-      <p class="sig" id="ownerSig"></p>
+<section class="pkg" id="bronze">
+  <div class="wrap fd">
+    <div class="fd-pic ph rv-clip" data-par>
+      <img src="assets/interior.jpg" alt="Clean truck interior after a detail: seats, dash and carpets" loading="lazy" decoding="async">
     </div>
     <div>
-      <p class="eyebrow">About</p>
-      <p id="aboutText"></p>
-      <p>Every job gets the same care whether it's a daily driver, a work truck, or something you only take out on Sundays. If we think your car needs more time than you booked, we tell you before we start, not after.</p>
-      <p>It isn't only soap and a vacuum either. Tint, headlights, curb rash and an oil change all happen in the same driveway, on the same visit.</p>
-      <span class="faith" id="faithLine" hidden><svg style="width:16px;height:16px"><use href="#i-spark"/></svg><span></span></span>
-    </div>
-  </div>
-</section>
-
-<section id="how">
-  <div class="wrap">
-    <p class="eyebrow">How it works</p>
-    <h2 class="h2">Booked in a minute.</h2>
-    <div class="how">
-      <div><h4>Pick a time</h4><p>Pick an open slot below. No account, no card, nothing to pay online.</p></div>
-      <div><h4>Get a text</h4><p>We text you to confirm, then remind you the day before and again an hour out.</p></div>
-      <div><h4>We pull up</h4><p>We come to your driveway or lot. Or drop the car off with us and grab it when it's done.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="book" class="book-sec">
-  <div class="wrap">
-    <p class="eyebrow">Book</p>
-    <h2 class="h2">Grab a spot.</h2>
-    <p class="lede" style="margin:0">Pick a day and a time. Or call and we'll find one with you.</p>
-
-    <div class="book">
-      <div class="panel">
-        <h4 id="bookTitle">Book online</h4>
-        <p class="sub" id="bookSub">We text you to confirm. Nothing is charged online.</p>
-
-        <div id="picker">
-          <span class="lab">Service</span>
-          <div class="seg" id="segService"></div>
-          <p class="note svc-alt" id="svcAlt" hidden></p>
-          <span class="lab">Day</span>
-          <div class="days" id="days"></div>
-          <div class="slots" id="slots"></div>
+      <div class="sec-head">
+        <p class="label rv tier" style="--c:#c48a57">Bronze</p>
+        <h2 class="head rv" style="--d:1">Executive Bronze Detail</h2>
+      </div>
+      <p class="fd-lead rv" style="--d:2">The maintenance detail. Book it every few weeks and the car never gets away from you.</p>
+      <div class="prices rv" style="--d:2" data-prices="essential"></div>
+      <p class="fd-meta rv" style="--d:3"><span>About 2 hours</span><span>At your place</span></p>
+      <div class="incl">
+        <div class="rv">
+          <h3 class="label">Outside</h3>
+          <ol><li>Full exterior hand wash and dry</li><li>Wheels, tires and wheel wells</li><li>Tire shine and trim dressing</li></ol>
         </div>
+        <div class="rv" style="--d:1">
+          <h3 class="label">Inside</h3>
+          <ol><li>Full vacuum, seats and carpet</li><li>Dash, console and door panels</li><li>Windows in and out</li></ol>
+        </div>
+      </div>
+      <div class="fd-cta rv">
+        <button type="button" class="btn btn-gold" data-book="essential">Book Bronze</button>
+        <a class="arrow" data-tel>Or call <span data-phone></span></a>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <form id="bookForm" novalidate>
-          <div id="step2">
-            <div class="picked" id="pickedBar" hidden><b id="pickedText"></b><button type="button" class="linkbtn" id="changeTime">Change</button></div>
-            <span class="lab">Where</span>
-            <div class="seg" id="segMode">
-              <button type="button" data-mode="mobile" class="sel">We come to you<small>Driveway, lot or work</small></button>
-              <button type="button" data-mode="dropoff">I'll drop it off<small>Address texted to you</small></button>
-            </div>
-            <div class="row2">
-              <div class="field"><label for="bName">Name</label><input id="bName" autocomplete="name" placeholder="Your name"></div>
-              <div class="field"><label for="bPhone">Mobile</label><input id="bPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
-            </div>
-            <div class="field"><label for="bVehicle">Vehicle</label><input id="bVehicle" placeholder="2020 Dodge Charger"></div>
-            <span class="lab">Size</span>
-            <div class="seg" id="segSize"></div>
-            <div class="field" id="addrField"><label for="bAddr">Address</label><input id="bAddr" autocomplete="street-address" placeholder="Street address, Sacramento">
-              <p class="note" id="travelNote"></p></div>
-            <button type="button" class="linkbtn" id="noteToggle">Add a note</button>
-            <div class="field" id="noteField" hidden style="margin-top:6px"><input id="bNotes" placeholder="Pet hair, tight driveway, second car"></div>
-            <button type="submit" class="btn btn-gold btn-lg btn-block" id="bookBtn" style="margin-top:12px">Book My Spot</button>
-            <p class="err" id="bookErr"></p>
+<section class="pkg" id="platinum">
+  <div class="wrap fd flip">
+    <div class="fd-pic ph rv-clip" data-par>
+      <img src="assets/vette-front.jpg" alt="Red Corvette C6 finished and gleaming in a driveway" loading="lazy" decoding="async">
+    </div>
+    <div>
+      <div class="sec-head">
+        <p class="label rv tier" style="--c:#d5dae1">Platinum<span class="tag">Most complete</span></p>
+        <h2 class="head rv" style="--d:1">Elite Platinum Detail</h2>
+      </div>
+      <p class="fd-lead rv" style="--d:2">A full reset, inside and out. Decontaminated paint, six months of protection and an interior that feels new again.</p>
+      <div class="prices rv" style="--d:2" data-prices="platinum"></div>
+      <p class="fd-meta rv" style="--d:3"><span>About 3 hours</span><span>At your place</span></p>
+      <div class="incl">
+        <div class="rv">
+          <h3 class="label">Outside</h3>
+          <ol><li>Pre-rinse and contact hand wash</li><li>Wheels and wells detailed, tires dressed</li><li>Paint decontamination</li><li>6-month paint protection</li></ol>
+        </div>
+        <div class="rv" style="--d:1">
+          <h3 class="label">Inside</h3>
+          <ol><li>Deep, thorough vacuum</li><li>Dash and center console disinfected and treated</li><li>Cloth and leather seats refreshed</li></ol>
+        </div>
+      </div>
+      <div class="fd-cta rv">
+        <button type="button" class="btn btn-gold" data-book="platinum">Book Platinum</button>
+        <a class="arrow" data-tel>Or call <span data-phone></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label rv">Our Work</p>
+      <h2 class="head rv" style="--d:1">Straight from the driveway.</h2>
+    </div>
+    <div class="rail rv" style="--d:2" id="rail"></div>
+    <div class="rail-foot">
+      <span class="swipe">Swipe</span>
+      <span class="dots" id="dots" aria-hidden="true"></span>
+    </div>
+  </div>
+</section>
+
+<section class="others" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label rv">Specialty Work</p>
+      <h2 class="head rv" style="--d:1">Anything else it needs.</h2>
+      <p class="lead rv" style="--d:2">Add any of these to a package or get them on their own. Each one is priced for your vehicle, so tap it and text us a photo.</p>
+    </div>
+    <div>
+      <div id="svcList"></div>
+      <p class="sizes rv"><b>Not just cars.</b> RVs, boats, motorcycles, fleet accounts and monthly maintenance plans too. <a class="arrow" data-sms-quote="an RV, boat or fleet job" style="margin-left:6px">Ask about it</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap about-in">
+    <div class="rv"><span class="logo"><img src="assets/logo.jpg" alt="Mr. Auto Treatment logo" loading="lazy"></span></div>
+    <div class="about-copy">
+      <div class="sec-head" style="margin-bottom:24px">
+        <p class="label rv">About</p>
+        <h2 class="head rv" style="--d:1">Blessed hands. Unmatched results.</h2>
+      </div>
+      <div id="aboutText"></div>
+      <p class="sig rv" id="ownerSig"></p>
+      <div class="marks rv">
+        <div><b>Licensed and insured</b><span>Your vehicle is in good hands</span></div>
+        <div><b>Satisfaction guaranteed</b><span>We don't cut corners</span></div>
+        <div><b>Premium products</b><span>Pro-grade chemicals and protection</span></div>
+        <div><b>Flexible scheduling</b><span>6am to 6pm, every day</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="label rv">How It Works</p>
+      <h2 class="head rv" style="--d:1">Booked in a minute.</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div><h3>Pick a time</h3>
+        <p>Choose Bronze or Platinum, your vehicle size, then a day and a time. No account to make.</p></div></div>
+      <div class="step rv"><div><h3>Hold it with $25</h3>
+        <p id="stepDeposit"></p></div></div>
+      <div class="step rv"><div><h3>We pull up</h3>
+        <p id="stepPay"></p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="book-sec" id="book">
+  <div class="wrap book">
+    <div class="panel rv">
+      <div class="panel-hd"><span class="logo"><img src="assets/logo.jpg" alt="" loading="lazy"></span><h4 id="bookTitle">Book online</h4></div>
+      <p class="ph-sub" id="bookSub">Takes about a minute. We text you to confirm.</p>
+
+      <div id="picker">
+        <p class="svc-label">Which detail?</p>
+        <div class="seg" id="segService"></div>
+        <p class="svc-label">Vehicle size</p>
+        <div class="seg" id="segSize"></div>
+        <p class="svc-label">Pick a day and time</p>
+        <div class="days" id="days"></div>
+        <div class="slots" id="slots"></div>
+      </div>
+
+      <form id="bookForm" novalidate>
+        <div id="step2" hidden>
+          <div class="picked">
+            <b id="pickedText"></b>
+            <button type="button" class="linkbtn" id="changeTime">Change</button>
           </div>
-        </form>
-        <div class="done" id="bookOk"></div>
-      </div>
-
-      <div class="side">
-        <div class="panel callcard">
-          <span class="lab">Rather talk?</span>
-          <span class="num" data-phone></span>
-          <p>Call or text and we'll find you a time. If we're under a car, the call still gets answered.</p>
-          <div class="actions">
-            <a class="btn btn-gold" data-tel><svg><use href="#i-phone"/></svg>Call</a>
-            <a class="btn btn-line" data-sms><svg><use href="#i-msg"/></svg>Text</a>
+          <div class="row2">
+            <div class="field"><label for="bName">Name</label><input id="bName" autocomplete="name" placeholder="Your name"></div>
+            <div class="field"><label for="bPhone">Mobile</label><input id="bPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
           </div>
+          <div class="field"><label for="bVehicle">Vehicle</label><input id="bVehicle" placeholder="2020 Dodge Charger"></div>
+          <div class="field"><label for="bAddr">Address</label><input id="bAddr" autocomplete="street-address" placeholder="Where the car will be">
+            <p class="fieldnote" id="travelNote"></p></div>
+          <button type="button" class="linkbtn" id="noteToggle">Add a note</button>
+          <div class="field" id="noteField" hidden style="margin-top:10px"><input id="bNotes" placeholder="Pet hair, gate code, tight driveway"></div>
+          <div class="sum" id="sum"></div>
+          <button type="submit" class="btn btn-gold btn-block" id="bookBtn" style="margin-top:22px"></button>
+          <p class="err-msg" id="bookErr"></p>
+          <p class="formnote" id="formNote"></p>
         </div>
-        <div class="panel dropcard">
-          <div class="drow"><span class="lab">Dropping off?</span><p id="dropText"></p></div>
-          <div class="drow"><span class="lab">Hours</span><p id="hoursText"></p></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="quote">
-  <div class="wrap quote">
-    <div>
-      <p class="eyebrow">Get a price</p>
-      <h2 class="h2">Bigger jobs start with a look.</h2>
-      <p class="lede">The Executive package and anything off the à-la-carte list get priced per vehicle. Tell us what you've got and we'll text you back with a real number, not a range.</p>
-      <ul class="quote-list">
-        <li><span class="ico"><svg><use href="#i-spark"/></svg></span><span><b>Executive Supreme Shine</b><i>Everything we do, on one car, in one day. Inside, outside, underneath.</i></span></li>
-        <li><span class="ico"><svg><use href="#i-shield"/></svg></span><span><b>Window tinting</b><i>Heat and glare cut down, and the cabin stops cooking in a Sacramento July.</i></span></li>
-        <li><span class="ico"><svg><use href="#i-sun"/></svg></span><span><b>Headlight restoration</b><i>Yellow, cloudy lenses brought back to clear, so you actually see at night.</i></span></li>
-        <li><span class="ico"><svg><use href="#i-wheel"/></svg></span><span><b>Curb rash correction</b><i>Scraped wheel lips cleaned up so they stop being the first thing you see.</i></span></li>
-        <li><span class="ico"><svg><use href="#i-drop"/></svg></span><span><b>Oil change</b><i>Done in your driveway while the car's already being worked on.</i></span></li>
-      </ul>
-    </div>
-    <div class="panel">
-      <h4 id="quoteTitle">Request a quote</h4>
-      <p class="sub" id="quoteSub">For the jobs that need a price before they get booked. Booking the Essential detail instead? <a href="#book" class="gold">Use the calendar above</a>.</p>
-        <p class="sub" style="margin-top:-12px">Fill this in and it opens a text to us with your answers already written out. Attach a photo of the car and hit send.</p>
-      <form id="quoteForm" novalidate>
-        <span class="lab">What do you need?</span>
-        <div class="seg" id="segQuote"></div>
-        <div class="row2">
-          <div class="field"><label for="qName">Name</label><input id="qName" autocomplete="name" placeholder="Your name"></div>
-          <div class="field"><label for="qPhone">Mobile</label><input id="qPhone" type="tel" inputmode="tel" autocomplete="tel" placeholder="(916) 555-0123"></div>
-        </div>
-        <div class="field"><label for="qVehicle">Vehicle</label><input id="qVehicle" placeholder="2017 BMW 3 Series, black"></div>
-        <div class="field"><label for="qDetails">What's going on with it?</label><textarea id="qDetails" placeholder="Two kids and a dog, hasn't been cleaned since I bought it"></textarea></div>
-        <p class="handoff"><svg><use href="#i-msg"/></svg>Next step opens your texting app with a message to us, ready to send.</p>
-        <button type="submit" class="btn btn-gold btn-lg btn-block" id="quoteBtn"><svg><use href="#i-msg"/></svg>Open My Text</button>
-        <p class="err" id="quoteErr"></p>
-        <p class="note" style="text-align:center">Nothing sends until you press send yourself.</p>
       </form>
-      <div class="done" id="quoteOk"></div>
+      <div class="ok-msg" id="bookOk"></div>
+    </div>
+
+    <div class="book-side">
+      <div class="sec-head">
+        <p class="label rv">Book</p>
+        <h2 class="head rv" style="--d:1">Pick a time. We'll bring everything.</h2>
+        <p class="lead rv" style="--d:2">Your detail, your size, then a day and a time. Seven days a week, 6am to 6pm.</p>
+      </div>
+      <div class="callcard rv">
+        <p class="label">Rather talk?</p>
+        <a class="big" data-tel><span data-phone></span></a>
+        <p>Call or text and we'll find you a time on the spot.</p>
+        <div class="btns">
+          <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg>Call</a>
+          <a class="btn btn-line" data-sms>Text</a>
+        </div>
+      </div>
+      <p class="area" id="areaText"></p>
     </div>
   </div>
 </section>
 
-<section id="faq" class="about">
-  <div class="wrap info">
-    <div>
-      <p class="eyebrow">Service area</p>
-      <h2 class="h2">Where we go.</h2>
-      <p style="color:var(--muted);margin:0" id="areaText"></p>
-      <div class="area" id="areaList"></div>
-      <div class="travel" id="travelText"></div>
-    </div>
-    <div>
-      <p class="eyebrow">FAQ</p>
-      <div class="faq" id="faqList"></div>
-    </div>
-  </div>
-</section>
-
-<section class="finale">
+<section class="reviews" id="reviews">
   <div class="wrap">
-    <h2 class="h2">Give it the <span class="script" style="font-size:1.35em">treatment.</span></h2>
-    <p class="lede">Pick a time in under a minute. We'll text you to confirm.</p>
-    <div class="actions">
-      <a class="btn btn-gold btn-lg" href="#book"><svg><use href="#i-cal"/></svg>Book a Detail</a>
-      <a class="btn btn-line btn-lg" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
+    <div class="sec-head">
+      <p class="label rv">Reviews</p>
+      <h2 class="head rv" style="--d:1">What people said after.</h2>
+    </div>
+    <div class="revs" id="revs"></div>
+    <div class="ask rv" id="ask">
+      <span class="logo"><img src="assets/logo.jpg" alt="" loading="lazy"></span>
+      <p><b>Had us out?</b>A couple of honest sentences helps a local business more than you'd think.</p>
+      <div class="links">
+        <a class="arrow" id="reviewLink" target="_blank" rel="noopener">Leave a review <svg><use href="#i-arrow"/></svg></a>
+        <a class="arrow" data-ig target="_blank" rel="noopener">See more on Instagram</a>
+      </div>
     </div>
   </div>
 </section>
+
+<section id="faq" style="border-top:1px solid var(--line)">
+  <div class="wrap faq-wrap">
+    <div class="sec-head">
+      <p class="label rv">FAQ</p>
+      <h2 class="head rv" style="--d:1">Common questions</h2>
+    </div>
+    <div class="faq rv" id="faqList"></div>
+  </div>
+</section>
+
+<section class="finale" id="finale">
+  <div class="wrap">
+    <span class="logo rv"><img src="assets/logo.jpg" alt="Mr. Auto Treatment" loading="lazy"></span>
+    <p class="big rv" style="--d:1">Give it the <em>treatment.</em></p>
+    <p class="rv" style="--d:2">Pick a detail and a time in about a minute. $25 holds your spot, and we come to you.</p>
+    <div class="acts rv" style="--d:3">
+      <a class="btn btn-gold" href="#book">Book a detail</a>
+      <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer class="site">
+<footer>
   <div class="wrap">
     <div class="foot">
       <div>
-        <h5>Mr. Auto Treatment</h5>
-        <p style="max-width:38ch">Mobile and drop-off car detailing in Sacramento, California. Open every day, 6am to 6pm.</p>
-        <a href="https://www.instagram.com/mrautotreatment_/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px"><svg style="width:17px;height:17px"><use href="#i-ig"/></svg>@mrautotreatment_</a>
-        <a href="https://www.facebook.com/MrAutoTreatment" target="_blank" rel="noopener">Facebook</a>
+        <span class="logo"><img src="assets/logo.jpg" alt="Mr. Auto Treatment" loading="lazy"></span>
+        <p>Where professionalism meets perfection. Elite mobile detailing in Sacramento and the surrounding area.</p>
       </div>
       <div>
-        <h5>Book</h5>
+        <h4>Contact</h4>
         <a data-tel><span data-phone></span></a>
-        <a data-sms>Text us</a>
-        <a href="#book">Online booking</a>
-        <a href="#quote">Request a quote</a>
+        <a data-mail><span data-email></span></a>
+        <a data-ig target="_blank" rel="noopener"><span data-ighandle></span></a>
+        <a data-fb target="_blank" rel="noopener">Facebook</a>
       </div>
       <div>
-        <h5>Info</h5>
-        <a href="#services">Services</a>
-        <a href="#work">Recent work</a>
-        <a href="#faq">FAQ</a>
-        <p id="footHours"></p>
+        <h4>Hours</h4>
+        <p>Every day, 6am to 6pm<br>100% mobile, we come to you<br>Sacramento, CA</p>
       </div>
     </div>
-    <div class="foot-bot">
-      <span>© <span id="yr">2026</span> Mr. Auto Treatment · Sacramento, CA</span>
-      <span>Nothing charged online</span>
-    </div>
+    <p class="fine">© <span id="yr">2026</span> Mr. Auto Treatment · Thank you for supporting a local business.</p>
   </div>
 </footer>
 
-<div class="mobar">
+<nav class="bar" id="bar" aria-label="Call or book">
   <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg>Call</a>
-  <a class="btn btn-gold" href="#book"><svg><use href="#i-cal"/></svg>Book</a>
-</div>
+  <a class="btn btn-gold" href="#book">Book a detail</a>
+</nav>
 
 <script>
 /* =====================================================================
    MR. AUTO TREATMENT site config. Everything tweakable lives here.
-   Anything marked PLACEHOLDER is a guess until the owner confirms it.
+   Anything marked PLACEHOLDER is still a guess until he confirms it.
    ===================================================================== */
 const CFG = {
   BUSINESS   : 'Mr. Auto Treatment',
-  PREVIEW    : false,                 // true shows the "Preview" ribbon. Off: this is the version he's shown as finished
-  PHONE_E164 : '+19166136405',        // confirmed by the owner
+  PHONE_E164 : '+19166136405',
   PHONE_TEXT : '(916) 613-6405',
-  PHONE_IS_PLACEHOLDER: false,        // real number, so the quote form opens a real text
+  EMAIL      : 'mrautotreatment@gmail.com',        // from his door magnet
+  IG         : 'https://www.instagram.com/mrautotreatment_/',
+  IG_HANDLE  : '@mrautotreatment_',
+  FB         : 'https://www.facebook.com/MrAutoTreatment',
 
-  OWNER_FIRST: 'Emmanuel',            // PLACEHOLDER: from his Facebook, confirm he wants it shown
-  ABOUT      : 'Mr. Auto Treatment is a Sacramento detailing business run by Emmanuel. Most jobs happen right in your driveway, and if that doesn\'t work for you, you can drop the car off instead.',
-  FAITH_LINE : 'God first, in the work and everything else.',   // PLACEHOLDER: ask how much faith to show; '' hides it
+  OWNER_FIRST: 'Emmanuel',                          // PLACEHOLDER: confirm he wants his name shown
+  // PLACEHOLDER: he's sending his own About paragraph. One string per paragraph.
+  ABOUT: [
+    'Mr. Auto Treatment is a <b>100% mobile</b> detailing business out of Sacramento. Everything we need comes with us, so the work happens in your driveway or your job\'s parking lot while you get on with your day.',
+    'We don\'t cut corners. We earn trust, one car at a time.',
+  ],
 
-  /* --- the menu --------------------------------------------------------
-     Two packages, in the owner's own words. `book:true` puts a service in
-     the calendar; `book:false` sends it to the quote form instead.
-     An id and minutes here must match booking_config.services on the
-     dashboard once that account exists. The server's copy wins for length. */
+  /* --- vehicle sizes. Every package price is a STARTING price per size. --- */
+  SIZES: [
+    { id:'sedan',     label:'Sedan',       sub:'or coupe' },
+    { id:'crossover', label:'Crossover',   sub:'RAV4, CR-V size' },
+    { id:'suv',       label:'SUV',         sub:'Tahoe, Explorer' },
+    { id:'xl',        label:'Truck or van',sub:'pickups, minivans' },
+  ],
+
+  /* --- the two details. Stage 1 and Stage 2, named the way he asked. -----
+     `plus` sizes show a "+" because bigger vehicles cost extra and he confirms
+     the number by text. The id must match booking_config.services on the
+     dashboard; Bronze keeps the old id `essential`.                         */
   SERVICES: [
-    { id:'essential', label:'Essential Supreme Shine', stage:'Stage 1', minutes:120, from:150, book:true,
-      time:'About 2 hours', blurb:'The maintenance detail',
-      lead:'The one you book every few weeks to keep it looking right.',
-      items:['Full exterior hand wash and dry','Wheels, tires and wheel wells','Full interior vacuum, seats and carpet',
-             'Dash, console and door panels cleaned','Windows in and out','Tire shine and trim dressing'] },
-
-    { id:'executive', label:'Executive Supreme Shine', stage:'Stage 2', minutes:480, from:null, book:false,
-      time:'A full day', blurb:'Everything we do', star:true, quoteAs:'Executive package',
-      lead:'The whole car, top to bottom. Nothing left on the table.',
-      items:['Full interior detail','Full exterior detail','Shampoo seats and carpets','Shampoo headliner',
-             'Steam clean seats, carpets and AC vents','Headlight restoration','Under carriage cleaning',
-             'Curb rash correction','Window tinting','Oil change'] },
-  ],
-  SIZE_NOTE  : 'Prices are for a sedan or coupe. SUVs, trucks and 3-row vehicles run a little more, and we confirm the number by text before we start. Nothing changes on you mid-job.',
-
-  /* --- things he'll do on their own ------------------------------------
-     He hasn't priced these individually yet, so they're quote-only.      */
-  ALA_CARTE: [
-    'Window tinting', 'Headlight restoration', 'Curb rash correction', 'Oil change',
-    'Under carriage cleaning', 'Seat and carpet shampoo', 'Headliner shampoo', 'Steam clean and AC vents',
+    { id:'essential', tier:'Bronze',   label:'Executive Bronze Detail', short:'Bronze',   minutes:120, time:'About 2 hours',
+      prices:{ sedan:150, crossover:175, suv:200, xl:200 }, plus:['xl'] },
+    { id:'platinum',  tier:'Platinum', label:'Elite Platinum Detail',   short:'Platinum', minutes:180, time:'About 3 hours',
+      prices:{ sedan:300, crossover:325, suv:350, xl:350 }, plus:['xl'] },
   ],
 
-  /* --- booking backend -------------------------------------------------
-     The page asks the dashboard for this slug. If the slug doesn't exist
-     yet (404) it runs a preview calendar and saves nothing. The moment the
-     client account is created with this slug, bookings go live with no
-     redeploy.                                                              */
+  /* --- deposit -----------------------------------------------------------
+     URL: a Stripe Payment Link for $25 made from HIS Stripe account. Leave ''
+     until it exists: bookings still save and the confirmation says we'll text
+     a deposit link. Set the link's after-payment redirect to
+     <site>/?deposit=paid#book and the page thanks them when they come back. */
+  DEPOSIT: {
+    AMOUNT : 25,
+    URL    : '',
+    // PLACEHOLDER: he asked for the deposit, not this exact policy. Confirm it.
+    POLICY : 'It goes toward your total. Text us at least 24 hours ahead to move your time and it carries over. No-shows lose it.',
+  },
+  PAYMENTS: 'cash, card, Zelle, Apple Pay or Google Pay. Business invoices available',   // from his door magnet
+
+  /* --- booking backend: dashboard.boyerscales.com, live. ------------------ */
   API_BASE   : 'https://dashboard.boyerscales.com',
   SLUG       : 'mrautotreatment',
   STEP_MIN   : 60,
   HORIZON    : 14,
-  LEAD_HOURS : 24,                     // PLACEHOLDER: "at least a day"
+  LEAD_HOURS : 24,
   HOURS      : {0:['06:00','18:00'],1:['06:00','18:00'],2:['06:00','18:00'],3:['06:00','18:00'],
-                4:['06:00','18:00'],5:['06:00','18:00'],6:['06:00','18:00']},   // confirmed: "I typically do 6am to 6pm"
-  HOURS_TEXT : 'Every day, 6am to 6pm.',
-  /* [tag, note]. The tag is what rides along to his booking notes, so it
-     stays short enough to read at a glance on a phone. */
-  SIZES      : [['Sedan','or coupe'],['SUV','or crossover'],['Truck','or 3-row']],
-  QUOTE_OPTIONS: ['Executive package','Window tinting','Headlight restoration',
-                  'Curb rash correction','Oil change','Something else'],
+                4:['06:00','18:00'],5:['06:00','18:00'],6:['06:00','18:00']},
 
-  /* --- area --------------------------------------------------------------*/
-  HUB        : 'Sacramento',
-  RADIUS_MI  : 15,                     // PLACEHOLDER
-  TRAVEL_PER_MILE : 1.5,               // PLACEHOLDER
-  AREAS      : ['Downtown','Midtown','Land Park','Natomas','Arden-Arcade','Carmichael','Rancho Cordova','West Sacramento','Pocket','Florin','Elk Grove','Citrus Heights'],
-  DROPOFF    : 'South Sacramento',     // PLACEHOLDER: real spot unknown
+  /* --- specialty work, priced by text --------------------------------------- */
+  ADDONS: [
+    ['Paint correction',      'Swirls and haze polished out of the paint.'],
+    ['Ceramic coating',       'Long-term gloss and protection.'],
+    ['Headlight restoration', 'Yellow, cloudy lenses brought back to clear.'],
+    ['Window tint',           'Less heat and glare in a Sacramento summer.'],
+    ['Engine bay',            'Degreased, cleaned and dressed.'],
+    ['Pet hair and odor',     'Removed, not covered up.'],
+    ['Shampoo and steam',     'Seats, carpet, headliner and vents.'],
+    ['Curb rash and oil change','Done in the same driveway, on the same visit.'],
+  ],
 
-  /* --- photos: missing files just drop out of the grid ------------------ */
+  /* --- area. ~30 minutes free, 45 min to an hour costs extra.
+         PLACEHOLDER: the fee amount, and where he's based.                  */
+  FREE_MIN : 30,
+  AREAS    : 'Sacramento, West Sacramento, Elk Grove, Natomas, Rancho Cordova, Citrus Heights, Carmichael, Roseville, Folsom, Davis, Lincoln and Plumas Lake',
+
+  /* --- reviews. Empty shows only the "had us out?" row. Add real ones as
+         {text, name}. Word for word. Never write these ourselves.           */
+  REVIEWS   : [],
+  REVIEW_URL: 'https://www.facebook.com/MrAutoTreatment/reviews',
+
   SHOTS: [
-    {src:'assets/chevy-c10.jpg',     cap:'Classic Chevy',  wide:false},
-    {src:'assets/headlight.jpg',     cap:'Headlights',                   wide:false},
-    {src:'assets/charger.jpg',       cap:'Dodge Charger, foam bath',     wide:false},
-    {src:'assets/porsche-tall.jpg',  cap:'Porsche 718, foam bath',       wide:false},
-    {src:'assets/odyssey.jpg',       cap:'Honda Odyssey',   wide:false},
-    {src:'assets/porsche-foam.jpg',  cap:'Porsche 718',        wide:false},
+    ['assets/charger-foam.jpg',    'Dodge Charger',  'Foam bath'],
+    ['assets/c10.jpg',             '1967 Chevy C10', 'Exterior'],
+    ['assets/suv-foam.jpg',        'Lexus SUV',      'Foam bath'],
+    ['assets/engine-bay.jpg',      'Engine bay',     'Detail'],
+    ['assets/c10-interior.jpg',    '1967 Chevy C10', 'Interior'],
+    ['assets/odyssey.jpg',         'Honda Odyssey',  'Full detail'],
+    ['assets/vette-foam.jpg',      'Corvette',       'Foam bath'],
+    ['assets/headlight-after.jpg', 'Headlights',     'Exterior'],
+    ['assets/red-foam.jpg',        'Contact wash',   'Exterior'],
+    ['assets/red-vette.jpg',       'Corvette',       'Finished'],
   ],
 };
 
 const $  = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+const REDUCED = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const pad = n => String(n).padStart(2,'0');
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const money = n => '$' + (Number.isInteger(n) ? n : n.toFixed(2));
-/* Types out as (916) 613-6405 while you go. Never fights the caret at the end,
-   and leaves anything that isn't a 10-digit US number alone. */
+const svcOf = id => CFG.SERVICES.find(x => x.id === id);
+const sizeOf = id => CFG.SIZES.find(x => x.id === id);
+const price = (s, size) => '$' + s.prices[size] + (s.plus.includes(size) ? '+' : '');
+const smsTo = body => `sms:${CFG.PHONE_E164}?&body=${encodeURIComponent(body)}`;
 const fmtPhone = v => {
   const d = String(v||'').replace(/\D/g,'').replace(/^1(?=\d{10})/,'').slice(0,10);
   if (d.length < 4) return d;
   if (d.length < 7) return `(${d.slice(0,3)}) ${d.slice(3)}`;
   return `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;
 };
-function livePhone(sel){
-  const el = document.querySelector(sel);
-  if (!el) return;
-  el.addEventListener('input', () => {
-    const atEnd = el.selectionStart === el.value.length;
-    el.value = fmtPhone(el.value);
-    if (atEnd) el.setSelectionRange(el.value.length, el.value.length);
-  });
-}
 
 /* ---------------------------- static fill ----------------------------- */
 (function fill(){
-  $('#previewBar').hidden = !CFG.PREVIEW;
-  $$('[data-phone]').forEach(e => e.textContent = CFG.PHONE_TEXT);
-  $$('[data-tel]').forEach(e => e.href = 'tel:' + CFG.PHONE_E164);
-  $$('[data-sms]').forEach(e => e.href = 'sms:' + CFG.PHONE_E164);
+  $$('[data-prices]').forEach(row => {
+    const s = svcOf(row.dataset.prices);
+    row.innerHTML = CFG.SIZES.map(z => `<div><b>$${s.prices[z.id]}${s.plus.includes(z.id) ? '<small>+</small>' : ''}</b><span>${esc(z.label)}</span></div>`).join('');
+  });
 
-  $('#menu').innerHTML = CFG.SERVICES.map(s => `
-    <article class="dish${s.star ? ' star' : ''}">
-      <p class="stage">${esc(s.stage)} · ${esc(s.blurb)}</p>
-      <h3>${esc(s.label)}</h3>
-      <p class="time">${esc(s.time)}</p>
-      <p class="lead">${esc(s.lead)}</p>
-      ${s.from
-        ? `<div class="from"><small>From</small><b>$${s.from}</b></div>`
-        : `<div class="from quote"><small>Price</small><b>By quote</b></div>`}
-      <ul>${s.items.map(i => `<li><svg><use href="#i-check"/></svg>${esc(i)}</li>`).join('')}</ul>
-      ${s.book
-        ? `<a class="btn btn-gold btn-block" href="#book" data-pick="${s.id}">Book this</a>`
-        : `<a class="btn btn-line btn-block" href="#quote" data-quote="${esc(s.quoteAs || s.label)}">Get a Price</a>`}
-    </article>`).join('');
-  $('#sizeNote').textContent = CFG.SIZE_NOTE;
-  $('#alaCarte').innerHTML = CFG.ALA_CARTE.map(n => `<span><svg><use href="#i-check"/></svg>${esc(n)}</span>`).join('');
+  $('#svcList').innerHTML = CFG.ADDONS.map(([n, d]) => `<div class="svc rv"><h3>${esc(n)}</h3><p>${esc(d)}</p>
+    <a class="arrow" data-sms-quote="${esc(n.toLowerCase())}">Get a price <svg><use href="#i-arrow"/></svg></a></div>`).join('');
+  $$('[data-sms-quote]').forEach(a => a.href = smsTo(`Hi ${CFG.BUSINESS}, I'd like a price on ${a.dataset.smsQuote} for my (year, make, model). I can send photos.`));
 
-  $('#ownerSig').textContent = CFG.OWNER_FIRST ? CFG.OWNER_FIRST + ', owner' : '';
-  $('#aboutText').textContent = CFG.ABOUT;
-  if (CFG.FAITH_LINE){ $('#faithLine span').textContent = CFG.FAITH_LINE; $('#faithLine').hidden = false; }
+  $('#aboutText').innerHTML = CFG.ABOUT.map((p, i) => `<p class="rv" style="--d:${i + 2}">${p}</p>`).join('');
+  $('#ownerSig').innerHTML = CFG.OWNER_FIRST ? `<b>${esc(CFG.OWNER_FIRST)}</b> · Owner, Mr. Auto Treatment` : '';
+  $('#ownerSig').hidden = !CFG.OWNER_FIRST;
 
-  const past = CFG.RADIUS_MI + 5;
-  const travel = `Free within <b>${CFG.RADIUS_MI} miles</b> of ${CFG.HUB}. Past that it's <b>${money(CFG.TRAVEL_PER_MILE)} a mile</b> for the miles over ${CFG.RADIUS_MI}, so ${past} miles out adds ${money(5*CFG.TRAVEL_PER_MILE)}.`;
-  $('#travelNote').innerHTML = travel;
-  $('#travelText').innerHTML = travel + ' Farther than that? Book anyway and we\'ll call you to work it out.';
-  $('#areaText').textContent = `We're based in ${CFG.HUB} and cover the neighborhoods and cities around it.`;
-  $('#areaList').innerHTML = `<span class="hub">${esc(CFG.HUB)}</span>` + CFG.AREAS.map(a => `<span>${esc(a)}</span>`).join('');
-  $('#dropText').innerHTML = `Our drop-off spot is in <b>${esc(CFG.DROPOFF)}</b>. Pick "I'll drop it off" when you book and we text you the exact address.`;
-  $('#hoursText').textContent = CFG.HOURS_TEXT + ' Book at least a day ahead.';
-  $('#footHours').textContent = CFG.HOURS_TEXT;
+  const D = CFG.DEPOSIT.AMOUNT;
+  $('#stepDeposit').textContent = `A $${D} deposit locks in your time, because a no-show is a slot someone else could have had. ${CFG.DEPOSIT.POLICY}`;
+  $('#stepPay').textContent = `We come to your driveway, lot or work. Look it over when we're done, then pay the rest: ${CFG.PAYMENTS}.`;
+  $('#areaText').innerHTML = `<b>Areas we serve.</b> No travel fee within about ${CFG.FREE_MIN} minutes of us. Farther out, 45 minutes to an hour, adds a small fee we tell you up front. ${esc(CFG.AREAS)}.`;
+  $('#travelNote').textContent = `Free within about ${CFG.FREE_MIN} minutes. 45 minutes to an hour out adds a small fee, and we text you the number first.`;
+
+  if (CFG.REVIEWS.length){
+    const star = '<svg><use href="#i-star"/></svg>'.repeat(5);
+    $('#revs').innerHTML = CFG.REVIEWS.map((r, i) => `<blockquote class="rev rv" style="--d:${i}"><span class="stars" aria-label="5 stars">${star}</span>
+      <p>${esc(r.text)}</p><cite><b>${esc(r.name)}</b></cite></blockquote>`).join('');
+  } else {
+    $('#revs').hidden = true;
+    $('#reviews .head').textContent = 'Word gets around.';
+  }
+  $('#reviewLink').href = CFG.REVIEW_URL;
 
   const FAQ = [
-    ['What\'s the difference between the two packages?',
-     'Essential is the maintenance detail, inside and out, and it\'s the one most people book on a regular basis. Executive is the full day: everything in Essential plus shampooed seats, carpets and headliner, steam cleaning, headlights, under carriage, curb rash, tint and an oil change.'],
-    ['Do you really come to me?',
-     `Yes. Most jobs happen in the customer's driveway, apartment lot or work parking lot, anywhere within ${CFG.RADIUS_MI} miles of ${CFG.HUB} with no travel charge. If that doesn't work, drop the car off with us instead.`],
+    ['What\'s the difference between Bronze and Platinum?',
+     '<b>Executive Bronze</b> is the maintenance detail: a hand wash, wheels and tires, a full vacuum, the dash and panels wiped down and the windows done. <b>Elite Platinum</b> is a full reset. It adds paint decontamination and six months of paint protection outside, and a deeper interior with the dash and console disinfected and treated and the seats refreshed.'],
+    [`Why is there a $${D} deposit?`,
+     `It holds your time. We turn other people away for that slot, so a no-show costs a real job. ${esc(CFG.DEPOSIT.POLICY)}`],
     ['How long does it take?',
-     'Essential runs about two hours. Executive is a full day, because it genuinely is everything. A car that needs extra time gets flagged before we start, not after.'],
-    ['Why doesn\'t the Executive package show a price?',
-     'Because it covers tint, an oil change and curb rash on top of the detail, and all three depend on the car. Send a few photos through the quote form and you get one real number back, not a range.'],
-    ['What do you need from me?',
-     'Just access to the car and a spot to work. If you\'re in a gated complex or a tight space, add a note when you book so we can plan for it.'],
-    ['Do prices change for a truck or an SUV?',
-     'The prices on this page are sedan prices. Bigger vehicles run a little more, and we confirm the number by text before the job starts.'],
-    ['How do I pay?',
-     'After the job is done. Nothing is charged through this website.'],
-    ['What if I need to reschedule?',
-     'Call or text us. If the weather looks bad we\'ll reach out the day before and move you to the next open time.'],
+     'About <b>two hours</b> for Bronze and about <b>three</b> for Platinum. If yours needs longer because of pet hair or a bad spill, we tell you before we start, not after.'],
+    ['Do you really come to me?',
+     `Yes, we're 100% mobile. Your driveway, apartment lot or work parking lot. There's no travel fee within about ${CFG.FREE_MIN} minutes of us. Farther out, 45 minutes to an hour, adds a small fee and we tell you the number before we book it.`],
+    ['Do trucks and vans cost more?',
+     'A little. The prices above go sedan, crossover, SUV. Bigger trucks, vans and 3-row vehicles start at the SUV price, and we text you the exact number before the job. Nothing changes on you mid-detail.'],
+    ['How do I pay the rest?',
+     `When the job is done: ${esc(CFG.PAYMENTS)}.`],
+    ['Do you do paint correction and ceramic coating?',
+     'Yes, plus tint, headlights, engine bays and more. Those depend on the car, so tap one in Specialty Work and text us a photo for a real number.'],
+    ['What about RVs, boats or a company fleet?',
+     'We do those too, along with monthly maintenance plans. Call or text and we\'ll work out a price.'],
   ];
-  $('#faqList').innerHTML = FAQ.map((q,i) => `<details class="q"${i===0?' open':''}><summary>${esc(q[0])}</summary><div class="a">${esc(q[1])}</div></details>`).join('');
+  $('#faqList').innerHTML = FAQ.map(q => `<details class="q"><summary>${esc(q[0])}</summary><div class="a">${q[1]}</div></details>`).join('');
   $('#yr').textContent = new Date().getFullYear();
-})();
 
-/* ------------------------------ gallery ------------------------------- */
-(function gallery(){
-  const g = $('#gallery');
-  CFG.SHOTS.forEach(s => {
-    const f = document.createElement('figure');
-    f.className = 'tile';
-    f.innerHTML = `<img src="${s.src}" alt="${esc(s.cap)} by Mr. Auto Treatment" loading="lazy"><figcaption>${esc(s.cap)}</figcaption>`;
-    const img = f.firstElementChild;
-    img.addEventListener('error', () => { f.remove(); layout(); });
-    img.addEventListener('load', layout);
-    g.append(f);
-  });
-  // With whatever photos actually loaded, make one tile wide per row of three
-  // so the grid never ends on a lonely half-row.
-  function layout(){
-    const tiles = $$('.tile', g);
-    tiles.forEach(t => t.classList.remove('wide'));
-    if (tiles.length % 3 === 2) tiles[tiles.length - 1].classList.add('wide');
-    else if (tiles.length % 3 === 1 && tiles.length > 1) tiles[0].classList.add('wide');
-    $('#work').hidden = tiles.length === 0;
+  // Back from paying the deposit.
+  if (new URLSearchParams(location.search).get('deposit') === 'paid'){
+    const t = document.createElement('div');
+    t.className = 'toast'; t.setAttribute('role','status');
+    t.innerHTML = '<svg><use href="#i-check"/></svg>Deposit received. Your spot is locked in.';
+    document.body.append(t);
+    setTimeout(() => t.remove(), 9000);
+    history.replaceState(null, '', location.pathname + location.hash);
   }
-  layout();
 })();
 
-/* ------------------------------ booking ------------------------------- */
+/* ----------------------------- his touches ----------------------------- */
+(function touches(){
+  const items = ['Foam bath','Paint decontamination','Ceramic coating','Paint correction','Interior reset','Headlight restoration','Engine bay','Window tint'];
+  const run = items.map(t => `<span>${t}</span>`).join('');
+  $('#marq').innerHTML = run + run;
+
+  // The statement lights up a word at a time as it crosses the screen.
+  const st = $('#statement');
+  st.innerHTML = st.textContent.trim().split(/\s+/).map(w => `<span class="w">${esc(w)}</span> `).join('');
+  const words = $$('.w', st);
+  if (REDUCED){ words.forEach(w => w.classList.add('lit')); return; }
+  const hdr = $('#hdr');
+  let ticking = false;
+  function frame(){
+    ticking = false;
+    const r = st.getBoundingClientRect(), vh = innerHeight;
+    const p = Math.min(1, Math.max(0, (vh * .85 - r.top) / (vh * .55 + r.height * .5)));
+    const n = Math.round(p * words.length);
+    words.forEach((w, i) => w.classList.toggle('lit', i < n));
+    const max = document.documentElement.scrollHeight - vh;
+    hdr.style.setProperty('--p', max > 0 ? (scrollY / max).toFixed(4) : 0);
+  }
+  const req = () => { if (!ticking){ ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', req, { passive:true }); addEventListener('resize', req); frame();
+})();
+
+/* ------------------------------ work row ------------------------------ */
+(function buildRail(){
+  $('#rail').innerHTML = CFG.SHOTS.map(([src, name, kind]) =>
+    `<figure><div class="ph"><img src="${src}" alt="${esc(name)}, ${esc(kind.toLowerCase())} by Mr. Auto Treatment" loading="lazy" decoding="async"></div>` +
+    `<figcaption>${esc(name)}<span>${esc(kind)}</span></figcaption></figure>`).join('') +
+    `<figure><a class="more" data-ig target="_blank" rel="noopener"><span class="logo"><img src="assets/logo.jpg" alt="" loading="lazy"></span>
+      <b>More every week.</b><span>New cars go up on Instagram as we finish them.</span>
+      <span class="arrow">${esc(CFG.IG_HANDLE)} <svg><use href="#i-arrow"/></svg></span></a></figure>`;
+})();
+
+/* Links filled after everything that renders markup, so every copy gets one. */
+(function links(){
+  $$('[data-phone]').forEach(e => e.textContent = CFG.PHONE_TEXT);
+  $$('[data-tel]').forEach(e => e.href = 'tel:' + CFG.PHONE_E164);
+  $$('[data-sms]').forEach(e => e.href = smsTo(`Hi ${CFG.BUSINESS}, I'd like to book a detail.`));
+  $$('[data-ig]').forEach(e => e.href = CFG.IG);
+  $$('[data-fb]').forEach(e => e.href = CFG.FB);
+  $$('[data-mail]').forEach(e => e.href = 'mailto:' + CFG.EMAIL);
+  $$('[data-email]').forEach(e => e.textContent = CFG.EMAIL);
+  $$('[data-ighandle]').forEach(e => e.textContent = CFG.IG_HANDLE);
+})();
+
+/* --------------------------- header + phone bar ------------------------- */
+(function chrome(){
+  const hdr = $('#hdr'), bar = $('#bar');
+  const onScroll = () => hdr.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  if (!('IntersectionObserver' in window)) return bar.classList.add('on');
+  // Also hidden over the booking form and the sign-off, which carry the same two buttons.
+  let pastHero = false;
+  const inside = new Set();
+  const sync = () => bar.classList.toggle('on', pastHero && !inside.size);
+  new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting && e.boundingClientRect.top < 0; sync(); }).observe($('#heroBook'));
+  const io = new IntersectionObserver(es => { es.forEach(e => e.isIntersecting ? inside.add(e.target) : inside.delete(e.target)); sync(); },
+    { rootMargin: '-30% 0px -30% 0px' });
+  io.observe($('#book')); io.observe($('#finale'));
+})();
+
+/* ------------------------------- photos ------------------------------- */
+(function photos(){
+  $$('.ph img').forEach(img => {
+    const box = img.closest('.ph');
+    const done = () => box.classList.add('done');
+    if (img.complete && img.naturalWidth) done();
+    else { img.addEventListener('load', done, { once:true }); img.addEventListener('error', done, { once:true }); }
+  });
+})();
+
+/* ------------------------------- motion -------------------------------
+   Reveals as things scroll in, a slow drift on the hero and the package
+   photos. Transform and opacity only, and none of it runs for people who
+   have asked for less motion. */
+(function motion(){
+  const rv = $$('.rv, .rv-clip');
+  if (REDUCED || !('IntersectionObserver' in window)) { rv.forEach(el => el.classList.add('in')); return; }
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+  }), { rootMargin: '0px 0px 12% 0px' });
+  rv.forEach(el => io.observe(el));
+
+  const heroImg = $('#heroImg'), heroCopy = $('#heroCopy');
+  const drift = $$('[data-par]');
+  let ticking = false;
+  function frame(){
+    ticking = false;
+    const vh = innerHeight, y = scrollY;
+    if (y < vh * 1.2){
+      heroImg.style.transform = `translate3d(0,${(y * 0.32).toFixed(1)}px,0)`;
+      heroCopy.style.opacity = Math.max(0, 1 - y / (vh * 0.55)).toFixed(3);
+      heroCopy.style.transform = `translate3d(0,${(y * 0.12).toFixed(1)}px,0)`;
+    }
+    drift.forEach(box => {
+      const r = box.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > vh) return;
+      const p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+      box.querySelector('img').style.transform = `translate3d(0,${(p * 6).toFixed(2)}%,0)`;
+    });
+  }
+  const req = () => { if (!ticking){ ticking = true; requestAnimationFrame(frame); } };
+  addEventListener('scroll', req, { passive:true }); addEventListener('resize', req); frame();
+})();
+
+/* Cards recede a little as they slide off the left edge; the dots track which card is up. */
+(function rail(){
+  const rail = $('#rail'), dots = $('#dots');
+  const cards = $$('figure', rail);
+  dots.innerHTML = cards.map(() => '<i></i>').join('');
+  const marks = $$('i', dots);
+  let ticking = false;
+  function frame(){
+    ticking = false;
+    const left = rail.getBoundingClientRect().left + parseFloat(getComputedStyle(rail).paddingLeft);
+    let best = 0, bestD = Infinity;
+    cards.forEach((c, i) => {
+      const r = c.getBoundingClientRect();
+      const d = (r.left - left) / r.width;
+      if (Math.abs(d) < bestD){ bestD = Math.abs(d); best = i; }
+      if (!REDUCED){
+        const k = Math.min(1, Math.max(0, -d));
+        c.firstElementChild.style.transform = k ? `scale(${(1 - k * 0.08).toFixed(3)})` : '';
+        c.style.opacity = (1 - k * 0.5).toFixed(3);
+      }
+    });
+    marks.forEach((m, i) => m.classList.toggle('on', i === best));
+  }
+  rail.addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(frame); } }, { passive:true });
+  frame();
+})();
+
+/* ------------------------- booking, two steps ------------------------- */
 (function booking(){
-  const daysEl = $('#days'), slotsEl = $('#slots'), form = $('#bookForm'), pickedBar = $('#pickedBar');
-  const bookable = CFG.SERVICES.filter(s => s.book);
-  let cfg = { hours:CFG.HOURS, booked:[], stepMinutes:CFG.STEP_MIN, horizonDays:CFG.HORIZON,
-              leadHours:CFG.LEAD_HOURS, services:bookable.map(s => ({id:s.id, label:s.label, minutes:s.minutes})) };
-  let live = false, mode = 'mobile', pickedDay = null, picked = null, size = CFG.SIZES[0][0];
-  let service = cfg.services[0];
+  const daysEl = $('#days'), slotsEl = $('#slots'), form = $('#bookForm'), step2 = $('#step2');
+  let cfg = { hours:CFG.HOURS, booked:[], stepMinutes:CFG.STEP_MIN, horizonDays:CFG.HORIZON, leadHours:CFG.LEAD_HOURS };
+  let live = false, picked = null, service = CFG.SERVICES[0], size = CFG.SIZES[0].id;
+  const minutes = {};                            // the dashboard's job lengths win over ours
+  const mins = s => minutes[s.id] || s.minutes;
+  const D = CFG.DEPOSIT.AMOUNT;
 
   const ymd  = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
   const hm2m = s => (+s.slice(0,2))*60 + (+s.slice(3,5));
   const label = m => { const h=Math.floor(m/60), mm=m%60, ap=h>=12?'PM':'AM', hh=h%12||12; return hh+(mm?':'+pad(mm):'')+' '+ap; };
   const digits = s => (s||'').replace(/\D/g,'');
-  const copy = id => CFG.SERVICES.find(x => x.id === id) || {};
 
   function renderServices(){
-    const el = $('#segService');
-    // One bookable service is a statement, not a choice. Show it as one.
-    if (cfg.services.length === 1){
-      const x = cfg.services[0], c = copy(x.id);
-      el.classList.add('one');
-      el.innerHTML = `<div class="svcone"><span class="nm">${esc(c.label || x.label)}</span>` +
-        `<span class="mt">${esc(c.time || '')}${c.from ? ' · from $' + c.from : ''}</span></div>`;
-      return;
-    }
-    el.classList.remove('one');
-    el.innerHTML = cfg.services.map(x => {
-      const c = copy(x.id);
-      return `<button type="button" data-svc="${x.id}"${x.id === service.id ? ' class="sel"' : ''}>${esc(c.label || x.label)}<small>${esc(c.blurb || '')}${c.from ? ' · from $' + c.from : ''}</small></button>`;
-    }).join('');
-    $$('button', el).forEach(b => b.addEventListener('click', () => choose(b.dataset.svc)));
+    $('#segService').innerHTML = CFG.SERVICES.map(s => `<button type="button" data-svc="${s.id}"${s.id === service.id ? ' class="sel"' : ''}>
+      ${esc(s.short)}<small>from <b>${price(s, size)}</b> · ${esc(s.time.toLowerCase())}</small></button>`).join('');
+    $$('#segService button').forEach(b => b.addEventListener('click', () => choose(b.dataset.svc)));
   }
-  // Anything priced by quote gets pointed at the quote form rather than hidden.
-  (function altNote(){
-    const alt = CFG.SERVICES.filter(x => !x.book);
-    if (!alt.length) return;
-    $('#svcAlt').innerHTML = `After the <a href="#quote" data-quote="${esc(alt[0].quoteAs || alt[0].label)}">${esc(alt[0].label)}</a> instead? ` +
-      `That one gets priced before it gets booked, and it only takes a minute.`;
-    $('#svcAlt').hidden = false;
-  })();
-  // Size matters: every price on this page is a sedan price.
-  (function renderSize(){
-    const el = $('#segSize');
-    el.innerHTML = CFG.SIZES.map(([n,sub],i) => `<button type="button" data-size="${esc(n)}"${i===0?' class="sel"':''}>${esc(n)}<small>${esc(sub)}</small></button>`).join('');
-    $$('button', el).forEach(b => b.addEventListener('click', () => {
-      $$('button', el).forEach(x => x.classList.remove('sel'));
-      b.classList.add('sel'); size = b.dataset.size;
+  function renderSizes(){
+    $('#segSize').innerHTML = CFG.SIZES.map(z => `<button type="button" data-size="${z.id}"${z.id === size ? ' class="sel"' : ''}>
+      ${esc(z.label)}<small>${esc(z.sub)}</small></button>`).join('');
+    $$('#segSize button').forEach(b => b.addEventListener('click', () => {
+      size = b.dataset.size;
+      $$('#segSize button').forEach(x => x.classList.toggle('sel', x === b));
+      renderServices(); renderSum();
     }));
-  })();
-  livePhone('#bPhone');
+  }
   function choose(id){
-    const hit = cfg.services.find(x => x.id === id);
+    const hit = svcOf(id);
     if (!hit) return;
+    const longer = mins(hit) !== mins(service);
     service = hit;
     $$('#segService button').forEach(x => x.classList.toggle('sel', x.dataset.svc === id));
-    picked = null; pickedBar.hidden = true;
-    renderDays();
+    if (longer){ picked = null; step2.hidden = true; renderDays(); }
+    else renderPicked();
+    renderSum();
   }
-  // "Book Interior" on a menu card preselects that service.
-  $$('[data-pick]').forEach(a => a.addEventListener('click', () => choose(a.dataset.pick)));
-
-  $$('#segMode button').forEach(b => b.addEventListener('click', () => {
-    $$('#segMode button').forEach(x => x.classList.remove('sel'));
-    b.classList.add('sel');
-    mode = b.dataset.mode;
-    $('#addrField').hidden = mode !== 'mobile';
+  // "Book Platinum" on the page picks it here, then scrolls down.
+  $$('[data-book]').forEach(b => b.addEventListener('click', () => {
+    choose(b.dataset.book);
+    $('#book').scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth' });
   }));
+
+  const ph = $('#bPhone');
+  ph.addEventListener('input', () => { const end = ph.selectionStart === ph.value.length; ph.value = fmtPhone(ph.value); if (end) ph.setSelectionRange(ph.value.length, ph.value.length); });
   $('#noteToggle').addEventListener('click', function(){ $('#noteField').hidden = false; this.hidden = true; $('#bNotes').focus(); });
   $('#changeTime').addEventListener('click', () => {
-    picked = null; pickedBar.hidden = true;
+    picked = null; step2.hidden = true;
     $$('.slot', slotsEl).forEach(x => x.classList.remove('sel'));
-    daysEl.scrollIntoView({behavior:'smooth', block:'center'});
+    daysEl.scrollIntoView({ behavior:'smooth', block:'center' });
   });
+
+  function renderSum(){
+    const z = sizeOf(size);
+    $('#sum').innerHTML = `
+      <div><span>${esc(service.label)}</span><b>from ${price(service, size)}</b></div>
+      <div><span>Vehicle</span><b>${esc(z.label)}</b></div>
+      <div class="due"><span>Due today</span><b>$${D}</b></div>`;
+    $('#bookBtn').innerHTML = `<svg><use href="#i-lock"/></svg>Hold my spot with $${D}`;
+    $('#formNote').textContent = `The $${D} goes toward your total. The rest is due after the job` +
+      (service.plus.includes(size) ? ', and we text you the exact price for your vehicle first.' : '.');
+  }
+  function renderPicked(){
+    if (!picked) return;
+    $('#pickedText').textContent = `${service.short} · ` +
+      picked.date.toLocaleDateString('en-US',{weekday:'short', month:'short', day:'numeric'}) + ' at ' + picked.text;
+  }
 
   // Busy blocks come back as {start:"YYYY-MM-DDTHH:MM", minutes}; overlap, never key-match.
   function busy(){
@@ -1041,14 +1180,13 @@ function livePhone(sel){
       const s = typeof b === 'string' ? b : b && b.start;
       const from = new Date(s).getTime();
       if (!Number.isFinite(from)) return null;
-      const mins = (b && Number(b.minutes)) || service.minutes;
-      return { from, to: from + mins*60000 };
+      return { from, to: from + ((b && Number(b.minutes)) || mins(service))*60000 };
     }).filter(Boolean);
   }
   function slotsFor(date){
     const span = cfg.hours[date.getDay()];
     if (!span) return [];
-    const job = service.minutes, step = cfg.stepMinutes || 60;
+    const job = mins(service), step = cfg.stepMinutes || 60;
     const floor = Date.now() + cfg.leadHours*3600000, blocks = busy(), out = [];
     for (let m = hm2m(span[0]); m + job <= hm2m(span[1]); m += step){
       const start = new Date(date); start.setHours(Math.floor(m/60), m%60, 0, 0);
@@ -1060,7 +1198,48 @@ function livePhone(sel){
     }
     return out;
   }
-  // Preview only: a few believable busy slots so the calendar doesn't look empty.
+  function renderDays(){
+    const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    daysEl.innerHTML = '';
+    let first = null;
+    for (let i = 0; i < cfg.horizonDays; i++){
+      const d = new Date(); d.setDate(d.getDate()+i); d.setHours(0,0,0,0);
+      const open = slotsFor(d).some(s => !s.taken);
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'day' + (open ? '' : ' off');
+      b.innerHTML = `<div class="dow">${i===0?'Today':DOW[d.getDay()]}</div><div class="num">${d.getDate()}</div><div class="mon">${MON[d.getMonth()]}</div>`;
+      b.addEventListener('click', () => pickDay(d, b));
+      daysEl.append(b);
+      if (open && !first) first = [d, b];
+    }
+    if (first) pickDay(...first);
+    else slotsEl.innerHTML = `<div class="slots-empty">Nothing open in the next two weeks. Call ${CFG.PHONE_TEXT}.</div>`;
+  }
+  function pickDay(d, btn){
+    picked = null; step2.hidden = true;
+    $$('.day', daysEl).forEach(x => x.classList.remove('sel'));
+    btn.classList.add('sel');
+    const list = slotsFor(d);
+    slotsEl.innerHTML = '';
+    if (!list.some(s => !s.taken)){
+      slotsEl.innerHTML = `<div class="slots-empty">Nothing open that day. Try another, or call ${CFG.PHONE_TEXT}.</div>`;
+      return;
+    }
+    list.forEach(s => {
+      const b = document.createElement('button');
+      b.type = 'button'; b.className = 'slot' + (s.taken ? ' taken' : ''); b.textContent = s.text;
+      if (s.taken){ b.disabled = true; b.setAttribute('aria-label', s.text + ', already booked'); }
+      else b.addEventListener('click', () => {
+        $$('.slot', slotsEl).forEach(x => x.classList.remove('sel'));
+        b.classList.add('sel'); picked = s;
+        renderPicked(); renderSum();
+        step2.hidden = false;
+        requestAnimationFrame(() => step2.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block:'nearest' }));
+      });
+      slotsEl.append(b);
+    });
+  }
+  // Preview only (no dashboard account): a few believable busy slots.
   function seedPreview(){
     const booked = [];
     for (let i = 1; i < cfg.horizonDays; i++){
@@ -1070,50 +1249,6 @@ function livePhone(sel){
     cfg.booked = booked;
   }
 
-  function renderDays(){
-    const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    daysEl.innerHTML = '';
-    let first = null;
-    for (let i = 0; i < cfg.horizonDays; i++){
-      const d = new Date(); d.setDate(d.getDate()+i); d.setHours(0,0,0,0);
-      const open = slotsFor(d).some(s => !s.taken);
-      const b = document.createElement('button');
-      b.type = 'button'; b.className = 'day' + (open ? '' : ' off'); b.style.setProperty('--i', i);
-      b.innerHTML = `<div class="dow">${i===0?'Today':i===1?'Tmrw':DOW[d.getDay()]}</div><div class="num">${d.getDate()}</div><div class="mon">${MON[d.getMonth()]}</div>`;
-      b.addEventListener('click', () => pickDay(d, b));
-      daysEl.append(b);
-      if (open && !first) first = [d, b];
-    }
-    if (first) pickDay(...first);
-    else slotsEl.innerHTML = `<div class="slots-empty">Nothing open in the next two weeks. Call ${CFG.PHONE_TEXT}.</div>`;
-  }
-  function pickDay(d, btn){
-    pickedDay = d; picked = null; pickedBar.hidden = true;
-    $$('.day', daysEl).forEach(x => x.classList.remove('sel'));
-    btn.classList.add('sel');
-    const list = slotsFor(d);
-    slotsEl.innerHTML = '';
-    if (!list.some(s => !s.taken)){
-      slotsEl.innerHTML = `<div class="slots-empty">Nothing open that day. Try another, or call ${CFG.PHONE_TEXT}.</div>`;
-      return;
-    }
-    list.forEach((s, i) => {
-      const b = document.createElement('button');
-      b.type = 'button'; b.className = 'slot' + (s.taken ? ' taken' : ''); b.textContent = s.text;
-      b.style.setProperty('--i', i);
-      if (s.taken){ b.disabled = true; b.setAttribute('aria-label', s.text + ', already booked'); }
-      else b.addEventListener('click', () => {
-        $$('.slot', slotsEl).forEach(x => x.classList.remove('sel'));
-        b.classList.add('sel'); picked = s;
-        $('#pickedText').textContent = (copy(service.id).label || service.label) + ' · ' +
-          s.date.toLocaleDateString('en-US',{weekday:'short', month:'short', day:'numeric'}) + ' at ' + s.text;
-        pickedBar.hidden = false;
-        requestAnimationFrame(() => pickedBar.scrollIntoView({behavior:'smooth', block:'nearest'}));
-      });
-      slotsEl.append(b);
-    });
-  }
-
   async function load(){
     try {
       const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}`);
@@ -1121,14 +1256,11 @@ function livePhone(sel){
         const j = await r.json();
         live = true;
         cfg = { hours:j.hours || cfg.hours, booked:j.booked || [], stepMinutes:j.stepMinutes || cfg.stepMinutes,
-                horizonDays:j.horizonDays || cfg.horizonDays, leadHours:j.leadHours ?? cfg.leadHours,
-                services:(j.services && j.services.length) ? j.services : cfg.services };
-        service = cfg.services.find(x => x.id === service.id) || cfg.services[0];
-      } else if (r.status === 404){
-        seedPreview();                 // no account yet: preview calendar, saves nothing
-      } else live = true;              // server trouble: stay "live" so a submit errors honestly
+                horizonDays:j.horizonDays || cfg.horizonDays, leadHours:j.leadHours ?? cfg.leadHours };
+        (j.services || []).forEach(x => { if (x && x.id && x.minutes) minutes[x.id] = x.minutes; });
+      } else if (r.status === 404) seedPreview();
+      else live = true;                  // server trouble: stay live so a submit errors honestly
     } catch (_) { live = true; }
-    renderServices();
     renderDays();
   }
 
@@ -1137,29 +1269,26 @@ function livePhone(sel){
     const err = $('#bookErr'); err.textContent = '';
     const name = $('#bName').value.trim(), phone = $('#bPhone').value.trim(), vehicle = $('#bVehicle').value.trim(),
           addr = $('#bAddr').value.trim(), notes = $('#bNotes').value.trim();
-    // Say what's wrong and put the cursor in the box that's wrong.
-    const fail = (msg, sel) => { err.textContent = msg; const el = sel && $(sel); if (el) el.focus({preventScroll:true}); return false; };
-    if (!picked){
-      slotsEl.scrollIntoView({behavior:'smooth', block:'center'});
-      return fail('Pick a day and a time above first.');
-    }
-    if (!name)                      return fail('We need a name for the appointment.', '#bName');
-    if (digits(phone).length < 10)  return fail('That number looks short. We text your confirmation there.', '#bPhone');
-    if (!vehicle)                   return fail('What are we working on? Year, make and model is perfect.', '#bVehicle');
-    if (mode === 'mobile' && !addr) return fail('We need an address to come to you, or switch to drop-off.', '#bAddr');
+    const fail = (msg, sel) => { err.textContent = msg; const el = sel && $(sel); if (el) el.focus(); return false; };
+    if (!picked)                   return fail('Pick a day and a time first.');
+    if (name.length < 2)           return fail('We need a name for the appointment.', '#bName');
+    if (digits(phone).length < 10) return fail('That number looks short. We text your confirmation there.', '#bPhone');
+    if (!vehicle)                  return fail('What are we working on? Year, make and model is perfect.', '#bVehicle');
+    if (!addr)                     return fail('We need an address to come to you.', '#bAddr');
 
+    const z = sizeOf(size), p = price(service, size);
     const btn = $('#bookBtn');
-    btn.disabled = true; btn.textContent = 'Booking';
+    btn.disabled = true; btn.textContent = 'Holding your spot…';
     let ok = true;
     if (live){
       try {
         const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}/book`, {
           method:'POST', headers:{'Content-Type':'application/json'},
-          // size also rides along inside notes, so it survives a backend that
-          // doesn't know the field yet.
-          body: JSON.stringify({ name, phone, start:picked.key, vehicle, mode, address:addr,
-                                 notes: [size, notes].filter(Boolean).join(' · '), vehicle_size:size,
-                                 service_id:service.id, service:copy(service.id).label || service.label })
+          // Size, price and deposit ride in notes so he sees them on the job,
+          // since the dashboard keeps one price per service.
+          body: JSON.stringify({ name, phone, start:picked.key, vehicle, mode:'mobile', address:addr,
+                                 notes: [`${z.label}, from ${p}`, `$${D} deposit ${CFG.DEPOSIT.URL ? 'sent to pay link' : 'to collect'}`, notes].filter(Boolean).join(' · '),
+                                 vehicle_size:z.label, service_id:service.id, service:service.label })
         });
         const j = await r.json().catch(() => ({}));
         ok = r.ok && j.ok !== false;
@@ -1168,218 +1297,30 @@ function livePhone(sel){
         ok = false; err.textContent = 'Couldn\'t reach the calendar. Please call ' + CFG.PHONE_TEXT + '.';
       }
     }
-    btn.disabled = false; btn.textContent = 'Book This Time';
+    btn.disabled = false; renderSum();
     if (!ok) return;
 
     $('#picker').hidden = true; form.hidden = true; $('#bookSub').hidden = true;
-    $('#bookTitle').textContent = 'You\'re booked';
+    $('#bookTitle').textContent = 'Your spot is held';
     const first = name.split(' ')[0];
+    const ref = 'MRA-' + picked.key.replace(/\D/g,'').slice(2) + '-' + digits(phone).slice(-4);
+    const link = CFG.DEPOSIT.URL ? CFG.DEPOSIT.URL + (CFG.DEPOSIT.URL.includes('?') ? '&' : '?') + 'client_reference_id=' + encodeURIComponent(ref) : '';
     const box = $('#bookOk');
-    box.innerHTML = `<strong>Thank you, ${esc(first.charAt(0).toUpperCase() + first.slice(1))}.</strong>
-      <span class="when">${esc(copy(service.id).label || service.label)}</span>
-      <span class="when">${picked.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric'})} at ${picked.text}</span>
-      ${mode === 'mobile' ? 'We come to you' : 'Drop-off'} · ${esc(vehicle)} · ${esc(size)}<br><br>
-      We'll text ${esc(phone)} shortly to confirm. Need to change it? Call or text <a href="tel:${CFG.PHONE_E164}" class="gold" style="font-weight:700">${CFG.PHONE_TEXT}</a>.
-      ${live ? '' : '<span class="pv">Preview mode: this booking was not saved and no text was sent.</span>'}`;
+    box.innerHTML = `<strong>Thanks, ${esc(first.charAt(0).toUpperCase() + first.slice(1))}.</strong>
+      <span class="ok-when">${picked.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric'})} at ${picked.text}</span>
+      <span>${esc(service.label)} · ${esc(z.label)} · from ${p}<br>${esc(vehicle)} · ${esc(addr)}</span>
+      <div class="ok-pay">${link
+        ? `<b>Last step: the $${D} deposit.</b>It locks in your time and goes toward your total.
+           <a class="btn btn-gold btn-block" href="${esc(link)}"><svg><use href="#i-lock"/></svg>Pay $${D} deposit</a>`
+        : `<b>Last step: the $${D} deposit.</b>We'll text ${esc(phone)} a secure link to pay it. Your time is locked in once it's paid, and it goes toward your total.`}</div>
+      Need to change something? Call or text <a href="tel:${CFG.PHONE_E164}" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">${CFG.PHONE_TEXT}</a>.
+      ${live ? '' : '<span class="ok-pv">Preview mode: this booking was not saved and no text was sent.</span>'}`;
     box.classList.add('on');
-    box.scrollIntoView({behavior:'smooth', block:'center'});
+    box.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block:'center' });
   });
 
+  renderServices(); renderSizes(); renderSum();
   load();
-})();
-
-/* ------------------------------- quote -------------------------------- */
-(function quote(){
-  const opts = CFG.QUOTE_OPTIONS;
-  let pick = opts[0];
-  const seg = $('#segQuote');
-  seg.innerHTML = opts.map((o,i) => `<button type="button" data-q="${esc(o)}"${i===0?' class="sel"':''}>${esc(o)}</button>`).join('');
-  function select(name){
-    const b = $$('button', seg).find(x => x.dataset.q === name);
-    if (!b) return;
-    $$('button', seg).forEach(x => x.classList.remove('sel'));
-    b.classList.add('sel'); pick = name;
-  }
-  $$('button', seg).forEach(b => b.addEventListener('click', () => select(b.dataset.q)));
-  livePhone('#qPhone');
-  // "Get a Price" on the Executive card lands here with that already ticked.
-  $$('[data-quote]').forEach(a => a.addEventListener('click', () => select(a.dataset.quote)));
-
-  $('#quoteForm').addEventListener('submit', e => {
-    e.preventDefault();
-    const err = $('#quoteErr'); err.textContent = '';
-    const name = $('#qName').value.trim(), phone = $('#qPhone').value.trim(),
-          vehicle = $('#qVehicle').value.trim(), details = $('#qDetails').value.trim();
-    if (!name) return err.textContent = 'What should we call you?';
-    if (phone.replace(/\D/g,'').length < 10) return err.textContent = 'We need a mobile number to text the quote to.';
-    if (!vehicle) return err.textContent = 'Tell us the vehicle so we can price it.';
-
-    const body = `Hi ${CFG.BUSINESS}, I'd like a quote for ${pick.toLowerCase()}.\n` +
-                 `Name: ${name}\nPhone: ${phone}\nVehicle: ${vehicle}` + (details ? `\nDetails: ${details}` : '') +
-                 `\n(I can send photos too)`;
-    $('#quoteForm').hidden = true; $('#quoteSub').hidden = true;
-    $('#quoteTitle').textContent = 'Almost done';
-    const box = $('#quoteOk');
-    if (CFG.PHONE_IS_PLACEHOLDER){
-      box.innerHTML = `<strong>Thanks, ${esc(name.split(' ')[0])}.</strong>This opens a text to us with everything filled in, so you can attach photos and hit send.
-        <span class="pv">Preview mode: the real number isn't set yet, so no text was opened.</span>`;
-    } else {
-      box.innerHTML = `<strong>Thanks, ${esc(name.split(' ')[0])}.</strong>Your text app should be open with everything filled in. Attach a few photos of the paint and hit send. If nothing opened, text ${CFG.PHONE_TEXT}.`;
-      window.location.href = `sms:${CFG.PHONE_E164}?&body=${encodeURIComponent(body)}`;
-    }
-    box.classList.add('on');
-  });
-})();
-
-/* ------------------------------ motion -------------------------------- */
-(function motion(){
-  const root = document.documentElement, header = $('header.site');
-  const calm = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  root.classList.add('js');
-  root.style.scrollBehavior = 'auto';      // the glide below does the easing
-
-  /* Section links. The browser's own smooth scroll is fast enough that it
-     reads as the page teleporting, so jumps get a slower eased glide. */
-  let anim = 0;
-  const ease = t => t < .5 ? 8*t*t*t*t : 1 - Math.pow(-2*t + 2, 4) / 2;
-  function glide(y){
-    cancelAnimationFrame(anim);
-    const from = scrollY, dist = y - from;
-    if (calm || Math.abs(dist) < 4) return scrollTo(0, y);
-    const dur = Math.min(1400, Math.max(700, Math.abs(dist) * .35)), t0 = performance.now();
-    const step = now => {
-      const p = Math.min(1, (now - t0) / dur);
-      scrollTo(0, from + dist * ease(p));
-      if (p < 1) anim = requestAnimationFrame(step);
-    };
-    anim = requestAnimationFrame(step);
-  }
-  // Grabbing the wheel or the screen mid-glide hands control straight back.
-  ['wheel','touchstart'].forEach(ev => addEventListener(ev, () => cancelAnimationFrame(anim), {passive:true}));
-  document.addEventListener('click', e => {
-    const a = e.target.closest('a[href^="#"]');
-    if (!a || e.metaKey || e.ctrlKey || e.shiftKey) return;
-    const id = a.getAttribute('href');
-    const el = id.length > 1 && $(id);
-    if (!el) return;
-    e.preventDefault();
-    const y = id === '#top' ? 0 : el.getBoundingClientRect().top + scrollY - header.offsetHeight - 8;
-    glide(Math.max(0, y));
-    history.replaceState(null, '', id);
-  });
-
-  /* Header deepens once you leave the top; hero photo drifts a little slower
-     than the page. */
-  const photo = $('.hero-photo img');
-  let ticking = false;
-  function onScroll(){
-    ticking = false;
-    header.classList.toggle('scrolled', scrollY > 10);
-    if (photo && !calm && scrollY < innerHeight * 1.3)
-      photo.style.setProperty('--py', Math.min(44, scrollY * .07).toFixed(1) + 'px');
-  }
-  addEventListener('scroll', () => { if (!ticking){ ticking = true; requestAnimationFrame(onScroll); } }, {passive:true});
-  onScroll();
-
-  // Nav underline follows whichever section is in the middle of the screen.
-  const links = $$('nav.main a');
-  const spy = new IntersectionObserver(entries => entries.forEach(en => {
-    if (en.isIntersecting) links.forEach(l => l.classList.toggle('on', l.getAttribute('href') === '#' + en.target.id));
-  }), { rootMargin: '-45% 0px -50% 0px' });
-  $$('main section[id]').forEach(s => spy.observe(s));
-
-  /* Reveal on scroll. Siblings matched by the same rule stagger in order. */
-  function tag(sel, kind, step){
-    $$(sel).forEach(el => {
-      if (el.classList.contains('rv')) return;
-      const i = [...el.parentElement.children].filter(x => x.matches(sel)).indexOf(el);
-      el.classList.add('rv');
-      if (kind) el.classList.add(kind);
-      el.style.setProperty('--d', Math.min(i * (step || .05), .3).toFixed(2) + 's');
-    });
-  }
-  ['.hero .eyebrow', '.hero h1', '.hero .lede', '.hero .actions', '.hero .facts'].forEach((s, i) => {
-    const el = $(s);
-    if (el){ el.classList.add('rv'); el.style.setProperty('--d', (.05 + i * .07).toFixed(2) + 's'); }
-  });
-  const hp = $('.hero-photo');
-  if (hp){ hp.classList.add('rv'); hp.style.setProperty('--d', '.18s'); }
-
-  tag('main section:not(.hero) .eyebrow, main section:not(.hero) .h2, main section:not(.hero) .lede, .sizes', '', .06);
-  tag('.dish', '', .08);
-  tag('.extras .card', '', .08);
-  tag('.tile', 'rv-zoom', .055);
-  tag('.follow');
-  tag('.about blockquote, .about .sig', 'rv-l', .1);
-  tag('#about .about-grid > div:last-child > p, #faithLine', '', .06);
-  tag('.how > div', '', .09);
-  tag('.book > .panel', 'rv-l');
-  tag('.side > .panel', 'rv-r', .07);
-  tag('.quote-list li', 'rv-l', .06);
-  tag('.quote > .panel', 'rv-r');
-  tag('.area span', 'rv-pop', .022);
-  tag('.travel');
-  tag('details.q', '', .04);
-  tag('.finale .actions');
-  tag('.foot > div', '', .06);
-
-  function reveal(target){
-    io.unobserve(target);
-    const el = proxyOf.get(target) || target;
-    if (el.classList.contains('in')) return;
-    el.classList.add('in');
-    // Once it has landed, drop the reveal classes so hover transitions on
-    // cards and buttons work normally again.
-    const d = parseFloat(el.style.getPropertyValue('--d')) || 0;
-    setTimeout(() => {
-      el.classList.remove('rv', 'in', 'rv-l', 'rv-r', 'rv-zoom', 'rv-pop');
-      el.style.removeProperty('--d');
-    }, (d + .9) * 1000);
-  }
-  const io = new IntersectionObserver(entries => entries.forEach(en => {
-    if (en.isIntersecting) reveal(en.target);
-  }), { threshold: .12, rootMargin: '0px 0px -6% 0px' });
-  /* The hero photo starts fully clipped, and Chrome counts a clipped box as
-     not on screen, so on phones (where the photo sits below the fold) it never
-     revealed. Watch its wrapper instead. */
-  const proxyOf = new Map();
-  $$('.rv').forEach(el => {
-    if (el.classList.contains('hero-photo')){ proxyOf.set(el.parentElement, el); io.observe(el.parentElement); }
-    else io.observe(el);
-  });
-
-  /* Safety net. Opening the site straight on #book or #quote (the link he'd
-     text someone) scrolls the page after the observer has already taken its
-     first reading, and with no scroll left to trigger a second one the whole
-     section stayed at opacity 0. Anything sitting on screen gets revealed
-     outright instead of waiting to be observed. */
-  function settle(){
-    $$('.rv').forEach(el => {
-      const t = el.classList.contains('hero-photo') ? el.parentElement : el;
-      const r = t.getBoundingClientRect();
-      if (r.top < innerHeight && r.bottom > 0) reveal(t);
-    });
-  }
-  requestAnimationFrame(settle);
-  addEventListener('load', () => requestAnimationFrame(settle));
-
-  // Prices tick up to their number the first time they come into view.
-  const cio = new IntersectionObserver(entries => entries.forEach(en => {
-    if (!en.isIntersecting) return;
-    cio.unobserve(en.target);
-    const b = en.target, to = parseInt(b.textContent.replace(/\D/g, ''), 10);
-    if (!to || calm) return;
-    // Starts close and settles fast. A price that visibly counts up from a
-    // number he doesn't charge is worse than no effect at all.
-    const from = Math.round(to * .8), t0 = performance.now();
-    const run = now => {
-      const p = Math.min(1, (now - t0) / 650);
-      b.textContent = '$' + Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
-      if (p < 1) requestAnimationFrame(run);
-    };
-    requestAnimationFrame(run);
-  }), { threshold: .6 });
-  $$('.dish .from b').forEach(b => cio.observe(b));
 })();
 </script>
 </body>
