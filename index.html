@@ -404,10 +404,13 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   .brand .logo{width:56px;height:56px}
   /* The wide shot is nearly square, so it sits on the right two thirds at close to its
      own size (sharp) and fades into the black under the headline. */
-  .hero-img{height:100%;left:auto;right:0;width:min(70%,1100px)}
-  .hero-img img{object-position:50% 60%}
-  .hero::after{background:linear-gradient(90deg,var(--bg) 0,var(--bg) 30%,rgba(11,11,12,.55) 46%,rgba(11,11,12,0) 66%),
-    linear-gradient(180deg,rgba(11,11,12,.6) 0,rgba(11,11,12,0) 18%,rgba(11,11,12,0) 62%,var(--bg) 100%)}
+  .hero-img{height:100%;left:auto;right:0;width:min(72%,1180px)}
+  /* The photo fades out on its own left edge, so there's never a seam where it starts. */
+  .hero-img img{object-position:60% 60%;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 18%,#000 48%);
+    mask-image:linear-gradient(90deg,transparent 0,rgba(0,0,0,.35) 18%,#000 48%)}
+  .hero::after{background:linear-gradient(90deg,rgba(11,11,12,.7) 0,rgba(11,11,12,.25) 40%,rgba(11,11,12,0) 60%),
+    linear-gradient(180deg,rgba(11,11,12,.55) 0,rgba(11,11,12,0) 16%,rgba(11,11,12,0) 66%,var(--bg) 100%)}
   .hero-copy{padding-bottom:76px}
   .hero .head{max-width:11ch}
   .hero-cta{flex-direction:row;align-items:center;gap:26px}
