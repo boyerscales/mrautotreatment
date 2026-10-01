@@ -157,7 +157,7 @@ button,input,select{font:inherit;color:inherit}
 @keyframes marq{to{transform:translateX(-50%)}}
 .statement .w{transition:color .35s ease;color:var(--ink3)}
 .statement .w.lit{color:var(--ink)}
-.tag{display:inline-block;margin-left:12px;padding:5px 9px;border:1px solid rgba(227,178,60,.55);border-radius:2px;color:var(--gold);
+.tag{display:inline-block;margin-left:2px;padding:5px 9px;border:1px solid rgba(227,178,60,.55);border-radius:2px;color:var(--gold);
   font-size:10px;letter-spacing:.16em;vertical-align:1px}
 #platinum .prices{border-top-color:var(--gold)}
 .finale{border-top:1px solid var(--line);text-align:center;overflow:hidden;position:relative}
@@ -212,7 +212,7 @@ section{padding:88px 0}
   font-variation-settings:"wdth" 125;letter-spacing:.06em;font-variant-numeric:tabular-nums}
 .fd-cta{display:flex;flex-direction:column;gap:18px;align-items:stretch}
 .fd-cta .arrow{align-self:center}
-.tier{display:inline-flex;align-items:center;gap:10px}
+.tier{display:inline-flex;flex-wrap:wrap;align-items:center;gap:10px;white-space:nowrap}
 .tier::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c)}
 
 /* ---------- work ----------
@@ -294,6 +294,7 @@ section{padding:88px 0}
 .seg button.sel{border-color:var(--ink);background:var(--bg3);box-shadow:inset 0 0 0 1px var(--ink)}
 .seg small{font-size:12.5px;color:var(--ink3);font-weight:400}
 .seg small b{color:var(--ink2);font-weight:500}
+.seg small.stg{font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-variation-settings:"wdth" 125;color:var(--gold)}
 .days{display:flex;gap:8px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;margin:8px -18px 12px;padding:2px 18px}
 .days::-webkit-scrollbar{display:none}
 .day{flex:0 0 64px;border:1px solid var(--line2);background:none;border-radius:2px;padding:10px 0 9px;cursor:pointer;text-align:center;
@@ -546,7 +547,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     </div>
     <div>
       <div class="sec-head">
-        <p class="label rv tier" style="--c:#c48a57">Bronze</p>
+        <p class="label rv tier" style="--c:#c48a57">Stage 1 · Bronze</p>
         <h2 class="head rv" style="--d:1">Executive Bronze Detail</h2>
       </div>
       <p class="fd-lead rv" style="--d:2">The maintenance detail. Book it every few weeks and the car never gets away from you.</p>
@@ -577,7 +578,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     </div>
     <div>
       <div class="sec-head">
-        <p class="label rv tier" style="--c:#d5dae1">Platinum<span class="tag">Most complete</span></p>
+        <p class="label rv tier" style="--c:#d5dae1">Stage 3 · Platinum<span class="tag">Most complete</span></p>
         <h2 class="head rv" style="--d:1">Elite Platinum Detail</h2>
       </div>
       <p class="fd-lead rv" style="--d:2">A full reset, inside and out. Decontaminated paint, six months of protection and an interior that feels new again.</p>
@@ -657,7 +658,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     </div>
     <div class="steps">
       <div class="step rv"><div><h3>Pick a time</h3>
-        <p>Choose Bronze or Platinum, your vehicle size, then a day and a time. No account to make.</p></div></div>
+        <p>Choose Stage 1 or Stage 3, your vehicle size, then a day and a time. No account to make.</p></div></div>
       <div class="step rv"><div><h3>Hold it with $25</h3>
         <p id="stepDeposit"></p></div></div>
       <div class="step rv"><div><h3>We pull up</h3>
@@ -825,14 +826,14 @@ const CFG = {
     { id:'xl',        label:'Truck or van',sub:'pickups, minivans' },
   ],
 
-  /* --- the two details. Stage 1 and Stage 2, named the way he asked. -----
+  /* --- the two details: Stage 1 and Stage 3 (he has no Stage 2). ---------
      `plus` sizes show a "+" because bigger vehicles cost extra and he confirms
      the number by text. The id must match booking_config.services on the
      dashboard; Bronze keeps the old id `essential`.                         */
   SERVICES: [
-    { id:'essential', tier:'Bronze',   label:'Executive Bronze Detail', short:'Bronze',   minutes:120, time:'About 2 hours',
+    { id:'essential', tier:'Bronze',   label:'Executive Bronze Detail', short:'Stage 1 · Bronze',   minutes:120, time:'About 2 hours',
       prices:{ sedan:150, crossover:175, suv:200, xl:200 }, plus:['xl'] },
-    { id:'platinum',  tier:'Platinum', label:'Elite Platinum Detail',   short:'Platinum', minutes:180, time:'About 3 hours',
+    { id:'platinum',  tier:'Platinum', label:'Elite Platinum Detail',   short:'Stage 3 · Platinum', minutes:180, time:'About 3 hours',
       prices:{ sedan:300, crossover:325, suv:350, xl:350 }, plus:['xl'] },
   ],
 
@@ -942,12 +943,12 @@ const fmtPhone = v => {
   $('#reviewLink').href = CFG.REVIEW_URL;
 
   const FAQ = [
-    ['What\'s the difference between Bronze and Platinum?',
-     '<b>Executive Bronze</b> is the maintenance detail: a hand wash, wheels and tires, a full vacuum, the dash and panels wiped down and the windows done. <b>Elite Platinum</b> is a full reset. It adds paint decontamination and six months of paint protection outside, and a deeper interior with the dash and console disinfected and treated and the seats refreshed.'],
+    ['What\'s the difference between Stage 1 and Stage 3?',
+     '<b>Stage 1, Executive Bronze</b>, is the maintenance detail: a hand wash, wheels and tires, a full vacuum, the dash and panels wiped down and the windows done. <b>Stage 3, Elite Platinum</b>, is a full reset. It adds paint decontamination and six months of paint protection outside, and a deeper interior with the dash and console disinfected and treated and the seats refreshed.'],
     [`Why is there a $${D} deposit?`,
      `It holds your time. We turn other people away for that slot, so a no-show costs a real job. ${esc(CFG.DEPOSIT.POLICY)}`],
     ['How long does it take?',
-     'About <b>two hours</b> for Bronze and about <b>three</b> for Platinum. If yours needs longer because of pet hair or a bad spill, we tell you before we start, not after.'],
+     'About <b>two hours</b> for Stage 1 and about <b>three</b> for Stage 3. If yours needs longer because of pet hair or a bad spill, we tell you before we start, not after.'],
     ['Do you really come to me?',
      `Yes, we're 100% mobile. Your driveway, apartment lot or work parking lot. There's no travel fee within about ${CFG.FREE_MIN} minutes of us. Farther out, 45 minutes to an hour, adds a small fee and we tell you the number before we book it.`],
     ['Do trucks and vans cost more?',
@@ -1127,7 +1128,7 @@ const fmtPhone = v => {
 
   function renderServices(){
     $('#segService').innerHTML = CFG.SERVICES.map(s => `<button type="button" data-svc="${s.id}"${s.id === service.id ? ' class="sel"' : ''}>
-      ${esc(s.short)}<small>from <b>${price(s, size)}</b> · ${esc(s.time.toLowerCase())}</small></button>`).join('');
+      <small class="stg">${esc(s.short.split(' · ')[0])}</small>${esc(s.tier)}<small>from <b>${price(s, size)}</b> · ${esc(s.time.toLowerCase())}</small></button>`).join('');
     $$('#segService button').forEach(b => b.addEventListener('click', () => choose(b.dataset.svc)));
   }
   function renderSizes(){

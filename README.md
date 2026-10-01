@@ -29,11 +29,11 @@ marked `PLACEHOLDER` is still a guess.
 | Package | Old name | Sedan | Crossover | SUV | Truck / Van | Time |
 |---|---|---|---|---|---|---|
 | Executive Bronze Detail (`essential`) | Stage 1, was Essential Supreme Shine | $150 | $175 | $200 | $200+ | ~2 hr |
-| Elite Platinum Detail (`platinum`) | Stage 2, was Executive Supreme Shine | $300 | $325 | $350 | $350+ | ~3 hr |
+| Elite Platinum Detail (`platinum`) | Stage 3, was Executive Supreme Shine | $300 | $325 | $350 | $350+ | ~3 hr |
 
-- Only **two** packages. The stage names *are* the detail names: Stage 1 = Executive
-  Bronze, Stage 2 = Elite Platinum (his "stage 3" in the text meant the second one).
-  The site shows the names, not stage numbers.
+- Only **two** packages: **Stage 1** = Executive Bronze, **Stage 3** = Elite Platinum.
+  He confirmed there is no Stage 2. The site labels them "Stage 1 · Bronze" and
+  "Stage 3 · Platinum".
 - Every price is shown as **starting at**. Bigger vehicles (family vans, single cab
   trucks) cost extra, so Truck / Van shows a `+` and the copy says he texts the number.
 - Platinum contents are his words: pre-rinse, contact wash, wheels and wells, tire
