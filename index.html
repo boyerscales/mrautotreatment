@@ -144,7 +144,7 @@ button,input,select{font:inherit;color:inherit}
 .seal{display:none;position:absolute;right:var(--gut);bottom:72px;width:138px;aspect-ratio:1;z-index:1;
   animation:up 1.1s var(--ease) both;animation-delay:.9s}
 .seal svg{position:absolute;inset:0;width:100%;height:100%;animation:spin 30s linear infinite}
-.seal text{font:600 9.4px var(--font);letter-spacing:2.4px;fill:var(--ink);font-variation-settings:"wdth" 125;text-transform:uppercase}
+.seal text{font:600 9.4px var(--font);letter-spacing:0;fill:var(--ink);font-variation-settings:"wdth" 125;text-transform:uppercase}
 .seal .logo{position:absolute;inset:19%;box-shadow:0 0 0 1px rgba(227,178,60,.5),0 14px 40px rgba(0,0,0,.6)}
 @keyframes spin{to{transform:rotate(360deg)}}
 .hdr::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:var(--gold);
@@ -519,7 +519,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   </div>
   <div class="seal" aria-hidden="true">
     <svg viewBox="0 0 160 160"><defs><path id="ring" d="M80,80 m-66,0 a66,66 0 1,1 132,0 a66,66 0 1,1 -132,0"/></defs>
-      <text><textPath href="#ring">Mr. Auto Treatment · Elite detailing · Sacramento ·</textPath></text></svg>
+      <text><textPath href="#ring" textLength="406" lengthAdjust="spacing">Mr. Auto Treatment · Elite detailing · Sacramento ·</textPath></text></svg>
     <span class="logo"><img src="assets/logo.jpg" alt=""></span>
   </div>
 </section>
