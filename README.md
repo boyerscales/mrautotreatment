@@ -14,7 +14,7 @@ marked `PLACEHOLDER` is still a guess.
 ## Where things came from
 - **Logo:** his Instagram profile picture (@mrautotreatment_), 545px. `assets/logo.jpg`,
   plus `logo-180.png` (home-screen icon) and `favicon.png`. It's on the header, hero
-  seal, about, booking panel, booking summary, quote form, reviews, finale and footer.
+  seal, booking panel, booking summary, quote form, reviews, finale and footer.
 - **Photos:** cover frames of his Instagram posts. Full-size originals live in
   `assets/originals/` (gitignored). Web copies were cut with
   `sips -s format jpeg -s formatOptions 68 -Z 1100`. Every shot is a portrait phone
@@ -43,6 +43,14 @@ marked `PLACEHOLDER` is still a guess.
   check". Treat as confirmed unless he comes back.
 - Travel: free within about 30 minutes, 45 min to an hour out costs extra.
 - **$25 deposit** to lock in a spot (no-shows and last-minute reschedules).
+
+## His cuts (text, 2026-10-05)
+- Hero is just **Mr. Auto Treatment** / "Professional mobile detailing" / **Book now**.
+  The "Bronze from $150 · $25 holds your spot" line under the button is gone.
+- Every "Book a detail" button now says **Book now**.
+- Moving headline: Foam bath → **Car wraps**, Interior reset → **Curb rash repair**.
+- Removed: the "Excellence isn't the goal" statement, **Our Work**, **About** and **FAQ**.
+  The work photos are still in `assets/` if he wants a gallery back.
 
 ## Booking
 Live against `https://dashboard.boyerscales.com/api/public/schedule/mrautotreatment`.
@@ -81,14 +89,12 @@ backend work: onboarding, webhooks, and a booking that only confirms once paid.
 no-shows lose it") is **our wording, not his**. Confirm it with him before launch.
 
 ## Still open
-1. His **About paragraph** (he's sending it). Paste into `CFG.ABOUT`.
-2. Deposit policy wording, and the Stripe link above.
-3. Travel fee amount for 45–60 min out, and where he's based.
-4. Reviews: `CFG.REVIEWS` is empty, so the section shows a "Leave a review" card.
+1. Deposit policy wording, and the Stripe link above.
+2. Travel fee amount for 45–60 min out, and where he's based.
+3. Reviews: `CFG.REVIEWS` is empty, so the section shows a "Leave a review" card.
    He has a Reviews highlight on Instagram. Add real ones as `{text, name, car}`.
    Never write them ourselves.
-5. OK to show "Emmanuel" as the owner name? (`CFG.OWNER_FIRST`, '' hides it)
-6. Licensed & insured is from his magnet. Worth a quick yes from him since it's a claim.
+4. Licensed & insured is from his magnet. Worth a quick yes from him since it's a claim.
 
 ## Going live checklist
 1. He pays us.
