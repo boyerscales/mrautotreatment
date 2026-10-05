@@ -51,6 +51,12 @@ marked `PLACEHOLDER` is still a guess.
 - Moving headline: Foam bath → **Car wraps**, Interior reset → **Curb rash repair**.
 - Removed: the "Excellence isn't the goal" statement, **Our Work**, **About** and **FAQ**.
   The work photos are still in `assets/` if he wants a gallery back.
+- In their place he wants people **calling him**. His number is in the header at every
+  size, a second button under Book now, and a big "Questions? Call or text" section
+  after Specialty.
+- **Car wraps** leads the Specialty list. Its "Get a price" text asks for the vehicle and
+  the color and finish they want. No wrap photos on his Instagram yet; once he has
+  some, wraps could get a photo block like the packages.
 
 ## Booking
 Live against `https://dashboard.boyerscales.com/api/public/schedule/mrautotreatment`.
