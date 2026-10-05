@@ -86,9 +86,12 @@ no-shows lose it") is **our wording, not his**. Confirm it with him before launc
 
 ## Going live checklist
 1. He pays us.
-2. Domain (his magnet already prints **mrautotreatment.com**) → GitHub Pages, add `CNAME`.
-3. Remove `<meta name="robots" content="noindex">`.
-4. Point the Stripe redirect at the real domain.
+2. ~~Domain → GitHub Pages, add `CNAME`.~~ Done 2026-10-05. **mrautotreatment.com** is
+   in Elijah's Namecheap account: four A records on `@` (185.199.108–111.153) and
+   `www` CNAME → `boyerscales.github.io.`
+3. ~~Remove `<meta name="robots" content="noindex">`.~~ Done 2026-10-05.
+4. Point the Stripe redirect at the real domain (`siteUrl` in his `booking_config`).
+5. Turn on Enforce HTTPS in the repo's Pages settings once GitHub issues the certificate.
 
 ## Local preview
 ```
