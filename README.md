@@ -19,6 +19,12 @@ marked `PLACEHOLDER` is still a guess.
   `assets/originals/` (gitignored). Web copies were cut with
   `sips -s format jpeg -s formatOptions 68 -Z 1100`. Every shot is a portrait phone
   photo, which is why the hero is a three-photo strip rather than one wide image.
+- **Package photos are stock (2026-10-05).** He felt his own shots didn't look clean
+  enough. Both are free under the Unsplash License (commercial use OK, no credit
+  required), cut to 1050px wide:
+  - `bronze-wheel.jpg`: Zac Nielson, https://unsplash.com/photos/8k_T1EwTySs
+  - `platinum-beading.jpg`: atelierbyvineeth, https://unsplash.com/photos/_qfANGN7w_4
+  No people's faces, so nobody reads them as him or his crew.
 - **Tagline, claims, payment types, service area:** his own car-door magnet
   (Instagram post DdIu3LXhNsq): "Elite Detailing, where professionalism meets
   perfection", licensed & insured, satisfaction guaranteed, premium products,
