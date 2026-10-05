@@ -57,6 +57,12 @@ The dashboard stores one price per service, so the booking POST also puts
 `SUV · from $350 · $25 deposit to collect` in `notes`, plus `vehicle_size`.
 
 ## Deposit
+**The site follows the dashboard (2026-10-05).** The schedule API reports `deposit`: 0
+until his Stripe is connected in the dashboard, then 25. At 0 the booking box says
+"Due today: Nothing" / "Book my spot", the How It Works step reads "Get a text", and the
+deposit FAQ is hidden. At 25 everything flips back on its own and a booking goes straight
+to Stripe checkout. Nothing to edit here when he connects.
+
 `CFG.DEPOSIT.URL` is empty, so right now the confirmation says *"We'll text you a
 secure link to pay it."* **Someone has to actually send that link** until the URL is set.
 

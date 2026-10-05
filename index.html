@@ -657,7 +657,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     <div class="steps">
       <div class="step rv"><div><h3>Pick a time</h3>
         <p>Choose Stage 1 or Stage 3, your vehicle size, then a day and a time. No account to make.</p></div></div>
-      <div class="step rv"><div><h3>Hold it with $25</h3>
+      <div class="step rv"><div><h3 id="stepDepositHead">Hold it with $25</h3>
         <p id="stepDeposit"></p></div></div>
       <div class="step rv"><div><h3>We pull up</h3>
         <p id="stepPay"></p></div></div>
@@ -944,7 +944,7 @@ const fmtPhone = v => {
     ['What\'s the difference between Stage 1 and Stage 3?',
      '<b>Stage 1, Executive Bronze</b>, is the maintenance detail: a hand wash, wheels and tires, a full vacuum, the dash and panels wiped down and the windows done. <b>Stage 3, Elite Platinum</b>, is a full reset. It adds paint decontamination and six months of paint protection outside, and a deeper interior with the dash and console disinfected and treated and the seats refreshed.'],
     [`Why is there a $${D} deposit?`,
-     `It holds your time. We turn other people away for that slot, so a no-show costs a real job. ${esc(CFG.DEPOSIT.POLICY)}`],
+     `It holds your time. We turn other people away for that slot, so a no-show costs a real job. ${esc(CFG.DEPOSIT.POLICY)}`, 'deposit'],
     ['How long does it take?',
      'About <b>two hours</b> for Stage 1 and about <b>three</b> for Stage 3. If yours needs longer because of pet hair or a bad spill, we tell you before we start, not after.'],
     ['Do you really come to me?',
@@ -958,7 +958,7 @@ const fmtPhone = v => {
     ['What about RVs, boats or a company fleet?',
      'We do those too, along with monthly maintenance plans. Call or text and we\'ll work out a price.'],
   ];
-  $('#faqList').innerHTML = FAQ.map(q => `<details class="q"><summary>${esc(q[0])}</summary><div class="a">${q[1]}</div></details>`).join('');
+  $('#faqList').innerHTML = FAQ.map(q => `<details class="q"${q[2] ? ` data-${q[2]}` : ''}><summary>${esc(q[0])}</summary><div class="a">${q[1]}</div></details>`).join('');
   $('#yr').textContent = new Date().getFullYear();
 
   // Back from Stripe: paid, or backed out (the slot was already freed).
@@ -1114,10 +1114,12 @@ const fmtPhone = v => {
 (function booking(){
   const daysEl = $('#days'), slotsEl = $('#slots'), form = $('#bookForm'), step2 = $('#step2');
   let cfg = { hours:CFG.HOURS, booked:[], stepMinutes:CFG.STEP_MIN, horizonDays:CFG.HORIZON, leadHours:CFG.LEAD_HOURS };
-  let live = false, picked = null, service = CFG.SERVICES[0], size = CFG.SIZES[0].id;
+  let live = false, picked = null, selDay = null, service = CFG.SERVICES[0], size = CFG.SIZES[0].id;
   const minutes = {};                            // the dashboard's job lengths win over ours
   const mins = s => minutes[s.id] || s.minutes;
-  const D = CFG.DEPOSIT.AMOUNT;
+  // The deposit the dashboard will actually take: 0 until his Stripe is
+  // connected, then CFG.DEPOSIT.AMOUNT. Until then a booking just goes on the calendar.
+  let dep = 0, booking = false, drawn = '';
 
   const ymd  = d => d.getFullYear()+'-'+pad(d.getMonth()+1)+'-'+pad(d.getDate());
   const hm2m = s => (+s.slice(0,2))*60 + (+s.slice(3,5));
@@ -1168,10 +1170,20 @@ const fmtPhone = v => {
     $('#sum').innerHTML = `
       <div><span>${esc(service.label)}</span><b>from ${price(service, size)}</b></div>
       <div><span>Vehicle</span><b>${esc(z.label)}</b></div>
-      <div class="due"><span>Due today</span><b>$${D}</b></div>`;
-    $('#bookBtn').innerHTML = `<svg><use href="#i-lock"/></svg>Hold my spot with $${D}`;
-    $('#formNote').textContent = `The $${D} goes toward your total. The rest is due after the job` +
-      (service.plus.includes(size) ? ', and we text you the exact price for your vehicle first.' : '.');
+      <div class="due"><span>Due today</span><b>${dep ? '$' + dep : 'Nothing'}</b></div>`;
+    $('#bookBtn').innerHTML = `<svg><use href="#i-lock"/></svg>${dep ? `Hold my spot with $${dep}` : 'Book my spot'}`;
+    const plus = service.plus.includes(size) ? ', and we text you the exact price for your vehicle first.' : '.';
+    $('#formNote').textContent = dep
+      ? `The $${dep} goes toward your total. The rest is due after the job${plus}`
+      : `Nothing to pay now. You pay after the job${plus}`;
+  }
+  // The deposit step and FAQ follow what the dashboard will actually take.
+  function applyDeposit(){
+    $$('[data-deposit]').forEach(el => { el.hidden = !dep; });
+    $('#stepDepositHead').textContent = dep ? `Hold it with $${dep}` : 'Get a text';
+    $('#stepDeposit').textContent = dep
+      ? `A $${dep} deposit locks in your time, because a no-show is a slot someone else could have had. ${CFG.DEPOSIT.POLICY}`
+      : `We text you to confirm your time. Need to change it? Call or text ${CFG.PHONE_TEXT}.`;
   }
   function renderPicked(){
     if (!picked) return;
@@ -1203,30 +1215,44 @@ const fmtPhone = v => {
     }
     return out;
   }
-  function renderDays(){
+  // keep: a refresh. Stay on the chosen day and time while they still work; if the
+  // time has dropped inside the notice window or been booked, drop it and say so.
+  function renderDays(keep){
     const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'], DOW = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    const lost = keep && picked ? picked : null, keepDay = keep ? selDay : null, scroll = daysEl.scrollLeft;
     daysEl.innerHTML = '';
-    let first = null;
+    let first = null, again = null;
     for (let i = 0; i < cfg.horizonDays; i++){
       const d = new Date(); d.setDate(d.getDate()+i); d.setHours(0,0,0,0);
       const open = slotsFor(d).some(s => !s.taken);
+      if (!open && !daysEl.children.length) continue;   // nothing left to book yet (today, inside the notice): don't offer it
       const b = document.createElement('button');
-      b.type = 'button'; b.className = 'day' + (open ? '' : ' off');
+      b.type = 'button'; b.className = 'day' + (open ? '' : ' off'); b.disabled = !open;
       b.innerHTML = `<div class="dow">${i===0?'Today':DOW[d.getDay()]}</div><div class="num">${d.getDate()}</div><div class="mon">${MON[d.getMonth()]}</div>`;
       b.addEventListener('click', () => pickDay(d, b));
       daysEl.append(b);
       if (open && !first) first = [d, b];
+      if (open && keepDay === ymd(d)) again = [d, b];
     }
-    if (first) pickDay(...first);
-    else slotsEl.innerHTML = `<div class="slots-empty">Nothing open in the next two weeks. Call ${CFG.PHONE_TEXT}.</div>`;
+    daysEl.scrollLeft = scroll;
+    if (again) pickDay(...again, lost && lost.key);
+    else if (first) pickDay(...first);
+    else { step2.hidden = true; slotsEl.innerHTML = `<div class="slots-empty">Nothing open in the next two weeks. Call ${CFG.PHONE_TEXT}.</div>`; }
+    if (lost && !picked){
+      const soon = lost.date.getTime() < Date.now() + cfg.leadHours*3600000;
+      slotsEl.insertAdjacentHTML('afterbegin', `<div class="slots-empty slots-note">${lost.text} on ${lost.date.toLocaleDateString('en-US',{weekday:'long'})} ${soon
+        ? `is now less than ${cfg.leadHours} hours away, so it can't be booked online. Pick a later time, or call ${CFG.PHONE_TEXT}.`
+        : 'just got booked. Pick another time.'}</div>`);
+    }
   }
-  function pickDay(d, btn){
-    picked = null; step2.hidden = true;
+  function pickDay(d, btn, keepKey){
+    picked = null; selDay = ymd(d);
     $$('.day', daysEl).forEach(x => x.classList.remove('sel'));
     btn.classList.add('sel');
     const list = slotsFor(d);
     slotsEl.innerHTML = '';
     if (!list.some(s => !s.taken)){
+      step2.hidden = true;
       slotsEl.innerHTML = `<div class="slots-empty">Nothing open that day. Try another, or call ${CFG.PHONE_TEXT}.</div>`;
       return;
     }
@@ -1241,8 +1267,11 @@ const fmtPhone = v => {
         step2.hidden = false;
         requestAnimationFrame(() => step2.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block:'nearest' }));
       });
+      if (!s.taken && keepKey && s.key === keepKey){ b.classList.add('sel'); picked = s; }
       slotsEl.append(b);
     });
+    if (picked) renderPicked();
+    else step2.hidden = true;
   }
   // Preview only (no dashboard account): a few believable busy slots.
   function seedPreview(){
@@ -1254,7 +1283,7 @@ const fmtPhone = v => {
     cfg.booked = booked;
   }
 
-  async function load(){
+  async function fetchSchedule(){
     try {
       const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}`);
       if (r.ok){
@@ -1263,11 +1292,31 @@ const fmtPhone = v => {
         cfg = { hours:j.hours || cfg.hours, booked:j.booked || [], stepMinutes:j.stepMinutes || cfg.stepMinutes,
                 horizonDays:j.horizonDays || cfg.horizonDays, leadHours:j.leadHours ?? cfg.leadHours };
         (j.services || []).forEach(x => { if (x && x.id && x.minutes) minutes[x.id] = x.minutes; });
-      } else if (r.status === 404) seedPreview();
+        dep = Number(j.deposit) > 0 ? Number(j.deposit) : 0;
+      } else if (r.status === 404){ seedPreview(); dep = CFG.DEPOSIT.AMOUNT; }
       else live = true;                  // server trouble: stay live so a submit errors honestly
     } catch (_) { live = true; }
-    renderDays();
+    applyDeposit(); renderSum();
   }
+  // What the picker shows depends on the bookings and on the clock (the notice
+  // window), which moves once per slot step.
+  const drawing = () => JSON.stringify(cfg.booked) + '|' + cfg.leadHours + '|' + service.id + '|' +
+    Math.floor((Date.now() + cfg.leadHours*3600000) / ((cfg.stepMinutes || 60)*60000));
+  async function load(){
+    await fetchSchedule();
+    renderDays(); drawn = drawing();
+  }
+  // A page left open drifts: an hour later its first times are inside the notice
+  // window and the calendar refuses them. Re-check every minute and when the tab
+  // comes back, and only redraw when something actually changed.
+  async function refresh(force){
+    if (booking || form.hidden) return;
+    await fetchSchedule();
+    if (!force && drawing() === drawn) return;
+    renderDays(true); drawn = drawing();
+  }
+  setInterval(() => { if (!document.hidden) refresh(); }, 60000);
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
@@ -1280,11 +1329,18 @@ const fmtPhone = v => {
     if (digits(phone).length < 10) return fail('That number looks short. We text your confirmation there.', '#bPhone');
     if (!vehicle)                  return fail('What are we working on? Year, make and model is perfect.', '#bVehicle');
     if (!addr)                     return fail('We need an address to come to you.', '#bAddr');
+    // Filled in slowly: the time may have slipped inside the notice window since it was picked.
+    if (picked.date.getTime() < Date.now() + cfg.leadHours*3600000){
+      renderDays(true); drawn = drawing();
+      daysEl.scrollIntoView({ behavior: REDUCED ? 'auto' : 'smooth', block:'center' });
+      return false;
+    }
 
     const z = sizeOf(size), p = price(service, size);
     const btn = $('#bookBtn');
-    btn.disabled = true; btn.textContent = 'Holding your spot…';
-    let ok = true, checkout = '';
+    btn.disabled = true; btn.textContent = dep ? 'Holding your spot…' : 'Booking…';
+    let ok = true, checkout = '', refused = false;
+    booking = true;
     if (live){
       try {
         const r = await fetch(`${CFG.API_BASE}/api/public/schedule/${CFG.SLUG}/book`, {
@@ -1298,13 +1354,16 @@ const fmtPhone = v => {
         const j = await r.json().catch(() => ({}));
         ok = r.ok && j.ok !== false;
         if (!ok) err.textContent = j.error || 'That time just got taken. Pick another, or call us.';
+        refused = r.status === 409 || /too soon/i.test(j.error || '');   // the time itself is gone
         if (ok && /^https:\/\/checkout\.stripe\.com\//.test(j.checkout_url || '')) checkout = j.checkout_url;
       } catch (_) {
         ok = false; err.textContent = 'Couldn\'t reach the calendar. Please call ' + CFG.PHONE_TEXT + '.';
       }
     }
+    booking = false;
     if (checkout){ btn.innerHTML = 'Opening secure checkout…'; location.href = checkout; return; }
     btn.disabled = false; renderSum();
+    if (refused){ await refresh(true); return; }   // redraws without that time and says why
     if (!ok) return;
 
     $('#picker').hidden = true; form.hidden = true; $('#bookSub').hidden = true;
@@ -1314,7 +1373,7 @@ const fmtPhone = v => {
     box.innerHTML = `<strong>Thanks, ${esc(first.charAt(0).toUpperCase() + first.slice(1))}.</strong>
       <span class="ok-when">${picked.date.toLocaleDateString('en-US',{weekday:'long', month:'long', day:'numeric'})} at ${picked.text}</span>
       <span>${esc(service.label)} · ${esc(z.label)} · from ${p}<br>${esc(vehicle)} · ${esc(addr)}</span>
-      <div class="ok-pay"><b>Last step: the $${D} deposit.</b>We'll text ${esc(phone)} a secure link to pay it. Your time is locked in once it's paid, and it goes toward your total.</div>
+      <div class="ok-pay"><b>Nothing to pay now.</b>We'll text ${esc(phone)} to confirm your time. You pay after the job.</div>
       Need to change something? Call or text <a href="tel:${CFG.PHONE_E164}" style="color:var(--ink);text-decoration:underline;text-underline-offset:3px">${CFG.PHONE_TEXT}</a>.
       ${live ? '' : '<span class="ok-pv">Preview mode: this booking was not saved and no text was sent.</span>'}`;
     box.classList.add('on');
