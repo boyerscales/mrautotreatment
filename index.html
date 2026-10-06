@@ -231,8 +231,9 @@ section{padding:88px 0}
    In place of About and FAQ: he'd rather answer questions on the phone. */
 .call{border-top:1px solid var(--line);text-align:center}
 .call .label{color:var(--gold)}
-.call-head{font-weight:600;letter-spacing:-.04em;line-height:.98;margin:0 auto;max-width:12ch;font-size:clamp(44px,12.5vw,150px);text-wrap:balance}
-.call-tag{margin:16px 0 0;color:var(--gold);font-family:var(--script);font-size:clamp(26px,6vw,44px);line-height:1.1}
+/* His slogan is the big line here, bigger than "Questions? Call or text" (text, 2026-10-06). */
+.call-head{font-weight:600;letter-spacing:-.03em;line-height:1.05;margin:0 auto;max-width:24ch;font-size:clamp(28px,6vw,64px);text-wrap:balance}
+.call-tag{margin:14px auto 0;max-width:14ch;color:var(--gold);font-family:var(--script);font-size:clamp(54px,14vw,170px);line-height:1;text-wrap:balance}
 .call-num{display:inline-block;margin:22px 0 0;font-size:clamp(28px,7vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1;
   font-variation-settings:"wdth" 112;font-variant-numeric:tabular-nums;white-space:nowrap;transition:color .18s}
 .call-num:hover{color:var(--gold2)}
@@ -350,6 +351,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
 .foot a{display:block;color:var(--ink2);padding:3px 0}
 .foot a:hover{color:var(--ink)}
 .foot p{margin:0;line-height:1.7}
+.foot .verse{margin-top:14px;max-width:36ch;color:var(--ink2);font-style:italic}
+.foot .verse span{display:block;font-style:normal;color:var(--gold);font-size:12px;letter-spacing:.16em;text-transform:uppercase;margin-top:4px}
 .fine{margin-top:36px;padding-top:20px;border-top:1px solid var(--line);font-size:12.5px}
 
 /* ---------- phone bar ----------
@@ -479,7 +482,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
 <div class="proof">
   <div class="wrap proof-in">
     <div class="proof-item"><svg><use href="#i-shield"/></svg><span><b>Licensed and insured.</b> Your vehicle is in good hands</span></div>
-    <div class="proof-item"><svg><use href="#i-pin"/></svg><span><b>We come to you.</b> Sacramento and the surrounding area</span></div>
+    <div class="proof-item"><svg><use href="#i-pin"/></svg><span><b>We come to you.</b> 100% mobile, Sacramento and the surrounding areas</span></div>
     <div class="proof-item"><svg><use href="#i-star"/></svg><span><b>Blessed hands.</b> Unmatched results</span></div>
   </div>
 </div>
@@ -674,7 +677,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   <div class="wrap">
     <span class="logo rv"><img src="assets/logo.jpg" alt="Mr. Auto Treatment" loading="lazy"></span>
     <p class="big long rv" style="--d:1">One stop shop for all your <em>detailing needs.</em></p>
-    <p class="rv" style="--d:2">Pick a detail and a time in about a minute, and we come to you.</p>
+    <p class="rv" style="--d:2">Pick a detail and a time, and you're all set. We come to you. Mobile anointing!</p>
     <div class="acts rv" style="--d:3">
       <a class="btn btn-gold" href="#book">Book now</a>
       <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
@@ -689,7 +692,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     <div class="foot">
       <div>
         <span class="logo"><img src="assets/logo.jpg" alt="Mr. Auto Treatment" loading="lazy"></span>
-        <p>Where professionalism meets perfection. Elite mobile detailing in Sacramento and the surrounding area.</p>
+        <p>Where professionalism meets perfection.</p>
+        <p class="verse">&ldquo;Seek first the kingdom of God and His righteousness, and all these things shall be added to you.&rdquo; <span>Matthew 6:33</span></p>
       </div>
       <div>
         <h4>Contact</h4>

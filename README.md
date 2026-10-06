@@ -65,6 +65,16 @@ marked `PLACEHOLDER` is still a guess.
   the color and finish they want. No wrap photos on his Instagram yet; once he has
   some, wraps could get a photo block like the packages.
 
+## His edits (text, 2026-10-06, afternoon)
+- Proof strip: "We come to you. 100% mobile, Sacramento and the surrounding areas".
+- Call section: his slogan "Pristine shine in no time." is now the big line, with
+  "Questions? Call or text" smaller above it.
+- Finale, under "One stop shop": "Pick a detail and a time, and you're all set. We come
+  to you. Mobile anointing!"
+- Footer left: "Where professionalism meets perfection." plus Matthew 6:33 (NKJV wording).
+- **Still to do:** he wants the hero Porsche (`porsche-foam.jpg` on wide screens,
+  `cayman-foam.jpg` on phones) replaced with a photo he texted. Needs the file.
+
 ## Booking
 Live against `https://dashboard.boyerscales.com/api/public/schedule/mrautotreatment`.
 Real bookings save and real texts go out, so **test with the network stubbed**, never
