@@ -22,7 +22,8 @@ marked `PLACEHOLDER` is still a guess.
 - **Package photos are stock (2026-10-05).** He felt his own shots didn't look clean
   enough. Both are free under the Unsplash License (commercial use OK, no credit
   required), cut to 1050px wide:
-  - `bronze-wheel.jpg`: Zac Nielson, https://unsplash.com/photos/8k_T1EwTySs
+  - ~~`bronze-wheel.jpg`~~ replaced 2026-10-06 by his own shot, `bronze-daytona.jpg`
+    (white Charger Daytona wheel; original in `assets/originals/`). The stock file is unused.
   - `platinum-beading.jpg`: atelierbyvineeth, https://unsplash.com/photos/_qfANGN7w_4
   No people's faces, so nobody reads them as him or his crew.
 - **Tagline, claims, payment types, service area:** his own car-door magnet

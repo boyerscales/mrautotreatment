@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" href="assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=Kaushan+Script&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://dashboard.boyerscales.com" crossorigin>
 <link rel="preload" as="image" media="(max-width:759px)" href="assets/cayman-foam.jpg">
 <link rel="preload" as="image" media="(min-width:760px)" href="assets/porsche-foam.jpg">
@@ -31,6 +31,8 @@
   --ink:#f3f1ed; --ink2:#b4b1ab; --ink3:#7d7a75;
   --gold:#e3b23c; --gold2:#f0c552; --bad:#ff7a70;
   --font:"Archivo",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  /* The brush script from his logo and flyer ("Treatment"). */
+  --script:"Kaushan Script","Brush Script MT",cursive;
   --gut:20px; --wrap:1180px;
   --ease:cubic-bezier(.2,.7,.2,1);
 }
@@ -93,11 +95,11 @@ button,input,select{font:inherit;color:inherit}
 .hdr-in{display:flex;align-items:center;height:68px;gap:28px}
 .brand{margin-right:auto;display:flex;align-items:center;gap:12px}
 .brand .logo{width:46px;height:46px;box-shadow:0 2px 14px rgba(0,0,0,.5)}
-.brand-name{font-size:13px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;font-variation-settings:"wdth" 125;line-height:1.25}
-.brand-name span{display:block;color:var(--gold);font-size:10.5px;letter-spacing:.28em}
+.brand-name{font-size:15px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-variation-settings:"wdth" 125;line-height:1;white-space:nowrap}
+.brand-name span{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;color:var(--gold);font-size:21px;margin-left:-1px}
 .nav{display:none;gap:28px}
-.nav a{font-size:14px;color:var(--ink2);transition:color .15s}
-.nav a:hover{color:var(--ink)}
+.nav a{font-size:15px;font-weight:500;color:var(--ink);transition:color .15s}
+.nav a:hover{color:var(--gold2)}
 .hdr .btn{display:none;height:44px;padding:0 20px;font-size:12px}
 /* He'd rather people call, so the number is in the header at every size. */
 .hdr-tel{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 14px;border:1px solid var(--line2);border-radius:2px;
@@ -133,7 +135,7 @@ button,input,select{font:inherit;color:inherit}
 /* ---------- his touches ----------
    The parts that are his and not Valley Details: the italic out of his logo,
    a light glint across fresh paint, his seal, and a little more gold. */
-.hero .head em{font-style:italic;font-weight:600;color:var(--gold);font-variation-settings:"wdth" 108;letter-spacing:-.03em;padding-right:.04em}
+.hero .head em{font-family:var(--script);font-style:normal;font-weight:400;color:var(--gold);letter-spacing:0;padding-right:.08em;display:inline-block;font-size:1.08em}
 .hero-img{overflow:hidden}
 .hero-img::after{content:"";position:absolute;inset:0;pointer-events:none;transform:translateX(-110%);
   background:linear-gradient(105deg,transparent 38%,rgba(255,255,255,.16) 50%,transparent 62%);
@@ -159,6 +161,7 @@ button,input,select{font:inherit;color:inherit}
 .finale{border-top:1px solid var(--line);text-align:center;overflow:hidden;position:relative}
 .finale .logo{width:92px;height:92px;margin:0 auto 34px;box-shadow:0 0 0 1px rgba(227,178,60,.35),0 20px 60px rgba(0,0,0,.6)}
 .finale .big{font-size:clamp(46px,11vw,128px);font-weight:600;letter-spacing:-.04em;line-height:.98;margin:0 0 30px;text-wrap:balance}
+.finale .big.long{font-size:clamp(40px,8vw,96px);max-width:14ch;margin-left:auto;margin-right:auto}
 .finale .big em{font-style:italic;color:var(--gold);font-variation-settings:"wdth" 108}
 .finale p{color:var(--ink2);font-size:17px;margin:0 auto 34px;max-width:40ch}
 .finale .acts{display:flex;flex-direction:column;gap:12px;align-items:stretch;max-width:420px;margin:0 auto}
@@ -179,6 +182,9 @@ section{padding:88px 0}
 .sec-head p.lead{color:var(--ink2);font-size:17px;margin:16px 0 0;max-width:46ch}
 
 /* ---------- the two packages ---------- */
+/* He asked for these to read brighter: lighter grays inside packages and specialty. */
+.pkg,.others{--ink2:#e2dfd9;--ink3:#b3afa8}
+.prices b{color:var(--gold2)}
 .pkg+.pkg{padding-top:0}
 .fd-pic{margin:0 calc(var(--gut)*-1) 32px;aspect-ratio:4/5}
 /* Taller than its frame so it can drift a little as the page scrolls past it. */
@@ -215,6 +221,11 @@ section{padding:88px 0}
 .svc .arrow{grid-column:2;grid-row:1/3;align-self:center;font-size:14px;white-space:nowrap}
 .sizes{font-size:14px;color:var(--ink3);margin:22px 0 0}
 .sizes b{color:var(--ink2);font-weight:500}
+/* He wanted this one to grab attention: a gold-framed card instead of a footnote. */
+.sizes.callout{margin:30px 0 0;padding:22px 24px;border:1px solid rgba(227,178,60,.6);border-left-width:3px;
+  background:rgba(227,178,60,.08);border-radius:2px;font-size:16px;color:var(--ink)}
+.sizes.callout b{display:block;color:var(--gold2);font-size:24px;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}
+.sizes.callout .arrow{display:flex;width:max-content;margin-top:14px;color:var(--gold2);border-color:var(--gold)}
 
 /* ---------- call ----------
    In place of About and FAQ: he'd rather answer questions on the phone. */
@@ -450,7 +461,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   </picture>
   <div class="wrap hero-copy" id="heroCopy">
     <h1 class="head up">Mr. Auto <em>Treatment</em></h1>
-    <p class="hero-sub up" style="--d:1">Professional mobile detailing</p>
+    <p class="hero-sub up" style="--d:1">Mobile detailing</p>
     <div class="hero-cta up" style="--d:2">
       <a class="btn btn-gold" id="heroBook" href="#book">Book now</a>
       <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
@@ -467,7 +478,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   <div class="wrap proof-in">
     <div class="proof-item"><svg><use href="#i-shield"/></svg><span><b>Licensed and insured.</b> Your vehicle is in good hands</span></div>
     <div class="proof-item"><svg><use href="#i-pin"/></svg><span><b>We come to you.</b> Sacramento and the surrounding area</span></div>
-    <div class="proof-item"><svg><use href="#i-lock"/></svg><span><b>$25 holds your spot.</b> The rest when it's done</span></div>
+    <div class="proof-item"><svg><use href="#i-star"/></svg><span><b>Blessed hands.</b> Unmatched results</span></div>
   </div>
 </div>
 
@@ -476,7 +487,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
 <section class="pkg" id="bronze">
   <div class="wrap fd">
     <div class="fd-pic ph rv-clip" data-par>
-      <img src="assets/bronze-wheel.jpg" alt="Gloved hand scrubbing a tire with a detailing brush" loading="lazy" decoding="async">
+      <img src="assets/bronze-daytona.jpg" alt="Clean wheel and tire on a white Dodge Charger Daytona after a Mr. Auto Treatment detail" loading="lazy" decoding="async">
     </div>
     <div>
       <div class="sec-head">
@@ -544,7 +555,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     </div>
     <div>
       <div id="svcList"></div>
-      <p class="sizes rv"><b>Not just cars.</b> RVs, boats, motorcycles, fleet accounts and monthly maintenance plans too. <a class="arrow" data-sms-quote="an RV, boat or fleet job" style="margin-left:6px">Ask about it</a></p>
+      <p class="sizes callout rv"><b>Not just cars.</b> RVs, boats, motorcycles, fleet accounts and monthly maintenance plans too. <a class="arrow" data-sms-quote="an RV, boat or fleet job">Ask about it</a></p>
     </div>
   </div>
 </section>
@@ -659,8 +670,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
 <section class="finale" id="finale">
   <div class="wrap">
     <span class="logo rv"><img src="assets/logo.jpg" alt="Mr. Auto Treatment" loading="lazy"></span>
-    <p class="big rv" style="--d:1">Give it the <em>treatment.</em></p>
-    <p class="rv" style="--d:2">Pick a detail and a time in about a minute. $25 holds your spot, and we come to you.</p>
+    <p class="big long rv" style="--d:1">One stop shop for all your <em>detailing needs.</em></p>
+    <p class="rv" style="--d:2">Pick a detail and a time in about a minute, and we come to you.</p>
     <div class="acts rv" style="--d:3">
       <a class="btn btn-gold" href="#book">Book now</a>
       <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
