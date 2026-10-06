@@ -98,8 +98,9 @@ To finish it:
 Moving money through BoyerScales instead (Stripe Connect) works, but it's dashboard
 backend work: onboarding, webhooks, and a booking that only confirms once paid.
 
-`CFG.DEPOSIT.POLICY` ("goes toward your total, carries over with 24 hours' notice,
-no-shows lose it") is **our wording, not his**. Confirm it with him before launch.
+`CFG.DEPOSIT.POLICY` is his wording (text, 2026-10-06): the $25 goes toward the total and
+the customer pays the rest after the service is completed. He wants "Due today" to show $25,
+which happens on its own once his Stripe is connected in the dashboard.
 
 ## Still open
 1. Deposit policy wording, and the Stripe link above.

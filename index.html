@@ -107,7 +107,7 @@ button,input,select{font:inherit;color:inherit}
 .hdr-tel:hover{border-color:var(--ink)}
 .hdr-tel svg{width:15px;height:15px;color:var(--gold)}
 
-/* ---------- toast (back from paying the deposit) ---------- */
+/* ---------- toast (back from paying the deposit, or from leaving a review) ---------- */
 .toast{position:fixed;left:50%;top:84px;z-index:90;transform:translateX(-50%);display:flex;gap:10px;align-items:center;
   padding:14px 18px;border-radius:2px;background:var(--bg3);border:1px solid var(--line2);font-size:15px;
   box-shadow:0 20px 50px rgba(0,0,0,.6);width:max-content;max-width:calc(100% - 32px)}
@@ -231,7 +231,9 @@ section{padding:88px 0}
    In place of About and FAQ: he'd rather answer questions on the phone. */
 .call{border-top:1px solid var(--line);text-align:center}
 .call .label{color:var(--gold)}
-.call-num{display:inline-block;margin:18px 0 0;font-size:clamp(34px,10vw,124px);font-weight:600;letter-spacing:-.04em;line-height:1;
+.call-head{font-weight:600;letter-spacing:-.04em;line-height:.98;margin:0 auto;max-width:12ch;font-size:clamp(44px,12.5vw,150px);text-wrap:balance}
+.call-tag{margin:16px 0 0;color:var(--gold);font-family:var(--script);font-size:clamp(26px,6vw,44px);line-height:1.1}
+.call-num{display:inline-block;margin:22px 0 0;font-size:clamp(28px,7vw,72px);font-weight:600;letter-spacing:-.04em;line-height:1;
   font-variation-settings:"wdth" 112;font-variant-numeric:tabular-nums;white-space:nowrap;transition:color .18s}
 .call-num:hover{color:var(--gold2)}
 .call-sub{color:var(--ink2);font-size:17px;margin:22px auto 30px;max-width:40ch}
@@ -562,9 +564,10 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
 
 <section class="call" id="call">
   <div class="wrap">
-    <p class="label rv">Questions? Call or text</p>
-    <a class="call-num rv" style="--d:1" data-tel><span data-phone></span></a>
-    <p class="call-sub rv" style="--d:2">A quote, a question about your car, or a time you don't see online. 6am to 6pm, every day.</p>
+    <h2 class="call-head rv">Questions? Call or text</h2>
+    <p class="call-tag rv" style="--d:1">Pristine shine in no time.</p>
+    <a class="call-num rv" style="--d:2" data-tel><span data-phone></span></a>
+    <p class="call-sub rv" style="--d:3">A quote, a question about your car, or a time you don't see online. Monday to Saturday, 6am to 6pm.</p>
     <div class="call-btns rv" style="--d:3">
       <a class="btn btn-gold" data-tel><svg><use href="#i-phone"/></svg>Call</a>
       <a class="btn btn-line" data-sms>Text</a>
@@ -633,7 +636,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
       <div class="sec-head">
         <p class="label rv">Book</p>
         <h2 class="head rv" style="--d:1">Pick a time. We'll bring everything.</h2>
-        <p class="lead rv" style="--d:2">Your detail, your size, then a day and a time. Seven days a week, 6am to 6pm.</p>
+        <p class="lead rv" style="--d:2">Your detail, your size, then a day and a time. Monday to Saturday, 6am to 6pm.</p>
       </div>
       <div class="callcard rv">
         <p class="label">Rather talk?</p>
@@ -658,7 +661,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     <div class="revs" id="revs"></div>
     <div class="ask rv" id="ask">
       <span class="logo"><img src="assets/logo.jpg" alt="" loading="lazy"></span>
-      <p><b>Had us out?</b>A couple of honest sentences helps a local business more than you'd think.</p>
+      <p><b>Tell us how we did!</b>We are blessed to have the pleasure of serving you.</p>
       <div class="links">
         <a class="arrow" id="reviewLink" target="_blank" rel="noopener">Leave a review <svg><use href="#i-arrow"/></svg></a>
         <a class="arrow" data-ig target="_blank" rel="noopener">See more on Instagram</a>
@@ -697,7 +700,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
       </div>
       <div>
         <h4>Hours</h4>
-        <p>Every day, 6am to 6pm<br>100% mobile, we come to you<br>Sacramento, CA</p>
+        <p>Monday to Saturday, 6am to 6pm<br>Sunday closed<br>100% mobile, we come to you<br>Sacramento, CA</p>
       </div>
     </div>
     <p class="fine">© <span id="yr">2026</span> Mr. Auto Treatment · Thank you for supporting a local business.</p>
@@ -750,8 +753,8 @@ const CFG = {
      bookings save as before and the confirmation says we'll text a link. */
   DEPOSIT: {
     AMOUNT : 25,
-    // PLACEHOLDER: he asked for the deposit, not this exact policy. Confirm it.
-    POLICY : 'It goes toward your total. Text us at least 24 hours ahead to move your time and it carries over. No-shows lose it.',
+    // His words (text, 2026-10-06).
+    POLICY : 'It goes toward your total, and you pay the rest after the service is completed.',
   },
   PAYMENTS: 'cash, card, Zelle, Apple Pay or Google Pay. Business invoices available',   // from his door magnet
 
@@ -761,7 +764,7 @@ const CFG = {
   STEP_MIN   : 60,
   HORIZON    : 14,
   LEAD_HOURS : 24,
-  HOURS      : {0:['06:00','18:00'],1:['06:00','18:00'],2:['06:00','18:00'],3:['06:00','18:00'],
+  HOURS      : {0:null,1:['06:00','18:00'],2:['06:00','18:00'],3:['06:00','18:00'],
                 4:['06:00','18:00'],5:['06:00','18:00'],6:['06:00','18:00']},
 
   /* --- specialty work, priced by text. An optional third item replaces what
@@ -788,6 +791,7 @@ const CFG = {
          {text, name}. Word for word. Never write these ourselves.           */
   REVIEWS   : [],
   REVIEW_URL: 'https://www.facebook.com/MrAutoTreatment/reviews',
+  REVIEW_THANKS: 'We appreciate you taking the time out of your day to leave us a review. God bless you.',   // his words
 };
 
 const $  = (s, r=document) => r.querySelector(s);
@@ -833,18 +837,29 @@ const fmtPhone = v => {
     $('#reviews .head').textContent = 'Word gets around.';
   }
   $('#reviewLink').href = CFG.REVIEW_URL;
+  // His thank-you (text, 2026-10-06). Facebook doesn't tell us when a review is posted,
+  // so it shows when they come back from the review tab after being gone a while.
+  const toast = (html, ms) => {
+    const t = document.createElement('div');
+    t.className = 'toast'; t.setAttribute('role','status'); t.innerHTML = html;
+    document.body.append(t); setTimeout(() => t.remove(), ms);
+  };
+  let reviewAt = 0;
+  $('#reviewLink').addEventListener('click', () => { reviewAt = Date.now(); });
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden || !reviewAt || Date.now() - reviewAt < 15000) return;
+    reviewAt = 0;
+    toast('<svg><use href="#i-check"/></svg>' + esc(CFG.REVIEW_THANKS), 10000);
+    $('#ask p').innerHTML = '<b>Thank you!</b>' + esc(CFG.REVIEW_THANKS);
+  });
   $('#yr').textContent = new Date().getFullYear();
 
   // Back from Stripe: paid, or backed out (the slot was already freed).
   const back = new URLSearchParams(location.search).get('deposit');
   if (back === 'paid' || back === 'canceled'){
-    const t = document.createElement('div');
-    t.className = 'toast'; t.setAttribute('role','status');
-    t.innerHTML = back === 'paid'
+    toast(back === 'paid'
       ? '<svg><use href="#i-check"/></svg>Deposit received. You\'re booked, and we\'ll text you a confirmation.'
-      : '<svg><use href="#i-lock"/></svg>No deposit, so that time wasn\'t held. Pick a time to try again.';
-    document.body.append(t);
-    setTimeout(() => t.remove(), 9000);
+      : '<svg><use href="#i-lock"/></svg>No deposit, so that time wasn\'t held. Pick a time to try again.', 9000);
     history.replaceState(null, '', location.pathname + location.hash);
   }
 })();
@@ -1004,7 +1019,7 @@ const fmtPhone = v => {
     $('#bookBtn').innerHTML = `<svg><use href="#i-lock"/></svg>${dep ? `Hold my spot with $${dep}` : 'Book my spot'}`;
     const plus = service.plus.includes(size) ? ', and we text you the exact price for your vehicle first.' : '.';
     $('#formNote').textContent = dep
-      ? `The $${dep} goes toward your total. The rest is due after the job${plus}`
+      ? `The $${dep} goes toward your total. You pay the rest after the service is completed${plus}`
       : `Nothing to pay now. You pay after the job${plus}`;
   }
   // The deposit step follows what the dashboard will actually take.
