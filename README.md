@@ -72,8 +72,12 @@ marked `PLACEHOLDER` is still a guess.
 - Finale, under "One stop shop": "Pick a detail and a time, and you're all set. We come
   to you. Mobile anointing!"
 - Footer left: "Where professionalism meets perfection." plus Matthew 6:33 (NKJV wording).
-- **Still to do:** he wants the hero Porsche (`porsche-foam.jpg` on wide screens,
-  `cayman-foam.jpg` on phones) replaced with a photo he texted. Needs the file.
+- **Hero is his white Daytona Charger (2026-10-08)**, replacing the Porsche. He texted two
+  shots and said pick the better one: we used the one against the white wall (`IMG_1911`,
+  clean background) over the parking-lot one (fence and trucks behind it). Originals are in
+  `assets/originals/from-text-2026-10-08/`. Wide screens get `charger-hero.jpg` (1800px crop,
+  windows to bumper), phones get `charger-hero-tall.jpg` (the full portrait shot). The old
+  `porsche-foam.jpg` and `cayman-foam.jpg` are no longer used on the page.
 
 ## Booking
 Live against `https://dashboard.boyerscales.com/api/public/schedule/mrautotreatment`.
