@@ -121,6 +121,8 @@ which happens on its own once his Stripe is connected in the dashboard.
 2. Travel fee amount for 45–60 min out, and where he's based.
 3. Reviews: `CFG.REVIEWS` is empty, so the section shows a "Leave a review" card.
    He has a Reviews highlight on Instagram. Add real ones as `{text, name, car}`.
+   "Leave a review" opens his Google Business Profile review box (his ask, 2026-10-10,
+   was Facebook). Place ID `ChIJUQorL68Y1SwRgOy6Knv3SQY`, listed as "MrAutoTreatment".
    Never write them ourselves.
 4. Licensed & insured is from his magnet. Worth a quick yes from him since it's a claim.
 

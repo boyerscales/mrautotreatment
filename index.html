@@ -794,7 +794,8 @@ const CFG = {
   /* --- reviews. Empty shows only the "had us out?" row. Add real ones as
          {text, name}. Word for word. Never write these ourselves.           */
   REVIEWS   : [],
-  REVIEW_URL: 'https://www.facebook.com/MrAutoTreatment/reviews',
+  // Opens the review box on his Google Business Profile (MrAutoTreatment). His ask, 2026-10-10.
+  REVIEW_URL: 'https://search.google.com/local/writereview?placeid=ChIJUQorL68Y1SwRgOy6Knv3SQY',
   REVIEW_THANKS: 'We appreciate you taking the time out of your day to leave us a review. God bless you.',   // his words
 };
 
@@ -841,7 +842,7 @@ const fmtPhone = v => {
     $('#reviews .head').textContent = 'Word gets around.';
   }
   $('#reviewLink').href = CFG.REVIEW_URL;
-  // His thank-you (text, 2026-10-06). Facebook doesn't tell us when a review is posted,
+  // His thank-you (text, 2026-10-06). Google doesn't tell us when a review is posted,
   // so it shows when they come back from the review tab after being gone a while.
   const toast = (html, ms) => {
     const t = document.createElement('div');
