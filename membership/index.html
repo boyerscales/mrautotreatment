@@ -249,7 +249,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   <div class="wrap">
     <p class="label">Monthly membership</p>
     <h1 class="head">A clean car, every month.</h1>
-    <p class="lead">Pick a plan and save a card. Book your detail each month like always, and your card is charged the plan price after the service is done. Cancel anytime.</p>
+    <p class="lead">Pick a plan and save a card. Book your detail each month from your member link, and your card is charged the plan price after the service is done. Cancel anytime.</p>
   </div>
 </section>
 
@@ -302,7 +302,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
       <ol class="steps">
         <li class="step"><div><h3>Pick a plan</h3><p>Choose the plan that fits your car and how you use it.</p></div></li>
         <li class="step"><div><h3>Save a card</h3><p>On Stripe's secure page. Nothing is charged today.</p></div></li>
-        <li class="step"><div><h3>Book your detail</h3><p>Online or by phone, any time each month. Members don't pay the booking deposit for their plan's detail.</p></div></li>
+        <li class="step"><div><h3>Book your detail</h3><p>Any time each month, from the booking link in your welcome email. Booked from that link, your plan's detail has no deposit. Or call or text and we'll book it with you.</p></div></li>
         <li class="step"><div><h3>Billed after the service</h3><p>When your plan's detail that month is done, your card is charged the plan price. No plan detail that month, no charge. Anything outside your plan is priced and paid like normal.</p></div></li>
         <li class="step"><div><h3>Cancel anytime</h3><p>Use the link in your welcome email, or call or text <a data-tel style="text-decoration:underline;text-underline-offset:3px"><span data-phone></span></a>.</p></div></li>
       </ol>
@@ -393,7 +393,7 @@ links();
 const qs = new URLSearchParams(location.search);
 // Tokens and flags come off the address bar once read, so a shared or bookmarked
 // link never carries them.
-if ([...qs.keys()].some(k => ['done','m','canceled','cancel'].includes(k))) history.replaceState(null, '', location.pathname + location.hash);
+if ([...qs.keys()].some(k => ['done','m','b','canceled','cancel'].includes(k))) history.replaceState(null, '', location.pathname + location.hash);
 
 /* ------------------------------ plans and joining ------------------------------ */
 let plans = [], plan = null;
@@ -478,16 +478,16 @@ $('#joinForm').addEventListener('submit', async e => {
 });
 
 /* Back from Stripe with the card saved. */
-function showJoined(token){
+function showJoined(token, bookToken){
   $('#join').hidden = false;
   $('#joinForm').hidden = true;
   $('#joinTitle').textContent = "You're a member";
   const box = $('#joinOk');
   box.innerHTML = `<strong>Welcome in.</strong>
-    <p>Your card is saved. Nothing was charged today. We'll email you a link to cancel anytime, and text you a confirmation.</p>
-    <p>Book your detail whenever you're ready. As a member you don't pay the booking deposit for your plan's detail.</p>
+    <p>Your card is saved. Nothing was charged today. We'll email you your own booking link and a link to cancel anytime, and text you a confirmation.</p>
+    <p>Book your detail whenever you're ready. Booked from your link, your plan's detail has no deposit.</p>
     <div class="acts">
-      <a class="btn btn-gold" href="../#book">Book my detail</a>
+      <a class="btn btn-gold" href="${/^[A-Za-z0-9_-]{16,64}$/.test(bookToken || '') ? `../?member=${encodeURIComponent(bookToken)}#book` : '../#book'}">Book my detail</a>
       <a class="btn btn-line" data-tel><svg><use href="#i-phone"/></svg>Call</a>
     </div>
     ${token ? `<button type="button" class="linkbtn" id="cancelMine">Changed your mind? Cancel your membership</button>` : ''}`;
@@ -540,7 +540,7 @@ async function openCancel(token){
 
 if (qs.get('cancel')) openCancel(qs.get('cancel'));
 else {
-  loadPlans().then(() => { if (qs.get('done') === '1') showJoined(qs.get('m') || ''); });
+  loadPlans().then(() => { if (qs.get('done') === '1') showJoined(qs.get('m') || '', qs.get('b') || ''); });
   if (qs.get('canceled') === '1') toast('<svg><use href="#i-lock"/></svg>No card was saved, so you\'re not signed up yet. Try again anytime.', 8000);
 }
 </script>
