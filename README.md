@@ -121,7 +121,7 @@ which happens on its own once his Stripe is connected in the dashboard.
 on Stripe (nothing charged), and the dashboard charges the plan price after the first job
 each month that the plan covers and is marked done. No covered job that month, no charge;
 anything else they book is priced and paid like normal. Members skip the booking deposit
-on their plan's detail. The confirmation text has a cancel link that opens
+on their plan's detail. The welcome email (never a text) has a cancel link that opens
 `membership/?cancel=...`.
 
 - **Plans, prices, what each covers and what's included come from his dashboard** (Settings > Membership plans),
