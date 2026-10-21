@@ -9,7 +9,20 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mr. Auto Treatment | Mobile Detailing, Sacramento">
 <meta property="og:description" content="Elite detailing by hand, inside and out, wherever your car is parked. Book online.">
-<meta property="og:image" content="assets/charger-hero.jpg">
+<meta property="og:image" content="https://mrautotreatment.com/assets/charger-hero.jpg">
+<meta property="og:url" content="https://mrautotreatment.com/">
+<link rel="canonical" href="https://mrautotreatment.com/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoWash","name":"Mr. Auto Treatment","url":"https://mrautotreatment.com/",
+"description":"Mobile car detailing in Sacramento and the surrounding area. We come to you.",
+"telephone":"+1-916-613-6405","image":"https://mrautotreatment.com/assets/charger-hero.jpg","logo":"https://mrautotreatment.com/assets/logo-180.png",
+"priceRange":"$150 to $350","areaServed":{"@type":"City","name":"Sacramento, CA"},
+"address":{"@type":"PostalAddress","addressLocality":"Sacramento","addressRegion":"CA","addressCountry":"US"},
+"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"06:00","closes":"18:00"}],
+"hasMap":"https://www.google.com/maps/place/?q=place_id:ChIJUQorL68Y1SwRgOy6Knv3SQY",
+"sameAs":["https://www.instagram.com/mrautotreatment_/"],
+"makesOffer":[{"@type":"Offer","name":"Executive Bronze Detail","price":"150","priceCurrency":"USD"},{"@type":"Offer","name":"Elite Platinum Detail","price":"300","priceCurrency":"USD"}]}
+</script>
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/logo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -308,6 +321,8 @@ section{padding:88px 0}
 .sum .due b{font-size:20px;font-weight:600;font-variation-settings:"wdth" 112}
 .err-msg{color:var(--bad);font-size:14.5px;margin:12px 0 0;min-height:1px}
 .formnote{font-size:13px;color:var(--ink3);margin:12px 0 0;text-align:center}
+.consent{font-size:12px;line-height:1.5;color:var(--ink3);margin:10px 0 0;text-align:center}
+.consent a,.fine a{color:inherit;text-decoration:underline;text-underline-offset:2px}
 .ok-msg{display:none;font-size:15px;color:var(--ink2);line-height:1.6}
 .ok-msg.on{display:block;animation:up .6s var(--ease) both}
 .ok-msg strong{display:block;color:var(--ink);margin-bottom:6px;font-size:18px}
@@ -630,6 +645,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
           <button type="submit" class="btn btn-gold btn-block" id="bookBtn" style="margin-top:22px"></button>
           <p class="err-msg" id="bookErr"></p>
           <p class="formnote" id="formNote"></p>
+          <p class="consent">By booking, you agree to get appointment texts from Mr. Auto Treatment at this number, like confirmations and reminders. Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out, HELP for help. <a href="terms/">Terms</a> and <a href="privacy/">Privacy Policy</a>.</p>
         </div>
       </form>
       <div class="ok-msg" id="bookOk"></div>
@@ -707,7 +723,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
         <p>Monday to Saturday, 6am to 6pm<br>Sunday closed<br>100% mobile, we come to you<br>Sacramento, CA</p>
       </div>
     </div>
-    <p class="fine">© <span id="yr">2026</span> Mr. Auto Treatment · Thank you for supporting a local business.</p>
+    <p class="fine">© <span id="yr">2026</span> Mr. Auto Treatment · Thank you for supporting a local business. · <a href="privacy/">Privacy Policy</a> · <a href="terms/">Terms</a></p>
   </div>
 </footer>
 
