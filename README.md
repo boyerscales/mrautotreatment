@@ -116,6 +116,19 @@ backend work: onboarding, webhooks, and a booking that only confirms once paid.
 the customer pays the rest after the service is completed. He wants "Due today" to show $25,
 which happens on its own once his Stripe is connected in the dashboard.
 
+## Membership (built 2026-10-20, his ask of 2026-10-16)
+`membership/` is a monthly maintenance membership: the customer picks a plan, saves a card
+on Stripe (nothing charged), and the dashboard charges the plan price after the first job
+each month that's marked done. No job that month, no charge. Members skip the booking
+deposit. The confirmation text has a cancel link that opens `membership/?cancel=...`.
+
+- **Plans, prices and what's included come from his dashboard** (Settings > Membership plans),
+  read from `/api/public/membership/mrautotreatment`. Nothing is priced in this repo.
+- Until he has a plan with a price AND his Stripe is connected, the page shows "Memberships
+  are coming soon. Call or text" with his number. Nothing to edit here when he's ready.
+- Linked from the header nav and a callout under the packages.
+- Test with the API stubbed, never by submitting the live form.
+
 ## Still open
 1. Deposit policy wording, and the Stripe link above.
 2. Travel fee amount for 45–60 min out, and where he's based.

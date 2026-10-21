@@ -226,6 +226,9 @@ section{padding:88px 0}
   background:rgba(227,178,60,.08);border-radius:2px;font-size:16px;color:var(--ink)}
 .sizes.callout b{display:block;color:var(--gold2);font-size:24px;font-weight:600;letter-spacing:-.02em;margin-bottom:6px}
 .sizes.callout .arrow{display:flex;width:max-content;margin-top:14px;color:var(--gold2);border-color:var(--gold)}
+/* The membership callout sits right under the packages, so it borrows their bottom space. */
+section.member-cta{padding:0 0 88px}
+.member-cta .sizes.callout{margin:0}
 
 /* ---------- call ----------
    In place of About and FAQ: he'd rather answer questions on the phone. */
@@ -398,6 +401,8 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
   .rev,.rev:last-child{border-bottom:0}
   .others .wrap,.how .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
   .others .sec-head,.how .sec-head{position:sticky;top:120px}
+  section.member-cta{padding:0 0 130px}
+  .member-cta .sizes.callout{max-width:760px}
   .ask{grid-template-columns:auto 1fr auto}
   .ask .links{grid-column:auto;flex-direction:column;align-items:flex-end;gap:12px}
   .book{grid-template-columns:.8fr 1.2fr;gap:72px;align-items:start}
@@ -450,6 +455,7 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
     <nav class="nav" aria-label="Main">
       <a href="#bronze">Packages</a>
       <a href="#services">Specialty</a>
+      <a href="membership/">Membership</a>
     </nav>
     <a class="hdr-tel" data-tel><svg><use href="#i-phone"/></svg><span data-phone></span></a>
     <a class="btn btn-gold" href="#book">Book</a>
@@ -548,6 +554,13 @@ footer{border-top:1px solid var(--line);padding:48px 0 120px;font-size:14px;colo
         <a class="arrow" data-tel>Or call <span data-phone></span></a>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- Monthly membership. Plans and prices live on membership/, loaded from his dashboard. -->
+<section class="member-cta" id="membership">
+  <div class="wrap">
+    <div class="sizes callout rv"><b>Monthly membership.</b>Keep it clean every month. Pick a plan and save a card, and you're billed after each month's detail. Members skip the booking deposit. Cancel anytime. <a class="arrow" href="membership/">See the plans <svg><use href="#i-arrow"/></svg></a></div>
   </div>
 </section>
 
